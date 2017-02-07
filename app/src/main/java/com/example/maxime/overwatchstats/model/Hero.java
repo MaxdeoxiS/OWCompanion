@@ -1,0 +1,62 @@
+package com.example.maxime.overwatchstats.model;
+
+import java.io.Serializable;
+
+public class Hero implements Serializable{
+
+    private String nickname;
+    private String firstName;
+    private String lastName;
+    private int age;
+
+    private double x;
+    private double y;
+
+    public Hero(String name) {
+        this.nickname = name;
+    };
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() { return age; }
+    public void setAge(int age) { this.age = age; }
+
+}

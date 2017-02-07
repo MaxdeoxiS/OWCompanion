@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">OverwatchStats</string>
+    <string name="button_my_profile">Mon Profil</string>
+    <string name="label_avatar">Avatar</string>
+    <string name="profile_button_quickplay">Partie rapide</string>
+    <string name="profile_button_ranked">Partie compétitive</string>
+    <string name="profile_button_achievements">Hauts-faits</string>
+    <string name="label_available_soon">Bientôt disponible</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_share">Partager</string>
+    <string name="menu_plus">Plus</string>
+    <string name="menu_profile">Mon Profil</string>
+    <string name="menu_favorites">Mes amis</string>
+    <string name="menu_place">Carte Interactive</string>
+    <string name="no_friends">Vous n\'avez aucun ami !</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Paramètres</string>
+    <string name="action_search">Rechercher un joueur</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="action_add_friend">Ajouter en ami</string>
+</resources>
