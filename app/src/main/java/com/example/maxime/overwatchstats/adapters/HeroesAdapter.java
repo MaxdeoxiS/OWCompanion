@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.model.HeroItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -27,15 +29,17 @@ public class HeroesAdapter extends ArrayAdapter<HeroItem> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_heroes, parent, false);
         }
         // Lookup view for data population
+
+        ImageView heroImg = (ImageView) convertView.findViewById(R.id.qp_hero_img_1);
         TextView heroName = (TextView) convertView.findViewById(R.id.qp_hero_text_1);
         TextView heroPlayTime = (TextView) convertView.findViewById(R.id.qp_hero_text_2);
-        TextView pb = (TextView) convertView.findViewById(R.id.qp_hero_progress);
 
         // Populate the data into the template view using the data object
+        Picasso.with(getContext()).load(hero.imgUrl).into(heroImg);
         heroName.setText(hero.name);
         heroPlayTime.setText(hero.playTime);
-        pb.setText(String.valueOf(hero.percentage));
         // Return the completed view to render on screen
         return convertView;
     }
+
 }

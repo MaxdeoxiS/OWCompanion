@@ -5,10 +5,10 @@ public class Friend {
     private long _id;
     private String username;
     private String battleTag;
+    private String portrait;
 
-    public Friend(long id, String u, String b)
+    public Friend(String u, String b)
     {
-        this._id = id;
         this.username = u;
         this.battleTag = b;
     }

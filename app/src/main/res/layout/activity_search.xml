@@ -17,6 +17,7 @@
 
         <Button
             android:id="@+id/player_searched_button"
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/action_add_friend"/>

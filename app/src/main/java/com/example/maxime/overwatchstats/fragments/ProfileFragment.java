@@ -1,8 +1,10 @@
 package com.example.maxime.overwatchstats.fragments;
 
-import android.support.v4.app.Fragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +16,16 @@ import com.example.maxime.overwatchstats.activities.AchievementsActivity;
 
 public class ProfileFragment extends Fragment {
 
-    final String defaultBattleTag = "MaxdeoxiS-2292";
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View mView = inflater.inflate(R.layout.activity_profile, container, false);
 
-        GetProfileStats profile = new GetProfileStats(mView, getActivity(), defaultBattleTag);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
+        String battleTag = preferences.getString("currentBattleTag", "");
+
+        GetProfileStats profile = new GetProfileStats(mView, getActivity(), battleTag);
         profile.execute();
 
         final Button button_qp = (Button) mView.findViewById(R.id.profile_button_quickplay);

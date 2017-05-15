@@ -4,7 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
-public class FriendDAO extends DAOBase{
+import java.util.ArrayList;
+
+public class FriendDAO extends DAOBase {
 
     public static final String TABLE_NAME = "friends";
 
@@ -21,14 +23,19 @@ public class FriendDAO extends DAOBase{
         super(context);
     }
 
-    public void add(Friend f) {
+    public boolean add(Friend f) {
 
-        ContentValues value = new ContentValues();
+        if (null == this.search(f.getUsername())) {
 
-        value.put(FriendDAO.USERNAME, f.getUsername());
-        value.put(FriendDAO.BATTLETAG, f.getBattleTag());
+            ContentValues value = new ContentValues();
 
-        mDb.insert(FriendDAO.TABLE_NAME, null, value);
+            value.put(FriendDAO.USERNAME, f.getUsername());
+            value.put(FriendDAO.BATTLETAG, f.getBattleTag());
+
+            mDb.insert(FriendDAO.TABLE_NAME, null, value);
+            return true;
+        }
+        return false;
     }
 
     public void delete(long id) {
@@ -36,18 +43,25 @@ public class FriendDAO extends DAOBase{
 
     }
 
-    public void update(Friend f) {
-
-
-    }
-
-    public Friend select(long id) {
-        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + KEY + " = ?", new String[]{""+id});
+    public Friend search(String username) {
+        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + USERNAME + " = ?", new String[]{username});
         Friend f = null;
 
         if (c.moveToFirst()) {
             do {
-                f = new Friend(id, c.getString(0), "test");
+                f = new Friend(c.getString(0), c.getString(0));
+            } while (c.moveToNext());
+        }
+        return  f;
+    }
+
+    public Friend select(long id) {
+        Cursor c = mDb.rawQuery("select " + USERNAME + " , " + BATTLETAG + " from " + TABLE_NAME + " where " + KEY + " = ?", new String[]{""+id});
+        Friend f = null;
+
+        if (c.moveToFirst()) {
+            do {
+                f = new Friend(c.getString(0), c.getString(1));
             } while (c.moveToNext());
         }
         return  f;
@@ -57,6 +71,25 @@ public class FriendDAO extends DAOBase{
         Cursor c = mDb.rawQuery("select * from " + TABLE_NAME, new String[]{});
 
         return c.getColumnCount();
+    }
+
+    public ArrayList<Friend> getAllFriends() {
+        ArrayList<Friend> friends = new ArrayList<Friend>();
+        Cursor c = mDb.rawQuery("select * from " + TABLE_NAME, new String[]{});
+        Friend f = null;
+
+        int i = 1;
+
+        if (c.moveToFirst()) {
+            do {
+                f = new Friend(c.getString(1), c.getString(2));
+                if(i != 1)
+                    friends.add(f);
+                i++;
+            } while (c.moveToNext());
+        }
+
+        return friends;
     }
 
     public void emptyTable() {

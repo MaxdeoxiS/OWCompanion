@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+  <TextView
+      android:id="@+id/text1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerInParent="false"
+      android:text="S'enregistrer"
+      android:layout_marginTop="14dp"
+      android:textAppearance="?android:attr/textAppearanceLarge"
+      />
+
+  <TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/text1"
+      android:layout_marginTop="20dp"
+      android:text="Pseudo* :"
+      android:textAppearance="?android:attr/textAppearanceLarge" />
+
+  <EditText
+      android:id="@+id/pseudo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_alignTop="@+id/textView1"
+      android:layout_toRightOf="@+id/textView1"
+      />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/textView1"
+      android:layout_marginTop="20dp"
+
+      android:text="BattleTag :"
+      android:textAppearance="?android:attr/textAppearanceLarge" />
+
+  <EditText
+      android:id="@+id/battleTag"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_alignTop="@+id/textView2"
+      android:layout_toRightOf="@+id/textView2"
+      />
+
+  <Button
+      android:id="@+id/btnRegister"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="false"
+      android:layout_below="@+id/battleTag"
+      android:layout_centerInParent="true"
+      android:text="Créer mon compte" />
+
+</RelativeLayout>

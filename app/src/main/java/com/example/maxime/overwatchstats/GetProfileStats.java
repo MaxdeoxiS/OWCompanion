@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,9 +30,11 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
     private String battleTag;
 
+    private Button button_add_friend;
+
     private ImageView profile_pic;
     private ImageView profile_level;
-    private ImageView profile_stars;
+    private ImageView profile_stars = null;
 
     private TextView profile_text;
     private TextView profile_text_level;
@@ -45,6 +48,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         profile_stars = (ImageView) myView.findViewById(R.id.img_profile_stars);
         profile_text = (TextView) myView.findViewById(R.id.profile_text);
         profile_text_level = (TextView) myView.findViewById(R.id.profile_level);
+        button_add_friend = (Button) myView.findViewById(R.id.player_searched_button);
         battleTag = b;
     }
 
@@ -54,11 +58,12 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
         Profile p = new Profile();
 
-        p.setUsername(test.getJSONObject("data").getString("username"));
-        p.setLevel(test.getJSONObject("data").getString("level"));
-        p.setAvatar(test.getJSONObject("data").getString("avatar"));
-        p.setImg_lvl(test.getJSONObject("data").getString("levelFrame"));
-        p.setImg_stars(test.getJSONObject("data").getString("star"));
+        p.setUsername(test.getString("username"));
+        p.setLevel(test.getString("level"));
+        p.setAvatar(test.getString("portrait"));
+        p.setImg_lvl(test.getString("levelFrame"));
+        if(!test.getString("star").equals(""))
+            p.setImg_stars(test.getString("star"));
 
 
         return p;
@@ -75,9 +80,8 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         // Will contain the raw JSON response as a string.
         String statsJsonStr = null;
 
-
         try {
-            final String BASE_URL = "https://api.lootbox.eu/";
+            final String BASE_URL = "http://ow-api.herokuapp.com/";
 
             final String PLATFORM = "pc";
             final String REGION = "eu";
@@ -85,10 +89,10 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
             String PARAM1 = "profile";
 
             Uri builtUri = Uri.parse(BASE_URL).buildUpon()
-                    .appendPath(PLATFORM + "/")
-                    .appendPath(REGION + "/")
-                    .appendPath(BATTLE_TAG + "/")
                     .appendPath(PARAM1)
+                    .appendPath(PLATFORM)
+                    .appendPath(REGION)
+                    .appendPath(BATTLE_TAG)
                     .build();
 
             URL url = new URL(builtUri.toString());
@@ -99,10 +103,15 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
             urlConnection.connect();
 
             // Read the input stream into a String
+            int status = urlConnection.getResponseCode();
+            if (status != 200) {
+                cancel(true);
+                return null;
+            }
+
             InputStream inputStream = urlConnection.getInputStream();
             StringBuilder buffer = new StringBuilder();
             if (inputStream == null) {
-                // Nothing to do.
                 return null;
             }
             reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -162,6 +171,9 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
                 (profile_text).setText(p.getUsername());
             if(null != profile_text_level)
                 (profile_text_level).setText(p.getLevel());
+            if(null != button_add_friend)
+                button_add_friend.setVisibility(View.VISIBLE);
         }
     }
+
 }

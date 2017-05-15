@@ -7,6 +7,7 @@ public class Hero implements Serializable{
     private String nickname;
     private String firstName;
     private String lastName;
+    private String desc;
     private int age;
 
     private double x;
@@ -50,6 +51,10 @@ public class Hero implements Serializable{
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getDescription() {
+        return desc;
     }
 
     public void setLastName(String lastName) {

@@ -47,8 +47,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (Hero hero : heroes.getHeroes()) {
             addHeroMarker(hero);
         }
-
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
     public void addHeroMarker(Hero hero) {
@@ -57,7 +55,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             .position(location)
                             .title(hero.getNickname())
                             .snippet(hero.getFirstName() + " " + hero.getLastName())
-                            .icon(BitmapDescriptorFactory.fromResource(getResources().getIdentifier(hero.getNickname().toLowerCase(), "drawable", "com.example.maxime.overwatchstats")))
+                            .icon(BitmapDescriptorFactory.fromResource(
+                                    getResources()
+                                            .getIdentifier(hero.getNickname().toLowerCase(), "drawable", "com.example.maxime.overwatchstats")))
         );
     }
 }

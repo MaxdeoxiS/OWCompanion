@@ -11,7 +11,7 @@ public class Profile {
     private int time_total;
 
     private String img_rank;
-    private String img_stars;
+    private String img_stars = null;
     private String img_lvl;
 
     private String avatar;

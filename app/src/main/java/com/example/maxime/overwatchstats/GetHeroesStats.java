@@ -1,8 +1,10 @@
 package com.example.maxime.overwatchstats;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 
@@ -27,6 +29,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
     private View myView;
     private Context context;
     private HeroesAdapter adapter;
+    // Gamemode. Either quickplay or competitive
     private String mode;
 
     public GetHeroesStats(View v, Context c, HeroesAdapter a, String m)
@@ -47,15 +50,17 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
 
     private ArrayList<HeroItem> getStatsDataFromJson(String statsAsString) throws JSONException {
 
-        JSONArray test = new JSONArray(statsAsString);
+        JSONObject jsonObject = new JSONObject(statsAsString);
 
         ArrayList<HeroItem> p = new ArrayList<HeroItem>();
 
-        int jsonArraySize = test.length();
+        JSONArray stats = jsonObject.getJSONObject("stats").getJSONObject("top_heroes").getJSONArray(this.mode);
+
+        int jsonArraySize = stats.length();
 
         for (int i = 0; i < jsonArraySize; i++) {
-            JSONObject currentNode = test.getJSONObject(i);
-            HeroItem h = new HeroItem(currentNode.getString("name"), currentNode.getString("playtime"), currentNode.getLong("percentage"));
+            JSONObject currentNode = stats.getJSONObject(i);
+            HeroItem h = new HeroItem(currentNode.getString("hero"), currentNode.getString("played"), currentNode.getString("img"));
             p.add(h);
         }
 
@@ -75,20 +80,22 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
 
 
         try {
-            final String BASE_URL = "https://api.lootbox.eu/";
+            final String BASE_URL = "http://ow-api.herokuapp.com/";
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+            String pref_battleTag = preferences.getString("currentBattleTag", "");
 
             final String PLATFORM = "pc";
             final String REGION = "eu";
-            final String BATTLE_TAG = "MaxdeoxiS-2292";
-            final String DATATYPE = "heroes";
+            final String BATTLE_TAG = pref_battleTag;
+            final String DATATYPE = "stats";
 
 
             Uri builtUri = Uri.parse(BASE_URL).buildUpon()
-                    .appendPath(PLATFORM + "/")
-                    .appendPath(REGION + "/")
-                    .appendPath(BATTLE_TAG + "/")
-                    .appendPath(this.mode + "/")
                     .appendPath(DATATYPE)
+                    .appendPath(PLATFORM)
+                    .appendPath(REGION)
+                    .appendPath(BATTLE_TAG)
                     .build();
 
             URL url = new URL(builtUri.toString());

@@ -3,7 +3,9 @@ package com.example.maxime.overwatchstats.activities;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,16 +13,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.fragments.FriendsFragment;
+import com.example.maxime.overwatchstats.fragments.MainFragment;
+import com.example.maxime.overwatchstats.fragments.NewsFragment;
 import com.example.maxime.overwatchstats.fragments.ProfileFragment;
-import com.example.maxime.overwatchstats.model.DatabaseHandler;
-import com.example.maxime.overwatchstats.model.Friend;
-import com.example.maxime.overwatchstats.model.FriendDAO;
 import com.example.maxime.overwatchstats.model.Heroes;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -43,18 +43,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        DatabaseHandler db = new DatabaseHandler(this, "friends", null, 5);
+        //ImageView iconHeader = (ImageView) findViewById(R.id.icon_menu_header);
 
-        FriendDAO f = new FriendDAO(this);
-        f.open();
-        f.emptyTable();
-        Friend friend = new Friend(1, "MaxdeoxiS", "MaxdeoxiS#2292");
-        Friend friend2 = new Friend(2, "Blackout", "MaxdeoxiS#2292");
-        f.add(friend);
-        f.add(friend2);
-        Log.v("test SQL", ""+f.countFriends());
-        Log.v("test SQL", ""+f.select(3).getUsername());
-        f.close();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new MainFragment())
+                .commit();
     }
 
 
@@ -96,11 +89,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -110,7 +98,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_profile) {
+        if (id == R.id.nav_home) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new NewsFragment())
+                    .addToBackStack("NEWS")
+                    .commit();
+        } else if (id == R.id.nav_profile) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            String myBattleTag = preferences.getString("battleTag", "");
+
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("currentBattleTag", myBattleTag);
+            editor.apply();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, new ProfileFragment())
                     .addToBackStack("PROFILE")
@@ -124,8 +123,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, MapsActivity.class);
             Heroes heroes = new Heroes();
             intent.putExtra("HEROES", heroes);
-                startActivity(intent);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_share) {
 
