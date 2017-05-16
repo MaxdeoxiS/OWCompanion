@@ -38,6 +38,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
     private TextView profile_text;
     private TextView profile_text_level;
+    private TextView profile_rank;
 
     public GetProfileStats(View v, Context c, String b)
     {
@@ -48,23 +49,25 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         profile_stars = (ImageView) myView.findViewById(R.id.img_profile_stars);
         profile_text = (TextView) myView.findViewById(R.id.profile_text);
         profile_text_level = (TextView) myView.findViewById(R.id.profile_level);
+        profile_rank = (TextView) myView.findViewById(R.id.profile_rank);
         button_add_friend = (Button) myView.findViewById(R.id.player_searched_button);
         battleTag = b;
     }
 
     private Object getStatsDataFromJson(String statsAsString) throws JSONException {
 
-        JSONObject test = new JSONObject(statsAsString);
+        JSONObject json = new JSONObject(statsAsString);
 
         Profile p = new Profile();
 
-        p.setUsername(test.getString("username"));
-        p.setLevel(test.getString("level"));
-        p.setAvatar(test.getString("portrait"));
-        p.setImg_lvl(test.getString("levelFrame"));
-        if(!test.getString("star").equals(""))
-            p.setImg_stars(test.getString("star"));
-
+        p.setUsername(json.getString("username"));
+        p.setLevel(json.getString("level"));
+        p.setAvatar(json.getString("portrait"));
+        p.setImg_lvl(json.getString("levelFrame"));
+        if(!json.getString("star").equals(""))
+            p.setImg_stars(json.getString("star"));
+        if(!json.getJSONObject("competitive").getString("rank").equals(""))
+            p.setRank(json.getJSONObject("competitive").getString("rank"));
 
         return p;
     }
@@ -171,6 +174,8 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
                 (profile_text).setText(p.getUsername());
             if(null != profile_text_level)
                 (profile_text_level).setText(p.getLevel());
+            if(null != profile_rank)
+                (profile_text_level).setText(p.getRank());
             if(null != button_add_friend)
                 button_add_friend.setVisibility(View.VISIBLE);
         }

@@ -5,7 +5,7 @@ public class Profile {
     private String username;
     private String fullUsername;
     private String level;
-    private int rank;
+    private String rank;
     private int time_qp;
     private int time_ranked;
     private int time_total;
@@ -49,11 +49,11 @@ public class Profile {
         this.level = lvl;
     }
 
-    public int getRank() {
+    public String getRank() {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 

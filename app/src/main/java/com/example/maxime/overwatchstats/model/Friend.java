@@ -5,7 +5,7 @@ public class Friend {
     private long _id;
     private String username;
     private String battleTag;
-    private String portrait;
+    private String avatar;
 
     public Friend(String u, String b)
     {

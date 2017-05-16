@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.maxime.overwatchstats.R;
@@ -31,6 +32,7 @@ public class MainFragment extends Fragment {
         View headerView = navigationView.getHeaderView(0);
         TextView menuPseudo = (TextView) headerView.findViewById(R.id.menu_pseudo);
         TextView menuBattleTag = (TextView) headerView.findViewById(R.id.menu_battleTag);
+        ImageView menuAvatar = (ImageView) headerView.findViewById(R.id.icon_menu_header);
 
         f = new FriendDAO(this.getContext());
         f.open();
@@ -46,6 +48,7 @@ public class MainFragment extends Fragment {
             editor.apply();
             menuPseudo.setText(friend.getUsername());
             menuBattleTag.setText(friend.getBattleTag());
+            //Picasso.with(this.getContext()).load(friend.getAvatar()).into(menuAvatar);
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, new NewsFragment())
                     .commit();
