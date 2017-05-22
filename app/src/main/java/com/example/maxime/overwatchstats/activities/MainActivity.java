@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .commit();
         } else if (id == R.id.nav_map) {
             Intent intent = new Intent(this, MapsActivity.class);
-            Heroes heroes = new Heroes();
+            Heroes heroes = new Heroes(this.getResources().openRawResource(R.raw.heroes));
             intent.putExtra("HEROES", heroes);
             startActivity(intent);
         } else if (id == R.id.nav_manage) {

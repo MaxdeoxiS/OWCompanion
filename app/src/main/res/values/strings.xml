@@ -14,6 +14,7 @@
     <string name="menu_favorites">Mes amis</string>
     <string name="menu_place">Carte Interactive</string>
     <string name="no_friends">Vous n\'avez aucun ami !</string>
+    <string name="label_click_for_more">Cliquez pour en savoir plus</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

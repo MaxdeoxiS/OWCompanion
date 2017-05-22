@@ -1,6 +1,7 @@
 package com.example.maxime.overwatchstats.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Hero implements Serializable{
 
@@ -13,9 +14,18 @@ public class Hero implements Serializable{
     private double x;
     private double y;
 
-    public Hero(String name) {
+    private List<Ability> abilities;
+
+    public Hero(String name, String firstName, String lastName, double x, double y, int age, String description, List<Ability> ab) {
         this.nickname = name;
-    };
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.x = x;
+        this.y = y;
+        this.age = age;
+        this.desc = description;
+        this.abilities = ab;
+    }
 
     public void setX(double x) {
         this.x = x;
@@ -63,5 +73,9 @@ public class Hero implements Serializable{
 
     public int getAge() { return age; }
     public void setAge(int age) { this.age = age; }
+
+    public void setAbilities(List<Ability> ab) { this.abilities = ab; }
+    public void addAbility(Ability a) { this.abilities.add(a); }
+    public List<Ability> getAbilities() { return this.abilities; }
 
 }
