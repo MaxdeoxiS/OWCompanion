@@ -1,5 +1,7 @@
 package com.example.maxime.overwatchstats.activities;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -17,6 +19,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
 
 import static com.example.maxime.overwatchstats.R.id.map;
 
@@ -50,6 +54,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private GoogleMap mMap;
+    private Marker currentMarker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,18 +92,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                LatLng position = (LatLng)(marker.getTag());
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 7));
+                if(currentMarker != null) {
+                    currentMarker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String)(((ArrayList)currentMarker.getTag()).get(1)), 80, 80)));
+                }
+                currentMarker = marker;
+                LatLng position = (LatLng)(((ArrayList)marker.getTag()).get(0));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 6));
+
+                marker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String)(((ArrayList)marker.getTag()).get(1)), 300, 300)));
                 marker.showInfoWindow();
+
+                mMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
+                    @Override
+                    public void onCameraMove() {
+                        currentMarker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String)(((ArrayList)currentMarker.getTag()).get(1)), 80, 80)));
+                    }
+                });
+
                 return true;
             }
+
         });
     }
 
     @Override
     public void onInfoWindowClick(Marker marker) {
+        //mMap.getUiSettings().setAllGesturesEnabled(false);
         Bundle args = new Bundle();
-        args.putString("id", (marker.getId()));
+        args.putString("nickname", (String)(((ArrayList)marker.getTag()).get(1)));
         HeroDescFragment frgm = new HeroDescFragment();
         frgm.setArguments(args);
 
@@ -114,10 +135,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             .position(location)
                             .title(hero.getNickname())
                             .snippet(hero.getFirstName() + " " + hero.getLastName())
-                            .icon(BitmapDescriptorFactory.fromResource(
-                                    getResources()
-                                            .getIdentifier(hero.getNickname().toLowerCase(), "drawable", "com.example.maxime.overwatchstats")))
+                            .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(hero.getNickname().toLowerCase(), 80, 80)))
         );
-        marker.setTag(location);
+        ArrayList tags = new ArrayList<>();
+        tags.add(0, location);
+        tags.add(1, hero.getNickname().toLowerCase());
+        marker.setTag(tags);
+    }
+
+    public Bitmap resizeMapIcons(String iconName, int width, int height){
+        Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(),getResources().getIdentifier(iconName, "drawable", getPackageName()));
+        return Bitmap.createScaledBitmap(imageBitmap, width, height, false);
     }
 }

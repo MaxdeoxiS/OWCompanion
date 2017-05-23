@@ -7,6 +7,19 @@
         <x>45.89924700</x>
         <y>6.12938400</y>
         <age>33</age>
+        <abilities>
+            <ability>
+                <name>Grappin</name>
+                <type>Déplacement</type>
+                <range>10m</range>
+            </ability>
+            <ability>
+                <name>Mine venimeuse</name>
+                <type>Objet posable</type>
+                <range>40m</range>
+                <damage>35</damage>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Ana</surname>

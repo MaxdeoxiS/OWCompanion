@@ -15,6 +15,8 @@ import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.model.Friend;
 import com.example.maxime.overwatchstats.model.FriendDAO;
 
+import static android.R.attr.path;
+
 public class SearchPlayerActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class SearchPlayerActivity extends AppCompatActivity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             final String query = intent.getStringExtra(SearchManager.QUERY);
 
+            //TODO add a method to check if player exists or not
+
             GetProfileStats profile = new GetProfileStats(this.getWindow().getDecorView().findViewById(android.R.id.content), this, query);
             profile.execute();
 
@@ -44,7 +48,7 @@ public class SearchPlayerActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             FriendDAO f = new FriendDAO(getBaseContext());
                             f.open();
-                            boolean insert_success = f.add(new Friend(query, query));
+                            boolean insert_success = f.add(new Friend(query.substring(0, query.length() - 5), query));
                             f.close();
                             Context context = getApplicationContext();
                             CharSequence text = (insert_success) ? "Ami ajouté !" : "Vous ne pouvez pas ajouter cet utilisateur.";

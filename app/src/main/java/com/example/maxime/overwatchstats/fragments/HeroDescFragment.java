@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.maxime.overwatchstats.R;
+import com.example.maxime.overwatchstats.model.Hero;
+import com.example.maxime.overwatchstats.model.Heroes;
 
 public class HeroDescFragment extends Fragment {
 
@@ -17,11 +19,19 @@ public class HeroDescFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View mView = inflater.inflate(R.layout.hero_description, container, false);
 
+        Heroes heroes = new Heroes(this.getResources().openRawResource(R.raw.heroes));
         if (getArguments() != null) {
-            String heroId = getArguments().getString("id");
+            String heroName = getArguments().getString("nickname");
+            Hero hero = heroes.findHeroByName(heroName);
 
-            TextView heroName = (TextView) mView.findViewById(R.id.hero_name);
-            heroName.setText("Hero " + heroId);
+            TextView heroNameTV = (TextView) mView.findViewById(R.id.hero_name);
+            String heroAbility = "";
+
+//            for(Ability a : hero.getAbilities()) {
+//                heroAbility += a.getName() + " ";
+//            }
+//
+//            heroNameTV.setText("Hero : " + heroName + "ability: " + heroAbility);
         }
 
         return mView;

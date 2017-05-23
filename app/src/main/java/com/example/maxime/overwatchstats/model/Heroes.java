@@ -32,17 +32,28 @@ public class Heroes implements Serializable {
                 }
             }
         }
-            }
+    }
 
     public List<Hero> getHeroes() {
         return heroes;
     }
 
     public String toString() {
-       return this.getHeroes().size() + " héros trouvés.";
+       return this.getHeroes().size() + " heroes found.";
     }
 
     public void setHeroes(List<Hero> heroes) {
         this.heroes = heroes;
+    }
+
+    public Hero findHeroByName(String name) {
+        Hero hero = null;
+        for (Hero h : this.getHeroes()) {
+            if(h.getNickname().toLowerCase().equals(name)) {
+                hero = h;
+                break;
+            }
+        }
+        return hero;
     }
 }

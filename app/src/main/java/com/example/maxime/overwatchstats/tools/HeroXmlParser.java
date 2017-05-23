@@ -14,8 +14,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.maxime.overwatchstats.R.raw.heroes;
-
 public class HeroXmlParser {
     private static final String ns = null;
 
@@ -84,6 +82,7 @@ public class HeroXmlParser {
                 skip(parser);
             }
         }
+
         //TODO change 1-before-last parameter
         return new Hero(nickname, firstName, lastName, Double.parseDouble(x), Double.parseDouble(y), Integer.parseInt(age), "", abilities);
     }
