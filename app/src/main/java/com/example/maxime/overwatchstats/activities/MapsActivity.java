@@ -30,16 +30,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         private final View myContentsView;
 
-        MyInfoWindowAdapter(){
+        MyInfoWindowAdapter() {
             myContentsView = getLayoutInflater().inflate(R.layout.custom_info_contents, null);
         }
 
         @Override
         public View getInfoContents(Marker marker) {
 
-            TextView tvTitle = ((TextView)myContentsView.findViewById(R.id.title));
+            TextView tvTitle = ((TextView) myContentsView.findViewById(R.id.title));
             tvTitle.setText(marker.getTitle());
-            TextView tvSnippet = ((TextView)myContentsView.findViewById(R.id.snippet));
+            TextView tvSnippet = ((TextView) myContentsView.findViewById(R.id.snippet));
             tvSnippet.setText(marker.getSnippet());
 
             return myContentsView;
@@ -92,20 +92,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                if(currentMarker != null) {
-                    currentMarker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String)(((ArrayList)currentMarker.getTag()).get(1)), 80, 80)));
+                if (currentMarker != null) {
+                    currentMarker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String) (((ArrayList) currentMarker.getTag()).get(1)), 80, 80)));
                 }
                 currentMarker = marker;
-                LatLng position = (LatLng)(((ArrayList)marker.getTag()).get(0));
+                LatLng position = (LatLng) (((ArrayList) marker.getTag()).get(0));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 6));
 
-                marker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String)(((ArrayList)marker.getTag()).get(1)), 300, 300)));
+                marker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String) (((ArrayList) marker.getTag()).get(1)), 300, 300)));
                 marker.showInfoWindow();
 
                 mMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
                     @Override
                     public void onCameraMove() {
-                        currentMarker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String)(((ArrayList)currentMarker.getTag()).get(1)), 80, 80)));
+                        currentMarker.setIcon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons((String) (((ArrayList) currentMarker.getTag()).get(1)), 80, 80)));
                     }
                 });
 
@@ -119,7 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onInfoWindowClick(Marker marker) {
         //mMap.getUiSettings().setAllGesturesEnabled(false);
         Bundle args = new Bundle();
-        args.putString("nickname", (String)(((ArrayList)marker.getTag()).get(1)));
+        args.putString("nickname", (String) (((ArrayList) marker.getTag()).get(1)));
         HeroDescFragment frgm = new HeroDescFragment();
         frgm.setArguments(args);
 
@@ -132,10 +132,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void addHeroMarker(Hero hero) {
         LatLng location = new LatLng(hero.getX(), hero.getY());
         Marker marker = mMap.addMarker(new MarkerOptions()
-                            .position(location)
-                            .title(hero.getNickname())
-                            .snippet(hero.getFirstName() + " " + hero.getLastName())
-                            .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(hero.getNickname().toLowerCase(), 80, 80)))
+                .position(location)
+                .title(hero.getNickname())
+                .snippet(hero.getFirstName() + " " + hero.getLastName())
+                .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons(hero.getNickname().toLowerCase(), 80, 80)))
         );
         ArrayList tags = new ArrayList<>();
         tags.add(0, location);
@@ -143,8 +143,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         marker.setTag(tags);
     }
 
-    public Bitmap resizeMapIcons(String iconName, int width, int height){
-        Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(),getResources().getIdentifier(iconName, "drawable", getPackageName()));
+    public Bitmap resizeMapIcons(String iconName, int width, int height) {
+        Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(), getResources().getIdentifier(iconName, "drawable", getPackageName()));
         return Bitmap.createScaledBitmap(imageBitmap, width, height, false);
     }
 }

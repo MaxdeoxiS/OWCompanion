@@ -8,8 +8,7 @@
         android:id="@+id/qp_hero_img_1"
         android:layout_gravity="center"
         android:layout_width="48dp"
-        android:layout_height="48dp"
-        />
+        android:layout_height="48dp" />
 
     <TextView
         android:id="@+id/qp_hero_text_1"

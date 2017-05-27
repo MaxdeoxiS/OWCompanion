@@ -27,6 +27,7 @@ public class HeroDescFragment extends Fragment {
             TextView heroNameTV = (TextView) mView.findViewById(R.id.hero_name);
             String heroAbility = "";
 
+
 //            for(Ability a : hero.getAbilities()) {
 //                heroAbility += a.getName() + " ";
 //            }

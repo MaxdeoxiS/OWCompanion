@@ -3,7 +3,7 @@ package com.example.maxime.overwatchstats.model;
 import java.io.Serializable;
 import java.util.List;
 
-public class Hero implements Serializable{
+public class Hero implements Serializable {
 
     private String nickname;
     private String firstName;
@@ -71,11 +71,24 @@ public class Hero implements Serializable{
         this.lastName = lastName;
     }
 
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
+    public int getAge() {
+        return age;
+    }
 
-    public void setAbilities(List<Ability> ab) { this.abilities = ab; }
-    public void addAbility(Ability a) { this.abilities.add(a); }
-    public List<Ability> getAbilities() { return this.abilities; }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setAbilities(List<Ability> ab) {
+        this.abilities = ab;
+    }
+
+    public void addAbility(Ability a) {
+        this.abilities.add(a);
+    }
+
+    public List<Ability> getAbilities() {
+        return this.abilities;
+    }
 
 }

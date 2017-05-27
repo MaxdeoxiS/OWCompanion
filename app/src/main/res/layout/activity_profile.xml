@@ -9,84 +9,138 @@
     android:weightSum="1">
 
     <RelativeLayout
-        android:id="@+id/relative_layout_profile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/img_profile_avatar"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_centerVertical="true"
-            android:contentDescription="@string/label_avatar"
-            android:scaleType="fitXY"
-            android:visibility="visible" />
-
-
-        <TextView
-            android:id="@+id/profile_text"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/relative_layout_profile"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-            android:layout_toEndOf="@+id/img_profile_avatar"
-            android:layout_toRightOf="@+id/img_profile_avatar"
-            android:textSize="35sp" />
+            android:clickable="false"
+            android:paddingBottom="16dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
 
-        <ImageView
-            android:id="@+id/img_profile_level"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/img_profile_avatar"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/label_avatar"
+                android:scaleType="fitXY"
+                android:visibility="visible" />
+
+
+
+            <TextView
+                android:id="@+id/profile_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/img_profile_avatar"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/player_searched_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="X"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textSize="15sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/profile_text"
-            android:layout_toRightOf="@+id/profile_text"
-            android:contentDescription="@string/label_avatar"
-            android:visibility="visible" />
-
-        <TextView
-            android:id="@+id/profile_rank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/img_profile_avatar"
-            android:layout_toRightOf="@+id/img_profile_avatar"
-            android:layout_centerVertical="false"
-            android:layout_marginLeft="15dp"
-            android:textSize="20sp"
-            android:layout_margin="1dp" />
-
-        <TextView
-            android:id="@+id/profile_level"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/img_profile_level"
-            android:layout_alignEnd="@id/img_profile_level"
-            android:layout_alignLeft="@id/img_profile_level"
-            android:layout_alignRight="@id/img_profile_level"
-            android:layout_alignStart="@id/img_profile_level"
-            android:layout_alignTop="@id/img_profile_level"
-            android:layout_centerVertical="true"
-            android:layout_margin="1dp"
-            android:gravity="center" />
+            android:id="@+id/layout_profile_level_rank"
+            android:layout_below="@+id/relative_layout_profile">
 
 
-        <ImageView
-            android:id="@+id/img_profile_stars"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/img_profile_level"
-            android:layout_alignStart="@+id/img_profile_level"
-            android:layout_below="@+id/img_profile_level"
-            android:layout_centerVertical="true"
-            android:contentDescription="@string/label_avatar"
-            android:visibility="visible" />
+            <RelativeLayout
+                android:id="@+id/layout_profile_level"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp">
 
+                <ImageView
+                    android:id="@+id/img_profile_level"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/label_avatar"
+                    android:visibility="visible" />
 
+                <TextView
+                    android:id="@+id/profile_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/img_profile_level"
+                    android:layout_alignEnd="@id/img_profile_level"
+                    android:layout_alignStart="@id/img_profile_level"
+                    android:layout_alignTop="@id/img_profile_level"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="1dp"
+                    android:textSize="12sp"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/img_profile_stars"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_alignEnd="@id/img_profile_level"
+                    android:layout_alignStart="@id/img_profile_level"
+                    android:layout_alignBottom="@id/img_profile_level"
+                    android:paddingTop="20dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/label_avatar"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@+id/profile_level"
+                    android:background="@android:color/darker_gray"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/layout_profile_level"
+                android:layout_alignBottom="@id/layout_profile_level"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/profile_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/img_profile_rank"
+                    android:layout_centerVertical="true"
+                    android:layout_alignBottom="@+id/img_profile_rank"
+                    android:layout_margin="1dp"
+                    android:textSize="20sp"
+                    tools:text="test" />
+
+                <ImageView
+                    android:id="@+id/img_profile_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:foregroundGravity="center_vertical"
+                    android:contentDescription="@string/label_avatar"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+        </RelativeLayout>
     </RelativeLayout>
-
     <LinearLayout
         android:id="@+id/layout_profile_buttons"
         android:layout_width="match_parent"

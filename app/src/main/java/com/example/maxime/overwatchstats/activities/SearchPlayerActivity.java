@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.maxime.overwatchstats.GetProfileStats;
@@ -15,16 +14,12 @@ import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.model.Friend;
 import com.example.maxime.overwatchstats.model.FriendDAO;
 
-import static android.R.attr.path;
-
 public class SearchPlayerActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        LinearLayout ln = (LinearLayout) findViewById(R.id.layout_profile_buttons) ;
-        ln.removeAllViews();
         handleIntent(getIntent());
     }
 
@@ -44,6 +39,7 @@ public class SearchPlayerActivity extends AppCompatActivity {
             profile.execute();
 
             final Button button_add_friend = (Button) findViewById(R.id.player_searched_button);
+            button_add_friend.setText("+");
                     button_add_friend.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             FriendDAO f = new FriendDAO(getBaseContext());
@@ -51,7 +47,7 @@ public class SearchPlayerActivity extends AppCompatActivity {
                             boolean insert_success = f.add(new Friend(query.substring(0, query.length() - 5), query));
                             f.close();
                             Context context = getApplicationContext();
-                            CharSequence text = (insert_success) ? "Ami ajouté !" : "Vous ne pouvez pas ajouter cet utilisateur.";
+                            CharSequence text = (insert_success) ? getString(R.string.friend_added) : getString(R.string.cant_add_friend);
                             int duration = Toast.LENGTH_SHORT;
 
                             Toast toast = Toast.makeText(context, text, duration);

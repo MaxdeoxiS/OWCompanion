@@ -35,6 +35,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
     private ImageView profile_pic;
     private ImageView profile_level;
     private ImageView profile_stars = null;
+    private ImageView profile_rank_img;
 
     private TextView profile_text;
     private TextView profile_text_level;
@@ -47,6 +48,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         profile_pic = (ImageView) myView.findViewById(R.id.img_profile_avatar);
         profile_level = (ImageView) myView.findViewById(R.id.img_profile_level);
         profile_stars = (ImageView) myView.findViewById(R.id.img_profile_stars);
+        profile_rank_img = (ImageView) myView.findViewById(R.id.img_profile_rank);
         profile_text = (TextView) myView.findViewById(R.id.profile_text);
         profile_text_level = (TextView) myView.findViewById(R.id.profile_level);
         profile_rank = (TextView) myView.findViewById(R.id.profile_rank);
@@ -66,8 +68,10 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         p.setImg_lvl(json.getString("levelFrame"));
         if(!json.getString("star").equals(""))
             p.setImg_stars(json.getString("star"));
-        if(!json.getJSONObject("competitive").getString("rank").equals(""))
+        if (!json.getJSONObject("competitive").getString("rank").equals("")) {
             p.setRank(json.getJSONObject("competitive").getString("rank"));
+            p.setImg_rank(json.getJSONObject("competitive").getString("rank_img"));
+        }
 
         return p;
     }
@@ -175,9 +179,11 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
             if(null != profile_text_level)
                 (profile_text_level).setText(p.getLevel());
             if(null != profile_rank)
-                (profile_text_level).setText(p.getRank());
+                (profile_rank).setText(p.getRank());
             if(null != button_add_friend)
                 button_add_friend.setVisibility(View.VISIBLE);
+            if(null != profile_rank_img)
+                Picasso.with(context).load(p.getImg_rank()).into(profile_rank_img);
         }
     }
 

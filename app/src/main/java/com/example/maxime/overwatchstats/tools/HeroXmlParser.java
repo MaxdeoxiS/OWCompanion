@@ -76,7 +76,7 @@ public class HeroXmlParser {
                 y = readData(parser, "y");
             } else if (name.equals("age")) {
                 age = readData(parser, "age");
-            } else if (name.equals("abilities")){
+            } else if (name.equals("abilities")) {
                 abilities = readAbilities(parser);
             } else {
                 skip(parser);
@@ -145,17 +145,17 @@ public class HeroXmlParser {
                 result.setAmmo(readData(parser, "ammo"));
             } else if (name.equals("rate")) {
                 result.setRate(readData(parser, "rate"));
-            }else if (name.equals("reload")) {
+            } else if (name.equals("reload")) {
                 result.setReload(readData(parser, "reload"));
-            }else if (name.equals("damage")) {
+            } else if (name.equals("damage")) {
                 result.setDamage(readData(parser, "damage"));
-            }else if (name.equals("cooldown")) {
+            } else if (name.equals("cooldown")) {
                 result.setCooldown(readData(parser, "cooldown"));
-            }else if (name.equals("range")) {
+            } else if (name.equals("range")) {
                 result.setRange(readData(parser, "range"));
-            } else if (name.equals("headshot")){
+            } else if (name.equals("headshot")) {
                 result.setHeadshot(readData(parser, "headshot"));
-            } else if (name.equals("more")){
+            } else if (name.equals("more")) {
                 result.setMore(readData(parser, "more"));
             } else {
                 skip(parser);

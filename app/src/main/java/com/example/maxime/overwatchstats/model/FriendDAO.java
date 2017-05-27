@@ -38,13 +38,33 @@ public class FriendDAO extends DAOBase {
         return false;
     }
 
-    public void delete(long id) {
+    public boolean register(Friend f) {
 
+        if (null == this.search(f.getUsername())) {
 
+            ContentValues value = new ContentValues();
+
+            value.put(FriendDAO.KEY, 1);
+            value.put(FriendDAO.USERNAME, f.getUsername());
+            value.put(FriendDAO.BATTLETAG, f.getBattleTag());
+
+            mDb.insert(FriendDAO.TABLE_NAME, null, value);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean delete(String battleTag) {
+        if (null == this.search(battleTag)) {
+            return false;
+        }
+
+        mDb.delete(TABLE_NAME, BATTLETAG + " = ?, " + KEY + " != 1" , new String[]{battleTag});
+            return true;
     }
 
     public Friend search(String username) {
-        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + USERNAME + " = ?", new String[]{username});
+        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + BATTLETAG + " = ? and " +KEY + " != 1" , new String[]{username});
         Friend f = null;
 
         if (c.moveToFirst()) {

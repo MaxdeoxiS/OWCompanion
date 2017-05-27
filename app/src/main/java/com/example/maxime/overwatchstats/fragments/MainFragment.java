@@ -1,6 +1,8 @@
 package com.example.maxime.overwatchstats.fragments;
 
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
@@ -31,7 +33,6 @@ public class MainFragment extends Fragment {
         NavigationView navigationView = (NavigationView) getActivity().findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
         TextView menuPseudo = (TextView) headerView.findViewById(R.id.menu_pseudo);
-        TextView menuBattleTag = (TextView) headerView.findViewById(R.id.menu_battleTag);
         ImageView menuAvatar = (ImageView) headerView.findViewById(R.id.icon_menu_header);
 
         f = new FriendDAO(this.getContext());
@@ -46,9 +47,13 @@ public class MainFragment extends Fragment {
             editor.putString("battleTag", friend.getBattleTag());
             editor.putString("currentBattleTag", friend.getBattleTag());
             editor.apply();
+
             menuPseudo.setText(friend.getUsername());
-            menuBattleTag.setText(friend.getBattleTag());
-            //Picasso.with(this.getContext()).load(friend.getAvatar()).into(menuAvatar);
+
+            Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(), getResources().getIdentifier("widowmaker", "drawable", this.getActivity().getPackageName()));
+            imageBitmap = Bitmap.createScaledBitmap(imageBitmap, 150, 150, false);
+            menuAvatar.setImageBitmap(imageBitmap);
+
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, new NewsFragment())
                     .commit();
@@ -77,7 +82,7 @@ public class MainFragment extends Fragment {
     {
         f.open();
         Friend mySelf = new Friend(pseudo, battleTag);
-        f.add(mySelf);
+        f.register(mySelf);
         f.close();
     }
 
