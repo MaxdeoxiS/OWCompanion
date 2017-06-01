@@ -176,12 +176,12 @@ public class Ability implements Serializable {
 
         for (Method method : methods) {
             String name = method.getName();
-            if (name.startsWith("get") && !name.equalsIgnoreCase("getClass")) {
+            if (name.startsWith("get") && !name.equalsIgnoreCase("getClass") && !name.equalsIgnoreCase("getAvailableAttributes")) {
 
                 boolean isAvailable = false;
 
                 try {
-                    isAvailable = method.invoke(this).equals("");
+                    isAvailable = !method.invoke(this).equals("");
                 } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                     e.printStackTrace();
                 }
