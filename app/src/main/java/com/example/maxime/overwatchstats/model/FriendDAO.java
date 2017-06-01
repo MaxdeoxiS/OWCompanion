@@ -59,12 +59,12 @@ public class FriendDAO extends DAOBase {
             return false;
         }
 
-        mDb.delete(TABLE_NAME, BATTLETAG + " = ?, " + KEY + " != 1" , new String[]{battleTag});
+        mDb.delete(TABLE_NAME, BATTLETAG + " = ? and " + KEY + " != ?" , new String[]{battleTag, "1"});
             return true;
     }
 
     public Friend search(String username) {
-        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + BATTLETAG + " = ? and " +KEY + " != 1" , new String[]{username});
+        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + BATTLETAG + " = ? and " +KEY + " != ?" , new String[]{username, "1"});
         Friend f = null;
 
         if (c.moveToFirst()) {

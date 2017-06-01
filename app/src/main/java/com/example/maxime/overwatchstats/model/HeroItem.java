@@ -3,7 +3,6 @@ package com.example.maxime.overwatchstats.model;
 public class HeroItem {
     public String name;
     public String playTime;
-    public int percentage;
     public String imgUrl;
 
     public HeroItem(String n, String p, String i) {

@@ -133,6 +133,7 @@ public class HeroXmlParser {
                 continue;
             }
             String name = parser.getName();
+
             if (name.equals("name")) {
                 result.setName(readData(parser, "name"));
             } else if (name.equals("hero")) {
@@ -143,6 +144,16 @@ public class HeroXmlParser {
                 result.setSpeed(readData(parser, "speed"));
             } else if (name.equals("ammo")) {
                 result.setAmmo(readData(parser, "ammo"));
+            } else if (name.equals("heal")) {
+                result.setHeal(readData(parser, "heal"));
+            } else if (name.equals("health")) {
+                result.setHealth(readData(parser, "health"));
+            } else if (name.equals("ammoUse")) {
+                result.setAmmoUse(readData(parser, "ammoUse"));
+            } else if (name.equals("duration")) {
+                result.setDuration(readData(parser, "duration"));
+            } else if (name.equals("charge")) {
+                result.setCharge(readData(parser, "charge"));
             } else if (name.equals("rate")) {
                 result.setRate(readData(parser, "rate"));
             } else if (name.equals("reload")) {

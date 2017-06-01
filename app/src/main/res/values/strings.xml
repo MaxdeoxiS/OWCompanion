@@ -101,4 +101,29 @@
     <string name="cant_add_friend">Vous ne pouvez pas ajouter cet utilisateur.</string>
     <string name="friend_deleted">Ami supprimé !</string>
     <string name="cant_delete_friend">Vous ne pouvez pas supprimer cet utilisateur.</string>
+
+    <string name="genji">#83FD01</string>
+    <string name="hanzo">#928748</string>
+    <string name="mccree">#8D3939</string>
+    <string name="widowmaker">#6F6FAE</string>
+    <string name="pharah">#1A64C5</string>
+    <string name="soldier76">#586FB5</string>
+    <string name="ana">#CBC1AD</string>
+    <string name="mei">#9ADAF3</string>
+    <string name="reaper">#272725</string>
+    <string name="roadhog">#C09476</string>
+    <string name="junkrat">#D29208</string>
+    <string name="zarya">#F470A7</string>
+    <string name="sombra">#751B9C</string>
+    <string name="zenyatta">#C69B00</string>
+    <string name="lucio">#8AEB22</string>
+    <string name="winston">#4B4F5A</string>
+    <string name="torbjorn">#FF6100</string>
+    <string name="d.va">#FF7FD0</string>
+    <string name="mercy">#FEE06B</string>
+    <string name="tracer">#F7911B</string>
+    <string name="bastion">#6D984C</string>
+    <string name="symmetra">#5BEBFF</string>
+    <string name="reinhardt">#A9958D</string>
+    <string name="orisa">#1D2741</string>
 </resources>

@@ -9,15 +9,41 @@
         <age>33</age>
         <abilities>
             <ability>
+                <name>Baiser de la veuve: Sniper</name>
+                <type>Hitscan</type>
+                <damage>12 / 120 (non-chargé/totalement chargé)</damage>
+                <ammo>30</ammo>
+                <ammoUse>3</ammoUse>
+                <reload>1.5 secondes</reload>
+                <headshot>x2.5</headshot>
+            </ability>
+            <ability>
+                <name>Baiser de la veuve: Assaut</name>
+                <type>Hitscan</type>
+                <damage>13</damage>
+                <ammo>30</ammo>
+                <reload>1.5 secondes</reload>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
                 <name>Grappin</name>
                 <type>Déplacement</type>
-                <range>10m</range>
+                <range>20m</range>
+                <cooldown>12 secondes</cooldown>
             </ability>
             <ability>
                 <name>Mine venimeuse</name>
                 <type>Objet posable</type>
                 <range>40m</range>
-                <damage>35</damage>
+                <damage>15/sec (75)</damage>
+                <duration>5 sec</duration>
+                <cooldown>15 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Infra-vision</name>
+                <area>Carte entière</area>
+                <duration>15.5 sec</duration>
+                <charge>1375 pts</charge>
             </ability>
         </abilities>
     </hero>
@@ -28,6 +54,43 @@
         <x>30.048786</x>
         <y>31.235461</y>
         <age>60</age>
+        <abilities>
+            <ability>
+                <name>Sniper Biotique</name>
+                <type>Hitscan</type>
+                <damage>60</damage>
+                <heal>75</heal>
+                <rate>1.25/sec</rate>
+                <ammo>10</ammo>
+                <reload>1.5 secondes</reload>
+                <headshot>x1</headshot>
+            </ability>
+            <ability>
+                <name>Sleep Dart</name>
+                <type>Projectile linéaire</type>
+                <damage>5</damage>
+                <duration>5.5 sec</duration>
+                <cooldown>12 sec</cooldown>
+                <headshot>x1</headshot>
+            </ability>
+            <ability>
+                <name>Grenade Biotique</name>
+                <type>Projectile à trajectoire courbée</type>
+                <heal>100 (+50% heal d'une autre source)</heal>
+                <damage>50</damage>
+				<area>4m</area>
+				<duration>4 sec</duration>
+                <cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Nano Boost</name>
+                <type>Hitscan</type>
+                <damage>+50%</damage>
+				<heal>-50% damage</heal>
+                <duration>8 sec</duration>
+                <charge>1650 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Bastion</surname>
@@ -36,6 +99,43 @@
         <x>50</x>
         <y>10</y>
         <age>30</age>
+        <abilities>
+            <ability>
+                <name>Configuration: Reconnaissance</name>
+                <type>Hitscan</type>
+                <damage>6-20 (dégâts diminent à partir de 26m)</damage>
+                <heal>75</heal>
+                <rate>8/sec</rate>
+                <ammo>25</ammo>
+                <reload>2 secondes</reload>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Configuration: Tourelle</name>
+                <type>Hitscan</type>
+                <damage>4-15 (dégâts diminent à partir de 35m)</damage>
+                <rate>35/sec</rate>
+                <ammo>300</ammo>
+                <reload>2 sec</reload>
+                <headshot>x1</headshot>
+            </ability>
+            <ability>
+                <name>Auto-réparation</name>
+                <heal>75/sec</heal>
+                <duration>4 sec</duration>
+                <cooldown>1 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Configuration: Tank</name>
+                <type>Projectile Linéaire</type>
+                <damage>205 (coup direct), 35 (dégâts contre soi-même)</damage>
+				<area>Rayon de 4m</area>
+				<rate>1.11/sec</rate>
+				<ammo>infini</ammo>
+                <duration>8 sec</duration>
+                <charge>2075 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>DVa</surname>
@@ -44,6 +144,37 @@
         <x>35.161623</x>
         <y>129.046736</y>
         <age>19</age>
+        <abilities>
+            <ability>
+                <name>Canons à fusion</name>
+                <type>Hitscan</type>
+                <damage>0.6-2 (dégâts diminent à partir de 10m)</damage>
+                <rate>6.67/sec</rate>
+                <ammo>infini</ammo>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Matrice Défensive</name>
+				<range>15m</range>
+				<duration>4 sec</duration>
+				<cooldown>1 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Autodestruction</name>
+                <area>Rayon de 20m</area>
+                <damage>1000</damage>
+                <charge>1375</charge>
+            </ability>
+            <ability>
+                <name>Pistolet Laser</name>
+                <type>Projectile Linéaire</type>
+                <damage>14</damage>
+				<reload>1.5 sec</reload>
+				<rate>7/sec</rate>
+				<ammo>20</ammo>
+				<headshot>x2</headshot>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Genji</surname>
@@ -52,6 +183,39 @@
         <x>28.668664</x>
         <y>84.039920</y>
         <age>35</age>
+        <abilities>
+            <ability>
+                <name>Shuriken</name>
+                <type>Projectile linéaire</type>
+                <damage>28/shuriken</damage>
+                <rate>1 tir/sec (1.33 tir/sec pour clic droit)</rate>
+                <ammo>24</ammo>
+				<ammoUse>3 shuriken/tir</ammoUse>
+				<reload>1 sec</reload>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Dash</name>
+				<damage>50</damage>
+				<range>14 m</range>
+				<cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Reflect</name>
+				<duration>2 sec</duration>
+				<cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Dragonblade</name>
+                <type>Mêlée</type>
+                <damage>120/coup</damage>
+				<range>5 m</range>
+				<rate>1.166 coup/sec</rate>
+				<duration>6 sec</duration>
+				<headshot>x2</headshot>
+				<charge>1500 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Hanzo</surname>
@@ -60,6 +224,42 @@
         <x>35.612765</x>
         <y>138.527966</y>
         <age>38</age>
+        <abilities>
+            <ability>
+                <name>Arc Tempête</name>
+                <type>Projectile courbé</type>
+                <damage>29-125 (déchargé - chargé)</damage>
+                <rate>0.5 sec</rate>
+                <ammo>infini</ammo>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Arc Sonique</name>
+                <type>Projectile courbé</type>
+                <damage>29-125 (déchargé - chargé)</damage>
+                <rate>0.5 sec</rate>
+                <ammo>infini</ammo>
+                <headshot>x2</headshot>
+                <duration>10 sec</duration>
+				<area>10 m (rayon)</area>
+				<cooldown>20 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Arc à dispersion</name>
+                <damage>29-125 (déchargé - chargé) | Dispersé : 22-75 (déchargé - chargé)/flèche | (6 flèches)</damage>
+				<duration>2 sec</duration>
+				<cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Charge du Dragon</name>
+                <type>Projectile linéaire</type>
+                <damage>200/sec</damage>
+				<range>infini</range>
+				<area>4 m (rayon)</area>
+				<duration>6 sec</duration>
+				<charge>1500 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Junkrat</surname>
@@ -68,6 +268,44 @@
         <x>-23.717704</x>
         <y>133.883566</y>
         <age>25</age>
+        <abilities>
+            <ability>
+                <name>Lance-Grenades</name>
+                <type>Projectile courbé</type>
+                <damage>40 en coup direct + 12.5-80 explosion (120 total)</damage>
+                <rate>1.66/sec</rate>
+                <ammo>5</ammo>
+				<reload>1.5 sec</reload>
+				<area>2 m (rayon)</area>
+            </ability>
+            <ability>
+                <name>Mine explosive</name>
+                <type>Projectile courbé</type>
+                <damage>120</damage>
+				<area>3 m (rayon)</area>
+				<cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Piège d'acier</name>
+                <damage>80</damage>
+				<health>100</health>
+                <area>1 m (rayon)</area>
+				<duration>4 sec</duration>
+				<cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Pneu explosif</name>
+				<health>100</health>
+                <damage>60 - 600</damage>
+				<area>10 m (rayon)</area>
+				<duration>10 sec</duration>
+				<charge>1575 pts</charge>
+            </ability>
+            <ability>
+                <name>Destruction totale</name>
+                <damage>50/grenade (6 grenades)</damage>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Lucio</surname>
@@ -76,6 +314,44 @@
         <x>-22.902317</x>
         <y>-43.180550</y>
         <age>26</age>
+        <abilities>
+            <ability>
+                <name>Amplificateur Sonique</name>
+                <type>Projectile linéaire</type>
+                <damage>20/projectile (4 projectiles par tir)</damage>
+                <rate>1 sec</rate>
+                <ammo>20</ammo>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Onde Sonore</name>
+                <type>Vague Frontale</type>
+                <damage>25</damage>
+                <range>8 m</range>
+                <ammo>20</ammo>
+                <ammoUse>4</ammoUse>
+				<reload>1.25 sec</reload>
+				<cooldown>4 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Fondu</name>
+                <heal>16.25/sec sur alliés|12.1875/sec sur soi-même</heal>
+				<area>10 m (rayon)</area>
+            </ability>
+            <ability>
+                <name>Amplifie !</name>
+                <heal>46.8/sec sur alliés|35.1/sec sur soi-même</heal>
+				<duration>3 sec</duration>
+				<cooldown>12 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Mur du son</name>
+                <heal>+500 (barrière)</heal>
+				<area>30 m (rayon)</area>
+				<duration>6 sec</duration>
+				<charge>2625 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>McCree</surname>
@@ -84,6 +360,41 @@
         <x>35.687214</x>
         <y>-105.937033</y>
         <age>37</age>
+        <abilities>
+            <ability>
+                <name>Soldat de la paix</name>
+                <type>Hitscan</type>
+                <damage>21-70 (dégâts diminuent après 22 m)</damage>
+                <rate>2/sec</rate>
+                <ammo>6</ammo>
+                <reload>1.5 sec</reload>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Fan the Hammer</name>
+                <type>Hitscan (tir rapide)</type>
+                <damage>13.5 - 45 / balle (dégâts diminuent après 18 m)</damage>
+                <ammo>6</ammo>
+                <rate>6 balles/0.67 sec</rate>
+				<reload>1.5 sec</reload>
+				<cooldown>4 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Flash</name>
+                <type>Projectile explosif</type>
+                <damage>25</damage>
+                <range>5</range>
+				<area>2 m (rayon)</area>
+				<duration>0.7 sec (stun)</duration>
+				<cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Dead Eye</name>
+                <damage>~250/sec</damage>
+				<duration>6 sec</duration>
+				<charge>1500 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Mei</surname>
@@ -92,6 +403,50 @@
         <x>34.357751</x>
         <y>108.943833</y>
         <age>31</age>
+        <abilities>
+            <ability>
+                <name>Arme endothermique</name>
+                <type>Faisceau</type>
+                <damage>45/sec</damage>
+                <range>10 m</range>
+                <ammo>200</ammo>
+                <ammoUse>20/sec</ammoUse>
+                <reload>1.5 sec</reload>
+				<duration>1.5 sec pour geler</duration>
+            </ability>
+            <ability>
+                <name>Stalactite</name>
+                <type>Projectile Linéaire</type>
+                <damage>22 - 75 (dégâts diminuent après 26 m)</damage>
+                <ammo>200</ammo>
+                <ammoUse>25/tir</ammoUse>
+                <rate>1.2/sec</rate>
+				<reload>1.5 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Cryogénisation</name>
+                <heal>37.5/sec (150 total)</heal>
+                <duration>4 sec</duration>
+				<cooldown>12 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Mur de glace</name>
+                <health>500/pilier (5 piliers)</health>
+				<duration>4.5 sec</duration>
+				<range>35 m</range>
+				<area>3x8 m</area>
+				<cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Blizzard</name>
+                <type>Projectile courbé</type>
+				<damage>97</damage>
+				<duration>5 sec</duration>
+				<area>10 m (rayon)</area>
+				<charge>1450 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Mercy</surname>
@@ -100,6 +455,30 @@
         <x>47.377201</x>
         <y>8.540833</y>
         <age>37</age>
+        <abilities>
+            <ability>
+                <name>Bâton de Caducée</name>
+                <type>Faisceau ciblé</type>
+                <damage>+30%</damage>
+                <heal>60/sec</heal>
+                <range>15 m</range>
+            </ability>
+            <ability>
+                <name>Pistolet Caducée</name>
+                <type>Projectile Linéaire</type>
+                <damage>20</damage>
+                <ammo>20</ammo>
+                <rate>5/sec</rate>
+				<reload>1 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Résurection</name>
+                <heal>Vie totale</heal>
+                <range>15 m</range>
+				<charge>1625 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Pharah</surname>
@@ -108,6 +487,31 @@
         <x>30.013960</x>
         <y>31.211787</y>
         <age>32</age>
+        <abilities>
+            <ability>
+                <name>Lance-Roquettes</name>
+                <type>Projectile Linéaire Explosif</type>
+                <damage>120 (coup direct)|20-80 (explosion)</damage>
+                <area>3 m (rayon)</area>
+                <rate>1.1/sec</rate>
+				<ammo>6</ammo>
+				<reload>1 sec</reload>
+            </ability>
+            <ability>
+                <name>Concussion</name>
+                <type>Projectile Linéaire Explosif</type>
+                <damage>0</damage>
+                <area>8 m (rayon)</area>
+				<cooldown>12 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Barrage</name>
+                <damage>40/roquette</damage>
+                <rate>30 roquettes/sec</rate>
+				<duration>3 sec</duration>
+				<charge>1850 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Torbjorn</surname>
@@ -116,6 +520,49 @@
         <x>57.709584</x>
         <y>11.970582</y>
         <age>57</age>
+        <abilities>
+            <ability>
+                <name>Canon à rivets</name>
+                <type>Projectile courbé</type>
+                <damage>70</damage>
+                <rate>1.67/sec</rate>
+                <ammo>18</ammo>
+                <reload>2 sec</reload>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Canon à rivets²</name>
+                <type>Projectile "Fusil à pompe"</type>
+                <damage>60 - 150/tir (dégâts diminuent après 7 m)</damage>
+                <ammo>18</ammo>
+                <rate>1.25/sec</rate>
+				<reload>2 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Marteau de forgeron</name>
+				<type>Mêlée</type>
+                <damage>55</damage>
+                <heal>50/coup (tourelle)</heal>
+                <rate>1.25 coup/sec</rate>
+            </ability>
+            <ability>
+                <name>Tourelle</name>
+				<type>Hitscan et Projectile Linéaire</type>
+                <damage>14</damage>
+                <health>150/300/800</health>
+				<range>40</range>
+                <rate>2/4/5 coup/sec</rate>
+				<cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Coeur du magma</name>
+				<heal>+300 armure</heal>
+                <rate>+50%</rate>
+                <duration>12 sec</duration>
+                <charge>1625 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Tracer</surname>
@@ -124,6 +571,36 @@
         <x>51.508049</x>
         <y>-0.118084</y>
         <age>26</age>
+        <abilities>
+            <ability>
+                <name>Pistolets à impulsion</name>
+                <type>Hitscan (tir rapide)</type>
+                <damage>3 - 12/tir (dêgats diminuent à partir de 11 m)</damage>
+                <rate>20/sec</rate>
+                <ammo>40</ammo>
+                <reload>1 sec</reload>
+                <headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Blink</name>
+                <ammo>3</ammo>
+				<range>7 m</range>
+				<cooldown>3 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Rappel</name>
+                <duration>1.25 sec</duration>
+                <heal>Vie d'il y a 3 sec (si supérieure)</heal>
+                <cooldown>12 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Bombe pulsative</name>
+				<type>Projectile courbé explosif</type>
+                <damage>5 (impact) + 400 (explosion)</damage>
+                <area>3 m</area>
+				<charge>1125 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Winston</surname>
@@ -132,6 +609,40 @@
         <x>36.140779</x>
         <y>-5.354291</y>
         <age>29</age>
+        <abilities>
+            <ability>
+                <name>Canon Tesla</name>
+                <type>Faisceau multi-cibles</type>
+                <damage>60/sec</damage>
+				<range>8 m</range>
+                <ammo>10</ammo>
+                <ammoUse>20/sec</ammoUse>
+                <reload>1.5 sec</reload>
+            </ability>
+            <ability>
+                <name>Jump Pack</name>
+                <damage>50 (atterissage), 1 (décollage)</damage>
+				<range>22 m</range>
+				<area>5 m (rayon)</area>
+				<cooldown>6 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Projecteur de barrière</name>
+                <duration>5 sec</duration>
+                <health>600</health>
+                <area>5 m (rayon)</area>
+                <cooldown>13 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Rage Primordiale</name>
+				<type>Mêlée</type>
+                <damage>40/coup</damage>
+				<range>4m/coup</range>
+				<rate>1.6 coup/sec</rate>
+				<duration>10 sec</duration>
+				<charge>1375 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Zarya</surname>
@@ -140,6 +651,47 @@
         <x>56.017824</x>
         <y>92.892508</y>
         <age>28</age>
+        <abilities>
+            <ability>
+                <name>Canon à particules</name>
+                <type>Faisceau</type>
+                <damage>95/sec (+1%/point d'énergie)</damage>
+				<range>16 m</range>
+                <ammo>100</ammo>
+                <ammoUse>20/sec</ammoUse>
+                <reload>1.5 sec</reload>
+            </ability>
+            <ability>
+                <name>Canon à particules²</name>
+				<type>Projectile courbé explosif</type>
+                <damage>45 (coup direct)</damage>
+				<area>2 m (rayon)</area>
+				<ammoUse>25/tir</ammoUse>
+				<reload>1.5 sec</reload>
+            </ability>
+            <ability>
+                <name>Barrière à particules</name>
+                <duration>2 sec</duration>
+                <health>200 (barrière)</health>
+                <cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Barrière projetée</name>
+                <duration>2 sec</duration>
+                <health>200 (barrière)</health>
+				<range>30 m</range>
+                <cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Orbe Gravitationnelle</name>
+				<type>Projectile courbé</type>
+                <damage>5.5/sec</damage>
+				<area>9 m (rayon)</area>
+				<rate>1.6 coup/sec</rate>
+				<duration>4 sec</duration>
+				<charge>1875 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Zenyatta</surname>
@@ -148,6 +700,51 @@
         <x>28.649383</x>
         <y>82.677616</y>
         <age>20</age>
+        <abilities>
+            <ability>
+                <name>Orbe de destruction</name>
+                <type>Projectile linéaire</type>
+                <damage>46</damage>
+				<rate>2.5 tir/sec</rate>
+                <ammo>20</ammo>
+                <reload>2 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Vollée d'orbes</name>
+				<type>Projectiles linéaires multiples</type>
+                <damage>46/orbe (max 230/vollée)</damage>
+				<rate>1.1 sec/4 sec (non-chargé/chargé)</rate>
+				<ammoUse>Jusqu'à 5 par vollée</ammoUse>
+				<reload>2 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Orbe d'harmonie</name>
+				<type>Projectile ciblé</type>
+                <duration>3 sec (quand plus dans la ligne de vue)</duration>
+				<ammo>1</ammo>
+				<range>40 m</range>
+                <heal>30/sec</heal>
+                <cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Orbe de discorde</name>
+				<type>Projectile ciblé</type>
+                <duration>3 sec (quand plus dans la ligne de vue)</duration>
+				<ammo>1</ammo>
+				<range>40 m</range>
+                <damage>+30% des dégâts reçus</damage>
+                <cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Transcendance</name>
+				<heal>300/sec</heal>
+				<area>10 m (rayon)</area>
+				<duration>6 sec</duration>
+				<charge>2075 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <!--<hero>-->
     <!--<surname>Orisa</surname>-->
@@ -164,6 +761,35 @@
         <x>34.055459</x>
         <y>-118.273060</y>
         <age>56</age>
+        <abilities>
+            <ability>
+                <name>Pompes funbèbres</name>
+                <type>Fusil à pome</type>
+                <damage>40 - 140 / tir (dégâts diminuent après 11 m)</damage>
+				<rate>2 tir/sec</rate>
+                <ammo>8</ammo>
+                <reload>1.5 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Forme spectrale</name>
+				<duration>3 sec</duration>
+				<cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Téléportation</name>
+                <duration>2 sec</duration>
+				<range>35 m</range>
+                <cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Éclosion mortelle</name>
+				<heal>170/sec (510 total)</heal>
+				<area>8 m (rayon)</area>
+				<duration>3 sec</duration>
+				<charge>1850 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Reinhardt</surname>
@@ -172,6 +798,40 @@
         <x>48.77715</x>
         <y>9.181677</y>
         <age>61</age>
+        <abilities>
+            <ability>
+                <name>Marteau Roquette</name>
+                <type>Mêlée</type>
+                <damage>75</damage>
+				<range>5 m</range>
+				<rate>1 coup/sec</rate>
+            </ability>
+            <ability>
+                <name>Barrière protectice</name>
+				<health>2000</health>
+				<heal>195/sec (barrière)</heal>
+				<cooldown>5 sec (après être cassé)</cooldown>
+            </ability>
+            <ability>
+                <name>Charge</name>
+                <damage>Choc : 50, Empalement contre mur : 300</damage>
+				<range>55 m</range>
+                <cooldown>10 sec (3 sec si interruption)</cooldown>
+            </ability>
+            <ability>
+                <name>Frappe de feu</name>
+				<type>Projectile Linéaire</type>
+				<damage>100</damage>
+				<cooldown>6 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Marteau Pillon</name>
+				<damage>50</damage>
+				<range>20 m</range>
+				<duration>2.5 sec</duration>
+				<charge>1375 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Soldier76</surname>
@@ -180,6 +840,37 @@
         <x>39.165618</x>
         <y>-86.527555</y>
         <age>55</age>
+        <abilities>
+            <ability>
+                <name>Fusil d'assault</name>
+                <type>Hit scan (tir rapide)</type>
+                <damage>5.7 - 19 (dégâts diminuent après 30m)</damage>
+				<ammo>25</ammo>
+				<rate>8.77 balles/sec</rate>
+				<reload>1.5 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Roquettes LX</name>
+				<type>Projectile linéaire explosif</type>
+				<damage>40 (coup direct) + 80 (explosion)</damage>
+				<area>2 m</area>
+				<cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Champ biotique</name>
+                <heal>40/sec</heal>
+				<area>5 m</area>
+				<duration>5 sec</duration>
+                <cooldown>15 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Visière Tactique</name>
+				<reload>0.75 sec</reload>
+				<duration>6 sec</duration>
+				<charge>2075 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Symmetra</surname>
@@ -188,6 +879,52 @@
         <x>22.505421</x>
         <y>88.303980</y>
         <age>28</age>
+        <abilities>
+            <ability>
+                <name>Projecteur de photons</name>
+                <type>Faisceau (ciblé)</type>
+                <damage>7.5/15/30 par "coup"</damage>
+				<range>7 m (verrou), 9.5 m (perd l'attache)</range>
+				<ammo>100</ammo>
+				<ammoUse>7/sec</ammoUse>
+				<rate>4 "coup"/sec</rate>
+				<reload>1.8 sec</reload>
+            </ability>
+            <ability>
+                <name>Bulle d'énergie</name>
+				<type>Projectile linéaire</type>
+				<ammo>100</ammo>
+				<ammoUse>4-20/tir</ammoUse>
+				<damage>26-125</damage>
+            </ability>
+            <ability>
+                <name>Tourelle Sentinelle</name>
+				<type>Faisceau ciblé</type>
+                <health>1</health>
+				<damage>30/sec</damage>
+				<range>10 m</range>
+				<ammo>6</ammo>
+                <cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Barrière à photons</name>
+				<health>1025</health>
+				<cooldown>10 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Téléporteur</name>
+				<health>50 + 350 bouclier</health>
+				<ammo>6 utilisations</ammo>
+				<charge>1000 pts</charge>
+            </ability>
+            <ability>
+                <name>Générateur de boucliers</name>
+				<health>50 + 350 bouclier</health>
+				<heal>+75 bouclier aux alliés</heal>
+				<area>50 m</area>
+				<charge>1000 pts</charge>
+            </ability>
+        </abilities>
     </hero>
     <hero>
         <surname>Sombra</surname>
@@ -196,5 +933,40 @@
         <x>17.531448</x>
         <y>-98.579759</y>
         <age>30</age>
+        <abilities>
+            <ability>
+                <name>Pistolet</name>
+                <type>Hitscan (tir rapide)</type>
+                <damage>2.4-8 (dégâts diminuent après 15m)</damage>
+				<range>7 m (verrou), 9.5 m (perd l'attache)</range>
+				<ammo>60</ammo>
+				<rate>20/sec</rate>
+				<reload>1.5 sec</reload>
+				<headshot>x2</headshot>
+            </ability>
+            <ability>
+                <name>Piratage</name>
+				<range>15 m</range>
+				<duration>Capacités: 6 sec|Barre de vie/Statut de l'ulti: 20 sec|Pack de soin: 60 sec|Tourelles: 10 sec</duration>
+				<cooldown>8 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Camouflage Thermoptique</name>
+				<duration>6 sec</duration>
+                <cooldown>6 sec</cooldown>
+            </ability>
+            <ability>
+                <name>Translocateur</name>
+				<type>Projectile courbé</type>
+				<duration>15 sec</duration>
+				<cooldown>4 sec</cooldown>
+            </ability>
+            <ability>
+                <name>IEM</name>
+				<area>15 m</area>
+				<duration>6 s</duration>
+				<charge>125s0 pts</charge>
+            </ability>
+        </abilities>
     </hero>
 </heroes>

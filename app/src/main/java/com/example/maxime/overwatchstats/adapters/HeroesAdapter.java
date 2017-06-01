@@ -1,12 +1,14 @@
 package com.example.maxime.overwatchstats.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.model.HeroItem;
@@ -18,6 +20,9 @@ public class HeroesAdapter extends ArrayAdapter<HeroItem> {
     public HeroesAdapter(Context context, ArrayList<HeroItem> heroes) {
         super(context, 0, heroes);
     }
+
+    float maxWidth;
+    int defWidth = 800;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -31,15 +36,34 @@ public class HeroesAdapter extends ArrayAdapter<HeroItem> {
         // Lookup view for data population
 
         ImageView heroImg = (ImageView) convertView.findViewById(R.id.qp_hero_img_1);
-        TextView heroName = (TextView) convertView.findViewById(R.id.qp_hero_text_1);
-        TextView heroPlayTime = (TextView) convertView.findViewById(R.id.qp_hero_text_2);
+        View heroTimeBar = (View) convertView.findViewById(R.id.qp_hero_bar);
 
         // Populate the data into the template view using the data object
         Picasso.with(getContext()).load(hero.imgUrl).into(heroImg);
-        heroName.setText(hero.name);
-        heroPlayTime.setText(hero.playTime);
+        String[] playtimeData = hero.playTime.split(" ");
+        float width = 0;
+        if(playtimeData.length > 1)
+        width = (playtimeData[1].equals("hours") || playtimeData[1].equals("hour")) ? Integer.parseInt(playtimeData[0]) :
+                ((playtimeData[1].equals("minutes")) ? (Integer.parseInt(playtimeData[0]) / 60) : (Integer.parseInt(playtimeData[0]) / 3600));
+
+        if (position == 0)
+            maxWidth = width;
+
+        heroTimeBar.setLayoutParams(new LinearLayout.LayoutParams(calculateWidth(maxWidth, width, defWidth), LinearLayout.LayoutParams.MATCH_PARENT));
+
+        Log.v("tesssst", ""+ width);
+
+        String nameCleaned = hero.name.toLowerCase().replaceAll(" |:", "").replaceAll("ú", "u").replaceAll("ö", "o");
+
+        heroTimeBar.setBackgroundColor(Color.parseColor(this.getContext().getString(this.getContext().getResources().getIdentifier(nameCleaned, "string", getContext().getPackageName()))));
+
         // Return the completed view to render on screen
         return convertView;
+    }
+
+    private int calculateWidth(float maxWidth, float width, int defWidth) {
+
+        return (int)((defWidth * width) / maxWidth);
     }
 
 }
