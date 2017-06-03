@@ -21,18 +21,12 @@ public class HeroDescFragment extends Fragment {
 
         Heroes heroes = new Heroes(this.getResources().openRawResource(R.raw.heroes));
         if (getArguments() != null) {
-            String heroName = getArguments().getString("nickname");
+            String heroName = getArguments().getString("hero");
             Hero hero = heroes.findHeroByName(heroName);
 
             TextView heroNameTV = (TextView) mView.findViewById(R.id.hero_name);
             String heroAbility = "";
 
-
-//            for(Ability a : hero.getAbilities()) {
-//                heroAbility += a.getName() + " ";
-//            }
-//
-//            heroNameTV.setText("Hero : " + heroName + "ability: " + heroAbility);
         }
 
         return mView;

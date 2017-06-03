@@ -119,7 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onInfoWindowClick(Marker marker) {
         //mMap.getUiSettings().setAllGesturesEnabled(false);
         Bundle args = new Bundle();
-        args.putString("nickname", (String) (((ArrayList) marker.getTag()).get(1)));
+        args.putString("hero", (String) (((ArrayList) marker.getTag()).get(1)));
         HeroDescFragment frgm = new HeroDescFragment();
         frgm.setArguments(args);
 

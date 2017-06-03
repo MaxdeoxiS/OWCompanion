@@ -22,7 +22,7 @@ public class HeroesFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View mView = inflater.inflate(R.layout.fragment_heroes, container, false);
 
-        Heroes heroes = new Heroes(this.getResources().openRawResource(R.raw.heroes));
+        final Heroes heroes = new Heroes(this.getResources().openRawResource(R.raw.heroes));
 
         RecyclerView mRecyclerView = (RecyclerView) mView.findViewById(R.id.my_recycler_view);
 
@@ -46,34 +46,38 @@ public class HeroesFragment extends Fragment {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                if(direction == ItemTouchHelper.LEFT)
+
+                String heroName = heroes.getHeroes().get(viewHolder.getAdapterPosition()).getNickname();
+                Bundle args = new Bundle();
+                args.putString("hero", heroName);
+
+                if(direction == ItemTouchHelper.LEFT) {
                     Toast.makeText(getContext(), "Swipe to left!", Toast.LENGTH_SHORT).show();
-                if(direction == ItemTouchHelper.RIGHT)
-                    Toast.makeText(getContext(), "Swipe to right!", Toast.LENGTH_SHORT).show();
+                    HeroDescFragment frgm = new HeroDescFragment();
+                    frgm.setArguments(args);
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.container, frgm)
+                            .addToBackStack("HERO_STORY")
+                            .commit();
+                }
+                if (direction == ItemTouchHelper.RIGHT) {
+                    Toast.makeText(getContext(), "Swipe to right!" + viewHolder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
+
+                    HeroAbilitiesFragment frgm = new HeroAbilitiesFragment();
+                    frgm.setArguments(args);
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.container, frgm)
+                            .addToBackStack("HERO_ABILITIES")
+                            .commit();
+
+                }
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
-//        TextView tv = (TextView) mView.findViewById(R.id.temp);
-//        String temp = "";
-//
-//        for (Hero hero : heroes.getHeroes()) {
-//            for (Ability ability : hero.getAbilities()) {
-//                ArrayMap<String, String> attributes = ability.getAvailableAttributes();
-//                        for (Map.Entry<String, String> attr : attributes.entrySet()) {
-//                            temp += attr.getKey();
-//                            temp += attr.getValue();
-//                        }
-//            }
-//        }
-//
-//        tv.setText(temp);
 
-//        Bundle args = new Bundle();
-//        args.putString("hero", (String) hero.getName());
-//        HeroAbilitiesFragment frgm = new HeroAbilitiesFragment();
-//        frgm.setArguments(args);
+
 
         return mView;
     }

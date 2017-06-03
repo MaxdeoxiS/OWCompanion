@@ -53,7 +53,7 @@ public class Heroes implements Serializable {
         Hero hero = null;
 
         for (Hero h : this.getHeroes()) {
-            if(h.getNickname().toLowerCase().equals(name)) {
+            if(h.getNickname().toLowerCase().equals(name.toLowerCase())) {
                 hero = h;
                 break;
             }
