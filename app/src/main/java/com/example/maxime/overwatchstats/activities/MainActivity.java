@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_heroes) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, new HeroesFragment())
-                    .addToBackStack("HEROES")
+                    .addToBackStack("HEROES_MAIN")
                     .commit();
         } else if (id == R.id.nav_map) { //TODO remove Map from menu and add it to Heroes section
             Intent intent = new Intent(this, MapsActivity.class);

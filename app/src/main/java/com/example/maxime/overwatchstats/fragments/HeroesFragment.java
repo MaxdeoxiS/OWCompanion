@@ -57,7 +57,7 @@ public class HeroesFragment extends Fragment {
                     frgm.setArguments(args);
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .replace(R.id.container, frgm)
-                            .addToBackStack("HERO_STORY")
+                            .addToBackStack("HEROES_DESC")
                             .commit();
                 }
                 if (direction == ItemTouchHelper.RIGHT) {
@@ -67,7 +67,7 @@ public class HeroesFragment extends Fragment {
                     frgm.setArguments(args);
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .replace(R.id.container, frgm)
-                            .addToBackStack("HERO_ABILITIES")
+                            .addToBackStack("HEROES_ABILITIES")
                             .commit();
 
                 }
