@@ -2,10 +2,10 @@
 
 Features (sorted by availability/release date):
 
-- check yours and anyone statistics from both Quickplay and Competitive Play.
-- learn more about your favorites heroes with the interactive map
-- TBD get heroes statistics including abilities damage, cooldown and more
-- TBD compare your stats with a friend's ones
-- TBD access to your achievements
-- TBD get the last patch notes
-- TBD Item Tracker
+- Access to yours and everyone statistics from both Quickplay and Competitive Play (including hero time played, ratio, accuray, and many, many, many more)
+- Learn more about your favorites heroes background story
+- Be a better player by learning heroes statistics including abilities and attacks damage, cooldown, ranges and more
+- TBD Compare your stats with another player's ones
+- TBD See your achievements
+- TBD Read the last patch notes
+- TBD Item Tracker for events
