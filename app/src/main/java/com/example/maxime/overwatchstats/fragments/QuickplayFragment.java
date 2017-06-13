@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.maxime.overwatchstats.GetHeroesStats;
@@ -14,6 +15,7 @@ import com.example.maxime.overwatchstats.model.HeroItem;
 import com.example.maxime.overwatchstats.model.HeroStats;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class QuickplayFragment extends Fragment implements
@@ -21,7 +23,7 @@ public class QuickplayFragment extends Fragment implements
 
     ListView lv;
     HeroesAdapter adapter;
-    ArrayList<HeroStats> stats;
+    HashMap<String, HeroStats> stats;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,11 +38,29 @@ public class QuickplayFragment extends Fragment implements
         GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, "quickplay", this);
         test.execute();
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String heroName = ((HeroItem)adapterView.getAdapter().getItem(i)).getName();
+                HeroesStatsFragment heroesStatsFrgm = new HeroesStatsFragment();
+                Bundle args = new Bundle();
+
+                args.putSerializable("stats", stats.get(heroName));
+                heroesStatsFrgm.setArguments(args);
+
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, heroesStatsFrgm)
+                        .addToBackStack("HEROES_STATS")
+                        .commit();
+            }
+        });
+
         return mView;
     }
 
     @Override
-    public void asyncResponse(ArrayList<HeroStats> stats)
+    public void asyncResponse(HashMap<String, HeroStats> stats)
     {
         this.stats = stats;
     }

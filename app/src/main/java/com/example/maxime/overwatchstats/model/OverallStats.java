@@ -1,6 +1,6 @@
 package com.example.maxime.overwatchstats.model;
 
-public class OverallStats {
+public class OverallStats implements Serializable {
     private float transcendence_healing;
     private float defensive_assists_most_in_game;
     private float healing_done;

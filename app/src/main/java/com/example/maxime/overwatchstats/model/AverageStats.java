@@ -1,6 +1,8 @@
 package com.example.maxime.overwatchstats.model;
 
-public class AverageStats {
+import java.io.Serializable;
+
+public class AverageStats implements Serializable{
     private float defensive_assists_average;
     private float healing_done_average;
     private float earthshatter_kills_average;

@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class HeroesAdapter extends ArrayAdapter<HeroItem> {
+public class HeroesAdapter extends ArrayAdapter<HeroItem>{
     public HeroesAdapter(Context context, ArrayList<HeroItem> heroes) {
         super(context, 0, heroes);
     }

@@ -81,7 +81,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
     }
 
     public  interface OnAsyncRequestComplete {
-        public void asyncResponse(ArrayList<HeroStats> response);
+        public void asyncResponse(HashMap<String, HeroStats> response);
     }
 
     public GetHeroesStats(View v, Context c, HeroesAdapter a)
@@ -97,7 +97,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
         JSONObject jsonObject = new JSONObject(statsAsString);
 
         ArrayList<HeroItem> p = new ArrayList<HeroItem>();
-        ArrayList<HeroStats> s = new ArrayList<HeroStats>();
+        HashMap<String, HeroStats> s = new HashMap<String, HeroStats>();
 
         JSONObject stats = jsonObject.getJSONObject("eu").getJSONObject("heroes").getJSONObject("playtime").getJSONObject(this.mode);
 
@@ -109,6 +109,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
             String heroName = names.next();
               HeroItem h = new HeroItem(heroName, stats.getString(heroName), heroImg + heroesHexa.get(heroName) + ".png");
               p.add(h);
+            s.put(heroName, new HeroStats(heroName));
         }
 
         HeroOutput heroOutput = new HeroOutput(p, s);
@@ -194,7 +195,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
     protected void onPostExecute(HeroOutput heroOutput) {
         if (heroOutput != null) {
             ArrayList<HeroItem> heroesItems = heroOutput.getHeroesItem();
-            ArrayList<HeroStats> heroesStats = heroOutput.getHeroesStats();
+            HashMap<String, HeroStats> heroesStats = heroOutput.getHeroesStats();
 
         Collections.sort(heroesItems, new Comparator<HeroItem>() {
             @Override

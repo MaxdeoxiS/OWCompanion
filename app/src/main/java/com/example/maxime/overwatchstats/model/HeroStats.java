@@ -1,6 +1,8 @@
 package com.example.maxime.overwatchstats.model;
 
-public class HeroStats {
+import java.io.Serializable;
+
+public class HeroStats implements Serializable{
     private AverageStats avg;
     private OverallStats ovl;
     private SpecificStats spc;

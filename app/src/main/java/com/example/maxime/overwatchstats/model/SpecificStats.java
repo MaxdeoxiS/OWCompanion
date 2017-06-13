@@ -1,6 +1,8 @@
 package com.example.maxime.overwatchstats.model;
 
-public class SpecificStats {
+import java.io.Serializable;
+
+public class SpecificStats implements Serializable {
     private float charge_kills;
     private float earthshatter_kills;
     private float damage_blocked_most_in_game;
