@@ -10,6 +10,8 @@ import android.view.View;
 
 import com.example.maxime.overwatchstats.adapters.HeroesAdapter;
 import com.example.maxime.overwatchstats.model.HeroItem;
+import com.example.maxime.overwatchstats.model.HeroOutput;
+import com.example.maxime.overwatchstats.model.HeroStats;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +29,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
+public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
 
     private final String LOG_TAG = GetHeroesStats.class.getSimpleName();
     private View myView;
@@ -35,6 +37,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
     private HeroesAdapter adapter;
     // Gamemode. Either quickplay or competitive
     private String mode;
+    private OnAsyncRequestComplete caller;
 
     private static final Map<String, String> heroesHexa = createMap();
 
@@ -68,12 +71,17 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
         return myMap;
     }
 
-    public GetHeroesStats(View v, Context c, HeroesAdapter a, String m)
+    public GetHeroesStats(View v, Context c, HeroesAdapter a, String m, OnAsyncRequestComplete caller)
     {
         myView = v;
         context = c;
         adapter = a;
         mode = m;
+        this.caller = caller;
+    }
+
+    public  interface OnAsyncRequestComplete {
+        public void asyncResponse(ArrayList<HeroStats> response);
     }
 
     public GetHeroesStats(View v, Context c, HeroesAdapter a)
@@ -84,11 +92,12 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
         mode = "quickplay";
     }
 
-    private ArrayList<HeroItem> getStatsDataFromJson(String statsAsString) throws JSONException {
+    private HeroOutput getStatsDataFromJson(String statsAsString) throws JSONException {
 
         JSONObject jsonObject = new JSONObject(statsAsString);
 
         ArrayList<HeroItem> p = new ArrayList<HeroItem>();
+        ArrayList<HeroStats> s = new ArrayList<HeroStats>();
 
         JSONObject stats = jsonObject.getJSONObject("eu").getJSONObject("heroes").getJSONObject("playtime").getJSONObject(this.mode);
 
@@ -102,11 +111,13 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
               p.add(h);
         }
 
-        return p;
+        HeroOutput heroOutput = new HeroOutput(p, s);
+
+        return heroOutput;
     }
 
     @Override
-    protected ArrayList<HeroItem> doInBackground(Void... Params) {
+    protected HeroOutput doInBackground(Void... Params) {
 
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
@@ -180,8 +191,11 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
     }
 
     @Override
-    protected void onPostExecute(ArrayList<HeroItem> heroesItems) {
-        if (heroesItems != null) {
+    protected void onPostExecute(HeroOutput heroOutput) {
+        if (heroOutput != null) {
+            ArrayList<HeroItem> heroesItems = heroOutput.getHeroesItem();
+            ArrayList<HeroStats> heroesStats = heroOutput.getHeroesStats();
+
         Collections.sort(heroesItems, new Comparator<HeroItem>() {
             @Override
             public int compare(HeroItem heroItem, HeroItem t1) {
@@ -196,6 +210,8 @@ public class GetHeroesStats extends AsyncTask<Void, Void, ArrayList<HeroItem>> {
         });
             adapter.addAll(heroesItems);
             adapter.notifyDataSetChanged();
+
+            caller.asyncResponse(heroesStats);
         }
     }
 }

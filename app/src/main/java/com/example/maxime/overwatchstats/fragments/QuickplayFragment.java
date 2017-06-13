@@ -11,14 +11,17 @@ import com.example.maxime.overwatchstats.GetHeroesStats;
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.adapters.HeroesAdapter;
 import com.example.maxime.overwatchstats.model.HeroItem;
+import com.example.maxime.overwatchstats.model.HeroStats;
 
 import java.util.ArrayList;
 
 
-public class QuickplayFragment extends Fragment {
+public class QuickplayFragment extends Fragment implements
+        GetHeroesStats.OnAsyncRequestComplete {
 
     ListView lv;
     HeroesAdapter adapter;
+    ArrayList<HeroStats> stats;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,9 +33,15 @@ public class QuickplayFragment extends Fragment {
         lv = (ListView)     mView.findViewById(R.id.quickplay_list_heroes);
         lv.setAdapter(adapter);
 
-        GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, "quickplay");
+        GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, "quickplay", this);
         test.execute();
 
         return mView;
+    }
+
+    @Override
+    public void asyncResponse(ArrayList<HeroStats> stats)
+    {
+        this.stats = stats;
     }
 }
