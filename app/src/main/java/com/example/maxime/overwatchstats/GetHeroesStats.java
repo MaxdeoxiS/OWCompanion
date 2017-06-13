@@ -9,9 +9,12 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.maxime.overwatchstats.adapters.HeroesAdapter;
+import com.example.maxime.overwatchstats.model.AverageStats;
 import com.example.maxime.overwatchstats.model.HeroItem;
 import com.example.maxime.overwatchstats.model.HeroOutput;
 import com.example.maxime.overwatchstats.model.HeroStats;
+import com.example.maxime.overwatchstats.model.OverallStats;
+import com.example.maxime.overwatchstats.model.SpecificStats;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -100,6 +103,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
         HashMap<String, HeroStats> s = new HashMap<String, HeroStats>();
 
         JSONObject stats = jsonObject.getJSONObject("eu").getJSONObject("heroes").getJSONObject("playtime").getJSONObject(this.mode);
+        JSONObject statsHero = jsonObject.getJSONObject("eu").getJSONObject("heroes").getJSONObject("stats").getJSONObject(this.mode);
 
         String heroImg = "https://blzgdapipro-a.akamaihd.net/game/heroes/small/0x02E0000000000";
 
@@ -107,14 +111,46 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
 
         for (names = stats.keys(); names.hasNext();) {
             String heroName = names.next();
-              HeroItem h = new HeroItem(heroName, stats.getString(heroName), heroImg + heroesHexa.get(heroName) + ".png");
-              p.add(h);
-            s.put(heroName, new HeroStats(heroName));
+            HeroItem h = new HeroItem(heroName, stats.getString(heroName), heroImg + heroesHexa.get(heroName) + ".png");
+            p.add(h);
+
+            JSONObject currentHeroStats = statsHero.getJSONObject(heroName);
+
+            HeroStats heroStats = new HeroStats(heroName);
+
+            AverageStats avg = parseAvg(currentHeroStats.getJSONObject("average_stats"));
+            OverallStats ovl = parseOvl(currentHeroStats.getJSONObject("general_stats"));
+            SpecificStats spc= parseSpc(currentHeroStats.getJSONObject("hero_stats"));
+
+            heroStats.setAvg(avg);
+            heroStats.setOvl(ovl);
+            heroStats.setSpc(spc);
+
+            s.put(heroName, heroStats);
         }
 
         HeroOutput heroOutput = new HeroOutput(p, s);
 
         return heroOutput;
+    }
+
+
+    private AverageStats parseAvg(JSONObject json)
+    {
+        AverageStats response = new AverageStats();
+        return response;
+    }
+
+    private OverallStats parseOvl(JSONObject json)
+    {
+        OverallStats response = new OverallStats();
+        return response;
+    }
+
+    private SpecificStats parseSpc(JSONObject json)
+    {
+        SpecificStats response = new SpecificStats();
+        return response;
     }
 
     @Override
