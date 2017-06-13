@@ -119,9 +119,9 @@
     <string name="lucio">#8AEB22</string>
     <string name="winston">#4B4F5A</string>
     <string name="torbjorn">#FF6100</string>
-    <string name="d.va">#FF7FD0</string>
-    <string name="mercy">#FEE06B</string>
-    <string name="tracer">#F7911B</string>
+    <string name="dva">#FF7FD0</string>
+    <string name="tracer">#FEE06B</string>
+    <string name="mercy">#F7911B</string>
     <string name="bastion">#6D984C</string>
     <string name="symmetra">#5BEBFF</string>
     <string name="reinhardt">#A9958D</string>

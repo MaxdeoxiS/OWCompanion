@@ -11,4 +11,27 @@ public class HeroItem {
         this.imgUrl = i;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getPlayTimeAsFloat() {
+        return Float.parseFloat(playTime);
+    }
+
+    public void setPlayTime(String playTime) {
+        this.playTime = playTime;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 }

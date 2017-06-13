@@ -40,11 +40,8 @@ public class HeroesAdapter extends ArrayAdapter<HeroItem> {
 
         // Populate the data into the template view using the data object
         Picasso.with(getContext()).load(hero.imgUrl).into(heroImg);
-        String[] playtimeData = hero.playTime.split(" ");
         float width = 0;
-        if(playtimeData.length > 1)
-        width = (playtimeData[1].equals("hours") || playtimeData[1].equals("hour")) ? Integer.parseInt(playtimeData[0]) :
-                ((playtimeData[1].equals("minutes")) ? (Integer.parseInt(playtimeData[0]) / 60) : (Integer.parseInt(playtimeData[0]) / 3600));
+        width = Float.parseFloat(hero.playTime);
 
         if (position == 0)
             maxWidth = width;
