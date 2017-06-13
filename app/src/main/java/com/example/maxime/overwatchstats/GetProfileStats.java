@@ -41,6 +41,8 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
     private TextView profile_text_level;
     private TextView profile_rank;
 
+    private String BATTLE_TAG;
+
     public GetProfileStats(View v, Context c, String b)
     {
         myView = v;
@@ -62,16 +64,44 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
         Profile p = new Profile();
 
-        p.setUsername(json.getString("username"));
-        p.setLevel(json.getString("level"));
-        p.setAvatar(json.getString("portrait"));
-        p.setImg_lvl(json.getString("levelFrame"));
-        if(!json.getString("star").equals(""))
-            p.setImg_stars(json.getString("star"));
-        if (!json.getJSONObject("competitive").getString("rank").equals("")) {
-            p.setRank(json.getJSONObject("competitive").getString("rank"));
-            p.setImg_rank(json.getJSONObject("competitive").getString("rank_img"));
+        p.setUsername(this.BATTLE_TAG.substring(0, this.BATTLE_TAG.length() - 5));
+
+        JSONObject stats = json.getJSONObject("eu").getJSONObject("stats").getJSONObject("quickplay").getJSONObject("overall_stats");
+        p.setLevel((Integer.parseInt(stats.getString("prestige")) * 100 + Integer.parseInt(stats.getString("level"))) + "");
+        p.setAvatar(stats.getString("avatar"));
+        p.setImg_lvl(stats.getString("rank_image"));
+        if(!stats.getString("prestige").equals("0"))
+            p.setImg_stars(stats.getString("rank_image").substring(0, stats.getString("rank_image").length() - 10) + "Rank.png");
+        if (!stats.getString("comprank").equals("")) {
+            p.setRank(stats.getString("comprank"));
+            int rank = Integer.parseInt(stats.getString("comprank"));
+            int i;
+            if(rank < 1500)
+                i = 1;
+            else if(rank < 2000)
+                i = 2;
+            else if(rank < 2500)
+                i = 3;
+            else if(rank < 3000)
+                i = 4;
+            else if(rank < 3500)
+                i = 5;
+            else if(rank < 4000)
+                i = 6;
+            else i = 7;
+
+            p.setImg_rank("https://blzgdapipro-a.akamaihd.net/game/rank-icons/season-2/rank-" + i + ".png");
         }
+
+        p.setQp_losses(stats.getString("losses"));
+        p.setQp_wins(stats.getString("wins"));
+        p.setQp_winrate(stats.getString("win_rate"));
+
+        JSONObject rankedStats = json.getJSONObject("eu").getJSONObject("stats").getJSONObject("competitive").getJSONObject("overall_stats");
+
+        p.setRanked_losses(rankedStats.getString("losses"));
+        p.setRanked_wins(rankedStats.getString("wins"));
+        p.setRanked_winrate(rankedStats.getString("win_rate"));
 
         return p;
     }
@@ -88,18 +118,16 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         String statsJsonStr = null;
 
         try {
-            final String BASE_URL = "http://ow-api.herokuapp.com/";
+            final String BASE_URL = "https://owapi.net/api/v3/u/";
 
             final String PLATFORM = "pc";
             final String REGION = "eu";
-            String BATTLE_TAG = battleTag;
-            String PARAM1 = "profile";
+            this.BATTLE_TAG = battleTag;
+            String PARAM1 = "stats";
 
             Uri builtUri = Uri.parse(BASE_URL).buildUpon()
+                    .appendPath(this.BATTLE_TAG)
                     .appendPath(PARAM1)
-                    .appendPath(PLATFORM)
-                    .appendPath(REGION)
-                    .appendPath(BATTLE_TAG)
                     .build();
 
             URL url = new URL(builtUri.toString());
@@ -137,7 +165,6 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
             }
             statsJsonStr = buffer.toString();
 
-            Log.v(LOG_TAG, "Forecast string: " + statsJsonStr);
         } catch (IOException e) {
             Log.e(LOG_TAG, "Error ", e);
             // If the code didn't successfully get the weather data, there's no point in attempting
@@ -179,7 +206,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
             if(null != profile_text_level)
                 (profile_text_level).setText(p.getLevel());
             if(null != profile_rank)
-                (profile_rank).setText(p.getRank());
+                (profile_rank).setText(p.getRank() + p.getRanked_winrate());
             if(null != button_add_friend)
                 button_add_friend.setVisibility(View.VISIBLE);
             if(null != profile_rank_img)

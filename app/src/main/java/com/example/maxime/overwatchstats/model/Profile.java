@@ -10,6 +10,14 @@ public class Profile {
     private int time_ranked;
     private int time_total;
 
+    private String qp_losses;
+    private String qp_wins;
+    private String qp_winrate;
+
+    private String ranked_losses;
+    private String ranked_wins;
+    private String ranked_winrate;
+
     private String img_rank;
     private String img_stars = null;
     private String img_lvl;
@@ -111,6 +119,54 @@ public class Profile {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public String getQp_losses() {
+        return qp_losses;
+    }
+
+    public void setQp_losses(String qp_losses) {
+        this.qp_losses = qp_losses;
+    }
+
+    public String getQp_wins() {
+        return qp_wins;
+    }
+
+    public void setQp_wins(String qp_wins) {
+        this.qp_wins = qp_wins;
+    }
+
+    public String getQp_winrate() {
+        return qp_winrate;
+    }
+
+    public void setQp_winrate(String qp_winrate) {
+        this.qp_winrate = qp_winrate;
+    }
+
+    public String getRanked_losses() {
+        return ranked_losses;
+    }
+
+    public void setRanked_losses(String ranked_losses) {
+        this.ranked_losses = ranked_losses;
+    }
+
+    public String getRanked_wins() {
+        return ranked_wins;
+    }
+
+    public void setRanked_wins(String ranked_wins) {
+        this.ranked_wins = ranked_wins;
+    }
+
+    public String getRanked_winrate() {
+        return ranked_winrate;
+    }
+
+    public void setRanked_winrate(String ranked_winrate) {
+        this.ranked_winrate = ranked_winrate;
     }
 }
 
