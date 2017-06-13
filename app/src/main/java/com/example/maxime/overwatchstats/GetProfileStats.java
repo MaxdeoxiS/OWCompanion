@@ -41,7 +41,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
     private TextView profile_text_level;
     private TextView profile_rank;
 
-    String BATTLE_TAG;
+    private String BATTLE_TAG;
 
     public GetProfileStats(View v, Context c, String b)
     {
@@ -99,9 +99,9 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
         JSONObject rankedStats = json.getJSONObject("eu").getJSONObject("stats").getJSONObject("competitive").getJSONObject("overall_stats");
 
-        p.setQp_losses(rankedStats.getString("losses"));
-        p.setQp_wins(rankedStats.getString("wins"));
-        p.setQp_winrate(rankedStats.getString("win_rate"));
+        p.setRanked_losses(rankedStats.getString("losses"));
+        p.setRanked_wins(rankedStats.getString("wins"));
+        p.setRanked_winrate(rankedStats.getString("win_rate"));
 
         return p;
     }
@@ -206,7 +206,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
             if(null != profile_text_level)
                 (profile_text_level).setText(p.getLevel());
             if(null != profile_rank)
-                (profile_rank).setText(p.getRank());
+                (profile_rank).setText(p.getRank() + p.getRanked_winrate());
             if(null != button_add_friend)
                 button_add_friend.setVisibility(View.VISIBLE);
             if(null != profile_rank_img)
