@@ -436,221 +436,221 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
         try {
 
         if(json.has("charge_kills"))
-            response.setCharge_kills(Float.parseFloat(json.getString("float charge_kills")));
+            response.setCharge_kills(Float.parseFloat(json.getString("charge_kills")));
         if(json.has("earthshatter_kills"))
-            response.setEarthshatter_kills(Float.parseFloat(json.getString("float earthshatter_kills")));
+            response.setEarthshatter_kills(Float.parseFloat(json.getString("earthshatter_kills")));
         if(json.has("damage_blocked_most_in_game"))
-            response.setDamage_blocked_most_in_game(Float.parseFloat(json.getString("float damage_blocked_most_in_game")));
+            response.setDamage_blocked_most_in_game(Float.parseFloat(json.getString("damage_blocked_most_in_game")));
         if(json.has("fire_strike_kills_most_in_game"))
-            response.setFire_strike_kills_most_in_game(Float.parseFloat(json.getString("float fire_strike_kills_most_in_game")));
+            response.setFire_strike_kills_most_in_game(Float.parseFloat(json.getString("fire_strike_kills_most_in_game")));
         if(json.has("earthshatter_kills_most_in_game"))
-            response.setEarthshatter_kills_most_in_game(Float.parseFloat(json.getString("float earthshatter_kills_most_in_game")));
+            response.setEarthshatter_kills_most_in_game(Float.parseFloat(json.getString("earthshatter_kills_most_in_game")));
         if(json.has("damage_blocked"))
-            response.setDamage_blocked(Float.parseFloat(json.getString("float damage_blocked")));
+            response.setDamage_blocked(Float.parseFloat(json.getString("damage_blocked")));
         if(json.has("charge_kills_most_in_game"))
-            response.setCharge_kills_most_in_game(Float.parseFloat(json.getString("float charge_kills_most_in_game")));
+            response.setCharge_kills_most_in_game(Float.parseFloat(json.getString("charge_kills_most_in_game")));
         if(json.has("fire_strike_kills"))
-            response.setFire_strike_kills(Float.parseFloat(json.getString("float fire_strike_kills")));
+            response.setFire_strike_kills(Float.parseFloat(json.getString("fire_strike_kills")));
         if(json.has("pulse_bomb_kills_most_in_game"))
-            response.setPulse_bomb_kills_most_in_game(Float.parseFloat(json.getString("float pulse_bomb_kills_most_in_game")));
+            response.setPulse_bomb_kills_most_in_game(Float.parseFloat(json.getString("pulse_bomb_kills_most_in_game")));
         if(json.has("pulse_bombs_attached_most_in_game"))
-            response.setPulse_bombs_attached_most_in_game(Float.parseFloat(json.getString("float pulse_bombs_attached_most_in_game")));
+            response.setPulse_bombs_attached_most_in_game(Float.parseFloat(json.getString("pulse_bombs_attached_most_in_game")));
         if(json.has("pulse_bombs_attached"))
-            response.setPulse_bombs_attached(Float.parseFloat(json.getString("float pulse_bombs_attached")));
+            response.setPulse_bombs_attached(Float.parseFloat(json.getString("pulse_bombs_attached")));
         if(json.has("pulse_bomb_kills"))
-            response.setPulse_bomb_kills(Float.parseFloat(json.getString("float pulse_bomb_kills")));
+            response.setPulse_bomb_kills(Float.parseFloat(json.getString("pulse_bomb_kills")));
         if(json.has("melee_final_blows_most_in_game"))
-            response.setMelee_final_blows_most_in_game(Float.parseFloat(json.getString("float melee_final_blows_most_in_game")));
+            response.setMelee_final_blows_most_in_game(Float.parseFloat(json.getString("melee_final_blows_most_in_game")));
         if(json.has("transcendence_healing_best"))
-            response.setTranscendence_healing_best(Float.parseFloat(json.getString("float transcendence_healing_best")));
+            response.setTranscendence_healing_best(Float.parseFloat(json.getString("transcendence_healing_best")));
         if(json.has("rip_tire_kills_most_in_game"))
-            response.setRip_tire_kills_most_in_game(Float.parseFloat(json.getString("float rip_tire_kills_most_in_game")));
+            response.setRip_tire_kills_most_in_game(Float.parseFloat(json.getString("rip_tire_kills_most_in_game")));
         if(json.has("enemies_trapped_a_minute"))
-            response.setEnemies_trapped_a_minute(Float.parseFloat(json.getString("float enemies_trapped_a_minute")));
+            response.setEnemies_trapped_a_minute(Float.parseFloat(json.getString("enemies_trapped_a_minute")));
         if(json.has("rip_tire_kills"))
-            response.setRip_tire_kills(Float.parseFloat(json.getString("float rip_tire_kills")));
+            response.setRip_tire_kills(Float.parseFloat(json.getString("rip_tire_kills")));
         if(json.has("enemies_trapped"))
-            response.setEnemies_trapped(Float.parseFloat(json.getString("float enemies_trapped")));
+            response.setEnemies_trapped(Float.parseFloat(json.getString("enemies_trapped")));
         if(json.has("enemies_trapped_most_in_game"))
-            response.setEnemies_trapped_most_in_game(Float.parseFloat(json.getString("float enemies_trapped_most_in_game")));
+            response.setEnemies_trapped_most_in_game(Float.parseFloat(json.getString("enemies_trapped_most_in_game")));
         if(json.has("deadeye_kills_most_in_game"))
-            response.setDeadeye_kills_most_in_game(Float.parseFloat(json.getString("float deadeye_kills_most_in_game")));
+            response.setDeadeye_kills_most_in_game(Float.parseFloat(json.getString("deadeye_kills_most_in_game")));
         if(json.has("fan_the_hammer_kills"))
-            response.setFan_the_hammer_kills(Float.parseFloat(json.getString("float fan_the_hammer_kills")));
+            response.setFan_the_hammer_kills(Float.parseFloat(json.getString("fan_the_hammer_kills")));
         if(json.has("deadeye_kill"))
-            response.setDeadeye_kill(Float.parseFloat(json.getString("float deadeye_kill")));
+            response.setDeadeye_kill(Float.parseFloat(json.getString("deadeye_kill")));
         if(json.has("melee_kills_most_in_game"))
-            response.setMelee_kills_most_in_game(Float.parseFloat(json.getString("float melee_kills_most_in_game")));
+            response.setMelee_kills_most_in_game(Float.parseFloat(json.getString("melee_kills_most_in_game")));
         if(json.has("melee_kills"))
-            response.setMelee_kills(Float.parseFloat(json.getString("float melee_kills")));
+            response.setMelee_kills(Float.parseFloat(json.getString("melee_kills")));
         if(json.has("players_knocked_back"))
-            response.setPlayers_knocked_back(Float.parseFloat(json.getString("float players_knocked_back")));
+            response.setPlayers_knocked_back(Float.parseFloat(json.getString("players_knocked_back")));
         if(json.has("jump_pack_kills_most_in_game"))
-            response.setJump_pack_kills_most_in_game(Float.parseFloat(json.getString("float jump_pack_kills_most_in_game")));
+            response.setJump_pack_kills_most_in_game(Float.parseFloat(json.getString("jump_pack_kills_most_in_game")));
         if(json.has("melee_final_blow_most_in_game"))
-            response.setMelee_final_blow_most_in_game(Float.parseFloat(json.getString("float melee_final_blow_most_in_game")));
+            response.setMelee_final_blow_most_in_game(Float.parseFloat(json.getString("melee_final_blow_most_in_game")));
         if(json.has("jump_pack_kills"))
-            response.setJump_pack_kills(Float.parseFloat(json.getString("float jump_pack_kills")));
+            response.setJump_pack_kills(Float.parseFloat(json.getString("jump_pack_kills")));
         if(json.has("players_knocked_back_most_in_game"))
-            response.setPlayers_knocked_back_most_in_game(Float.parseFloat(json.getString("float players_knocked_back_most_in_game")));
+            response.setPlayers_knocked_back_most_in_game(Float.parseFloat(json.getString("players_knocked_back_most_in_game")));
         if(json.has("scatter_arrow_kills_most_in_game"))
-            response.setScatter_arrow_kills_most_in_game(Float.parseFloat(json.getString("float scatter_arrow_kills_most_in_game")));
+            response.setScatter_arrow_kills_most_in_game(Float.parseFloat(json.getString("scatter_arrow_kills_most_in_game")));
         if(json.has("scatter_arrow_kills"))
-            response.setScatter_arrow_kills(Float.parseFloat(json.getString("float scatter_arrow_kills")));
+            response.setScatter_arrow_kills(Float.parseFloat(json.getString("scatter_arrow_kills")));
         if(json.has("dragonstrike_kills"))
-            response.setDragonstrike_kills(Float.parseFloat(json.getString("float dragonstrike_kills")));
+            response.setDragonstrike_kills(Float.parseFloat(json.getString("dragonstrike_kills")));
         if(json.has("dragonstrike_kills_most_in_game"))
-            response.setDragonstrike_kills_most_in_game(Float.parseFloat(json.getString("float dragonstrike_kills_most_in_game")));
+            response.setDragonstrike_kills_most_in_game(Float.parseFloat(json.getString("dragonstrike_kills_most_in_game")));
         if(json.has("rocket_direct_hits"))
-            response.setRocket_direct_hits(Float.parseFloat(json.getString("float rocket_direct_hits")));
+            response.setRocket_direct_hits(Float.parseFloat(json.getString("rocket_direct_hits")));
         if(json.has("barrage_kills_most_in_game"))
-            response.setBarrage_kills_most_in_game(Float.parseFloat(json.getString("float barrage_kills_most_in_game")));
+            response.setBarrage_kills_most_in_game(Float.parseFloat(json.getString("barrage_kills_most_in_game")));
         if(json.has("barrage_kills"))
-            response.setBarrage_kills(Float.parseFloat(json.getString("float barrage_kills")));
+            response.setBarrage_kills(Float.parseFloat(json.getString("barrage_kills")));
         if(json.has("rocket_direct_hits_most_in_gam"))
-            response.setRocket_direct_hits_most_in_gam(Float.parseFloat(json.getString("float rocket_direct_hits_most_in_gam")));
+            response.setRocket_direct_hits_most_in_gam(Float.parseFloat(json.getString("rocket_direct_hits_most_in_gam")));
         if(json.has("whole_hog_kills"))
-            response.setWhole_hog_kills(Float.parseFloat(json.getString("float whole_hog_kills")));
+            response.setWhole_hog_kills(Float.parseFloat(json.getString("whole_hog_kills")));
         if(json.has("hook_accuracy_best_in_game"))
-            response.setHook_accuracy_best_in_game(Float.parseFloat(json.getString("float hook_accuracy_best_in_game")));
+            response.setHook_accuracy_best_in_game(Float.parseFloat(json.getString("hook_accuracy_best_in_game")));
         if(json.has("enemies_hooked_most_in_game"))
-            response.setEnemies_hooked_most_in_game(Float.parseFloat(json.getString("float enemies_hooked_most_in_game")));
+            response.setEnemies_hooked_most_in_game(Float.parseFloat(json.getString("enemies_hooked_most_in_game")));
         if(json.has("hook_accuracy"))
-            response.setHook_accuracy(Float.parseFloat(json.getString("float hook_accuracy")));
+            response.setHook_accuracy(Float.parseFloat(json.getString("hook_accuracy")));
         if(json.has("enemies_hooked"))
-            response.setEnemies_hooked(Float.parseFloat(json.getString("float enemies_hooked")));
+            response.setEnemies_hooked(Float.parseFloat(json.getString("enemies_hooked")));
         if(json.has("whole_hog_kills_most_in_game"))
-            response.setWhole_hog_kills_most_in_game(Float.parseFloat(json.getString("float whole_hog_kills_most_in_game")));
+            response.setWhole_hog_kills_most_in_game(Float.parseFloat(json.getString("whole_hog_kills_most_in_game")));
         if(json.has("hooks_attempted"))
-            response.setHooks_attempted(Float.parseFloat(json.getString("float hooks_attempted")));
+            response.setHooks_attempted(Float.parseFloat(json.getString("hooks_attempted")));
         if(json.has("lifetime_graviton_surge_kills"))
-            response.setLifetime_graviton_surge_kills(Float.parseFloat(json.getString("float lifetime_graviton_surge_kills")));
+            response.setLifetime_graviton_surge_kills(Float.parseFloat(json.getString("lifetime_graviton_surge_kills")));
         if(json.has("graviton_surge_kills_most_in_game"))
-            response.setGraviton_surge_kills_most_in_game(Float.parseFloat(json.getString("float graviton_surge_kills_most_in_game")));
+            response.setGraviton_surge_kills_most_in_game(Float.parseFloat(json.getString("graviton_surge_kills_most_in_game")));
         if(json.has("lifetime_energy_accumulation"))
-            response.setLifetime_energy_accumulation(Float.parseFloat(json.getString("float lifetime_energy_accumulation")));
+            response.setLifetime_energy_accumulation(Float.parseFloat(json.getString("lifetime_energy_accumulation")));
         if(json.has("energy_maximum"))
-            response.setEnergy_maximum(Float.parseFloat(json.getString("float energy_maximum")));
+            response.setEnergy_maximum(Float.parseFloat(json.getString("energy_maximum")));
         if(json.has("projected_barriers_applied"))
-            response.setProjected_barriers_applied(Float.parseFloat(json.getString("float projected_barriers_applied")));
+            response.setProjected_barriers_applied(Float.parseFloat(json.getString("projected_barriers_applied")));
         if(json.has("high_energy_kills_most_in_game"))
-            response.setHigh_energy_kills_most_in_game(Float.parseFloat(json.getString("float high_energy_kills_most_in_game")));
+            response.setHigh_energy_kills_most_in_game(Float.parseFloat(json.getString("high_energy_kills_most_in_game")));
         if(json.has("high_energy_kill"))
-            response.setHigh_energy_kill(Float.parseFloat(json.getString("float high_energy_kill")));
+            response.setHigh_energy_kill(Float.parseFloat(json.getString("high_energy_kill")));
         if(json.has("turret_kills"))
-            response.setTurret_kills(Float.parseFloat(json.getString("float turret_kills")));
+            response.setTurret_kills(Float.parseFloat(json.getString("turret_kills")));
         if(json.has("molten_core_kills"))
-            response.setMolten_core_kills(Float.parseFloat(json.getString("float molten_core_kills")));
+            response.setMolten_core_kills(Float.parseFloat(json.getString("molten_core_kills")));
         if(json.has("torbjorn_kills"))
-            response.setTorbjorn_kills(Float.parseFloat(json.getString("float torbjorn_kills")));
+            response.setTorbjorn_kills(Float.parseFloat(json.getString("torbjorn_kills")));
         if(json.has("torbjorn_kills_most_in_game"))
-            response.setTorbjorn_kills_most_in_game(Float.parseFloat(json.getString("float torbjorn_kills_most_in_game")));
+            response.setTorbjorn_kills_most_in_game(Float.parseFloat(json.getString("torbjorn_kills_most_in_game")));
         if(json.has("armor_packs_created"))
-            response.setArmor_packs_created(Float.parseFloat(json.getString("float armor_packs_created")));
+            response.setArmor_packs_created(Float.parseFloat(json.getString("armor_packs_created")));
         if(json.has("molten_core_kills_most_in_gam"))
-            response.setMolten_core_kills_most_in_gam(Float.parseFloat(json.getString("float molten_core_kills_most_in_gam")));
+            response.setMolten_core_kills_most_in_gam(Float.parseFloat(json.getString("molten_core_kills_most_in_gam")));
         if(json.has("players_resurrected"))
-            response.setPlayers_resurrected(Float.parseFloat(json.getString("float players_resurrected")));
+            response.setPlayers_resurrected(Float.parseFloat(json.getString("players_resurrected")));
         if(json.has("players_resurrected_most_in_game"))
-            response.setPlayers_resurrected_most_in_game(Float.parseFloat(json.getString("float players_resurrected_most_in_game")));
+            response.setPlayers_resurrected_most_in_game(Float.parseFloat(json.getString("players_resurrected_most_in_game")));
         if(json.has("tactical_visor_kills"))
-            response.setTactical_visor_kills(Float.parseFloat(json.getString("float tactical_visor_kills")));
+            response.setTactical_visor_kills(Float.parseFloat(json.getString("tactical_visor_kills")));
         if(json.has("helix_rockets_kills"))
-            response.setHelix_rockets_kills(Float.parseFloat(json.getString("float helix_rockets_kills")));
+            response.setHelix_rockets_kills(Float.parseFloat(json.getString("helix_rockets_kills")));
         if(json.has("tactical_visor_kills_most_in_game"))
-            response.setTactical_visor_kills_most_in_game(Float.parseFloat(json.getString("float tactical_visor_kills_most_in_game")));
+            response.setTactical_visor_kills_most_in_game(Float.parseFloat(json.getString("tactical_visor_kills_most_in_game")));
         if(json.has("helix_rockets_kills_most_in_game"))
-            response.setHelix_rockets_kills_most_in_game(Float.parseFloat(json.getString("float helix_rockets_kills_most_in_game")));
+            response.setHelix_rockets_kills_most_in_game(Float.parseFloat(json.getString("helix_rockets_kills_most_in_game")));
         if(json.has("biotic_field_healing_done"))
-            response.setBiotic_field_healing_done(Float.parseFloat(json.getString("float biotic_field_healing_done")));
+            response.setBiotic_field_healing_done(Float.parseFloat(json.getString("biotic_field_healing_done")));
         if(json.has("biotic_fields_deploye"))
-            response.setBiotic_fields_deploye(Float.parseFloat(json.getString("float biotic_fields_deploye")));
+            response.setBiotic_fields_deploye(Float.parseFloat(json.getString("biotic_fields_deploye")));
         if(json.has("nano_boost_assists"))
-            response.setNano_boost_assists(Float.parseFloat(json.getString("float nano_boost_assists")));
+            response.setNano_boost_assists(Float.parseFloat(json.getString("nano_boost_assists")));
         if(json.has("unscoped_accuracy"))
-            response.setUnscoped_accuracy(Float.parseFloat(json.getString("float unscoped_accuracy")));
+            response.setUnscoped_accuracy(Float.parseFloat(json.getString("unscoped_accuracy")));
         if(json.has("nano_boosts_applied"))
-            response.setNano_boosts_applied(Float.parseFloat(json.getString("float nano_boosts_applied")));
+            response.setNano_boosts_applied(Float.parseFloat(json.getString("nano_boosts_applied")));
         if(json.has("nano_boost_assists_most_in_game"))
-            response.setNano_boost_assists_most_in_game(Float.parseFloat(json.getString("float nano_boost_assists_most_in_game")));
+            response.setNano_boost_assists_most_in_game(Float.parseFloat(json.getString("nano_boost_assists_most_in_game")));
         if(json.has("venom_mine_kills"))
-            response.setVenom_mine_kills(Float.parseFloat(json.getString("float venom_mine_kills")));
+            response.setVenom_mine_kills(Float.parseFloat(json.getString("venom_mine_kills")));
         if(json.has("scoped_accuracy_best_in_game"))
-            response.setScoped_accuracy_best_in_game(Float.parseFloat(json.getString("float scoped_accuracy_best_in_game")));
+            response.setScoped_accuracy_best_in_game(Float.parseFloat(json.getString("scoped_accuracy_best_in_game")));
         if(json.has("scoped_hits"))
-            response.setScoped_hits(Float.parseFloat(json.getString("float scoped_hits")));
+            response.setScoped_hits(Float.parseFloat(json.getString("scoped_hits")));
         if(json.has("scoped_critical_hits_most_in_game"))
-            response.setScoped_critical_hits_most_in_game(Float.parseFloat(json.getString("float scoped_critical_hits_most_in_game")));
+            response.setScoped_critical_hits_most_in_game(Float.parseFloat(json.getString("scoped_critical_hits_most_in_game")));
         if(json.has("venom_mine_kills_most_in_game"))
-            response.setVenom_mine_kills_most_in_game(Float.parseFloat(json.getString("float venom_mine_kills_most_in_game")));
+            response.setVenom_mine_kills_most_in_game(Float.parseFloat(json.getString("venom_mine_kills_most_in_game")));
         if(json.has("recon_assists_most_in_game"))
-            response.setRecon_assists_most_in_game(Float.parseFloat(json.getString("float recon_assists_most_in_game")));
+            response.setRecon_assists_most_in_game(Float.parseFloat(json.getString("recon_assists_most_in_game")));
         if(json.has("scoped_accuracy"))
-            response.setScoped_accuracy(Float.parseFloat(json.getString("float scoped_accuracy")));
+            response.setScoped_accuracy(Float.parseFloat(json.getString("scoped_accuracy")));
         if(json.has("scoped_critical_hits"))
-            response.setScoped_critical_hits(Float.parseFloat(json.getString("float scoped_critical_hits")));
+            response.setScoped_critical_hits(Float.parseFloat(json.getString("scoped_critical_hits")));
         if(json.has("scoped_shots"))
-            response.setScoped_shots(Float.parseFloat(json.getString("float scoped_shots")));
+            response.setScoped_shots(Float.parseFloat(json.getString("scoped_shots")));
         if(json.has("dragonblades"))
-            response.setDragonblades(Float.parseFloat(json.getString("float dragonblades")));
+            response.setDragonblades(Float.parseFloat(json.getString("dragonblades")));
         if(json.has("damage_reflected"))
-            response.setDamage_reflected(Float.parseFloat(json.getString("float damage_reflected")));
+            response.setDamage_reflected(Float.parseFloat(json.getString("damage_reflected")));
         if(json.has("damage_reflected_most_in_game"))
-            response.setDamage_reflected_most_in_game(Float.parseFloat(json.getString("float damage_reflected_most_in_game")));
+            response.setDamage_reflected_most_in_game(Float.parseFloat(json.getString("damage_reflected_most_in_game")));
         if(json.has("dragonblade_kills_most_in_game"))
-            response.setDragonblade_kills_most_in_game(Float.parseFloat(json.getString("float dragonblade_kills_most_in_game")));
+            response.setDragonblade_kills_most_in_game(Float.parseFloat(json.getString("dragonblade_kills_most_in_game")));
         if(json.has("dragonblade_kills"))
-            response.setDragonblade_kills(Float.parseFloat(json.getString("float dragonblade_kills")));
+            response.setDragonblade_kills(Float.parseFloat(json.getString("dragonblade_kills")));
         if(json.has("death_blossom_kills"))
-            response.setDeath_blossom_kills(Float.parseFloat(json.getString("float death_blossom_kills")));
+            response.setDeath_blossom_kills(Float.parseFloat(json.getString("death_blossom_kills")));
         if(json.has("death_blossom_kills_most_in_game"))
-            response.setDeath_blossom_kills_most_in_game(Float.parseFloat(json.getString("float death_blossom_kills_most_in_game")));
+            response.setDeath_blossom_kills_most_in_game(Float.parseFloat(json.getString("death_blossom_kills_most_in_game")));
         if(json.has("enemies_frozen_most_in_game"))
-            response.setEnemies_frozen_most_in_game(Float.parseFloat(json.getString("float enemies_frozen_most_in_game")));
+            response.setEnemies_frozen_most_in_game(Float.parseFloat(json.getString("enemies_frozen_most_in_game")));
         if(json.has("enemies_frozen"))
-            response.setEnemies_frozen(Float.parseFloat(json.getString("float enemies_frozen")));
+            response.setEnemies_frozen(Float.parseFloat(json.getString("enemies_frozen")));
         if(json.has("blizzard_kills"))
-            response.setBlizzard_kills(Float.parseFloat(json.getString("float blizzard_kills")));
+            response.setBlizzard_kills(Float.parseFloat(json.getString("blizzard_kills")));
         if(json.has("blizzard_kills_most_in_game"))
-            response.setBlizzard_kills_most_in_game(Float.parseFloat(json.getString("float blizzard_kills_most_in_game")));
+            response.setBlizzard_kills_most_in_game(Float.parseFloat(json.getString("blizzard_kills_most_in_game")));
         if(json.has("recon_kills_most_in_game"))
-            response.setRecon_kills_most_in_game(Float.parseFloat(json.getString("float recon_kills_most_in_game")));
+            response.setRecon_kills_most_in_game(Float.parseFloat(json.getString("recon_kills_most_in_game")));
         if(json.has("tank_kills_most_in_game"))
-            response.setTank_kills_most_in_game(Float.parseFloat(json.getString("float tank_kills_most_in_game")));
+            response.setTank_kills_most_in_game(Float.parseFloat(json.getString("tank_kills_most_in_game")));
         if(json.has("sentry_kills"))
-            response.setSentry_kills(Float.parseFloat(json.getString("float sentry_kills")));
+            response.setSentry_kills(Float.parseFloat(json.getString("sentry_kills")));
         if(json.has("tank_kills"))
-            response.setTank_kills(Float.parseFloat(json.getString("float tank_kills")));
+            response.setTank_kills(Float.parseFloat(json.getString("tank_kills")));
         if(json.has("recon_kills"))
-            response.setRecon_kills(Float.parseFloat(json.getString("float recon_kills")));
+            response.setRecon_kills(Float.parseFloat(json.getString("recon_kills")));
         if(json.has("sentry_kills_most_in_game"))
-            response.setSentry_kills_most_in_game(Float.parseFloat(json.getString("float sentry_kills_most_in_game")));
+            response.setSentry_kills_most_in_game(Float.parseFloat(json.getString("sentry_kills_most_in_game")));
         if(json.has("teleporter_uptime"))
-            response.setTeleporter_uptime(Float.parseFloat(json.getString("float teleporter_uptime")));
+            response.setTeleporter_uptime(Float.parseFloat(json.getString("teleporter_uptime")));
         if(json.has("shields_provided_most_in_game"))
-            response.setShields_provided_most_in_game(Float.parseFloat(json.getString("float shields_provided_most_in_game")));
+            response.setShields_provided_most_in_game(Float.parseFloat(json.getString("shields_provided_most_in_game")));
         if(json.has("players_teleported_most_in_game"))
-            response.setPlayers_teleported_most_in_game(Float.parseFloat(json.getString("float players_teleported_most_in_game")));
+            response.setPlayers_teleported_most_in_game(Float.parseFloat(json.getString("players_teleported_most_in_game")));
         if(json.has("players_teleported"))
-            response.setPlayers_teleported(Float.parseFloat(json.getString("float players_teleported")));
+            response.setPlayers_teleported(Float.parseFloat(json.getString("players_teleported")));
         if(json.has("shields_provided"))
-            response.setShields_provided(Float.parseFloat(json.getString("float shields_provided")));
+            response.setShields_provided(Float.parseFloat(json.getString("shields_provided")));
         if(json.has("teleporter_uptime_best_in_game"))
-            response.setTeleporter_uptime_best_in_game(Float.parseFloat(json.getString("float teleporter_uptime_best_in_game")));
+            response.setTeleporter_uptime_best_in_game(Float.parseFloat(json.getString("teleporter_uptime_best_in_game")));
         if(json.has("sentry_turret_kills_most_in_game"))
-            response.setSentry_turret_kills_most_in_game(Float.parseFloat(json.getString("float sentry_turret_kills_most_in_game")));
+            response.setSentry_turret_kills_most_in_game(Float.parseFloat(json.getString("sentry_turret_kills_most_in_game")));
         if(json.has("sentry_turret_kills"))
-            response.setSentry_turret_kills(Float.parseFloat(json.getString("float sentry_turret_kills")));
+            response.setSentry_turret_kills(Float.parseFloat(json.getString("sentry_turret_kills")));
         if(json.has("mechs_called_most_in_game"))
-            response.setMechs_called_most_in_game(Float.parseFloat(json.getString("float mechs_called_most_in_game")));
+            response.setMechs_called_most_in_game(Float.parseFloat(json.getString("mechs_called_most_in_game")));
         if(json.has("mech_deaths"))
-            response.setMech_deaths(Float.parseFloat(json.getString("float mech_deaths")));
+            response.setMech_deaths(Float.parseFloat(json.getString("mech_deaths")));
         if(json.has("mechs_called"))
-            response.setMechs_called(Float.parseFloat(json.getString("float mechs_called")));
+            response.setMechs_called(Float.parseFloat(json.getString("mechs_called")));
         if(json.has("sound_barriers_provided_most_in_game"))
-            response.setSound_barriers_provided_most_in_game(Float.parseFloat(json.getString("float sound_barriers_provided_most_in_game")));
+            response.setSound_barriers_provided_most_in_game(Float.parseFloat(json.getString("sound_barriers_provided_most_in_game")));
         if(json.has("sound_barriers_provided"))
-            response.setSound_barriers_provided(Float.parseFloat(json.getString("float sound_barriers_provided")));
+            response.setSound_barriers_provided(Float.parseFloat(json.getString("sound_barriers_provided")));
         } catch (JSONException e) {
             Log.e("MYAPP", "unexpected JSON exception", e);
         }

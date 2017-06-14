@@ -11,14 +11,18 @@ import com.example.maxime.overwatchstats.GetHeroesStats;
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.adapters.HeroesAdapter;
 import com.example.maxime.overwatchstats.model.HeroItem;
+import com.example.maxime.overwatchstats.model.HeroStats;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
-public class RankedFragment extends Fragment {
+public class RankedFragment extends Fragment implements
+        GetHeroesStats.OnAsyncRequestComplete  {
 
     ListView lv;
     HeroesAdapter adapter;
+    HashMap<String, HeroStats> stats;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,9 +34,15 @@ public class RankedFragment extends Fragment {
         lv = (ListView)     mView.findViewById(R.id.ranked_list_heroes);
         lv.setAdapter(adapter);
 
-        GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, "competitive");
+        GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, "competitive", this);
         test.execute();
 
         return mView;
+    }
+
+    @Override
+    public void asyncResponse(HashMap<String, HeroStats> stats)
+    {
+        this.stats = stats;
     }
 }
