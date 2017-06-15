@@ -1,7 +1,9 @@
 package com.example.maxime.overwatchstats.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.ListView;
 
 import com.example.maxime.overwatchstats.GetHeroesStats;
 import com.example.maxime.overwatchstats.R;
+import com.example.maxime.overwatchstats.activities.HeroesStatsActivity;
 import com.example.maxime.overwatchstats.adapters.HeroesAdapter;
 import com.example.maxime.overwatchstats.model.HeroItem;
 import com.example.maxime.overwatchstats.model.HeroStats;
@@ -18,7 +21,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class QuickplayFragment extends Fragment implements
+public class HeroesTimePlayedFragment extends Fragment implements
         GetHeroesStats.OnAsyncRequestComplete {
 
     ListView lv;
@@ -35,7 +38,10 @@ public class QuickplayFragment extends Fragment implements
         lv = (ListView)     mView.findViewById(R.id.quickplay_list_heroes);
         lv.setAdapter(adapter);
 
-        GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, "quickplay", this);
+        String mode = this.getArguments().getString("mode");
+        Log.v("mode", mode);
+
+        GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, mode, this);
         test.execute();
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -43,16 +49,10 @@ public class QuickplayFragment extends Fragment implements
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 String heroName = ((HeroItem)adapterView.getAdapter().getItem(i)).getName();
-                HeroesStatsFragment heroesStatsFrgm = new HeroesStatsFragment();
-                Bundle args = new Bundle();
 
-                args.putSerializable("stats", stats.get(heroName));
-                heroesStatsFrgm.setArguments(args);
-
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, heroesStatsFrgm)
-                        .addToBackStack("HEROES_STATS")
-                        .commit();
+                Intent intent = new Intent(getContext(), HeroesStatsActivity.class);
+                intent.putExtra("stats", stats.get(heroName));
+                startActivity(intent);
             }
         });
 

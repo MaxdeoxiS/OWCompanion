@@ -1,8 +1,11 @@
 package com.example.maxime.overwatchstats.model;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
 
-public class OverallStats implements Serializable {
+public class OverallStats extends Stats implements Serializable{
     private float transcendence_healing;
     private float defensive_assists_most_in_game;
     private float healing_done;
@@ -605,5 +608,37 @@ public class OverallStats implements Serializable {
 
     public void setEnemies_hacked(float enemies_hacked) {
         this.enemies_hacked = enemies_hacked;
+    }
+
+    @Override
+    public ArrayList<String> getAvailableStats()
+    {
+
+        ArrayList<String> result = new ArrayList<>();
+        Method[] methods = this.getClass().getMethods();
+
+        for (Method method : methods) {
+            String name = method.getName();
+            if (name.startsWith("get") && !name.equalsIgnoreCase("getClass") && !name.equalsIgnoreCase("getAvailableStats")) {
+
+                boolean isAvailable = false;
+
+                try {
+                    isAvailable = !(method.invoke(this)).equals((float)0.0);
+                } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+
+                if (isAvailable) {
+                    try {
+                        result.add(method.getName().substring(3).toLowerCase() + " : " + (String) method.invoke(this).toString());
+                    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        return result;
     }
 }

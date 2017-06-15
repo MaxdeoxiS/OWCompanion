@@ -114,19 +114,23 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
             HeroItem h = new HeroItem(heroName, stats.getString(heroName), heroImg + heroesHexa.get(heroName) + ".png");
             p.add(h);
 
-            JSONObject currentHeroStats = statsHero.getJSONObject(heroName);
+            if(statsHero.has(heroName)) {
 
-            HeroStats heroStats = new HeroStats(heroName);
+                JSONObject currentHeroStats = statsHero.getJSONObject(heroName);
 
-            AverageStats avg = parseAvg(currentHeroStats.getJSONObject("average_stats"));
-            OverallStats ovl = parseOvl(currentHeroStats.getJSONObject("general_stats"));
-            SpecificStats spc= parseSpc(currentHeroStats.getJSONObject("hero_stats"));
 
-            heroStats.setAvg(avg);
-            heroStats.setOvl(ovl);
-            heroStats.setSpc(spc);
+                HeroStats heroStats = new HeroStats(heroName);
 
-            s.put(heroName, heroStats);
+                AverageStats avg = parseAvg(currentHeroStats.getJSONObject("average_stats"));
+                OverallStats ovl = parseOvl(currentHeroStats.getJSONObject("general_stats"));
+                SpecificStats spc= parseSpc(currentHeroStats.getJSONObject("hero_stats"));
+
+                heroStats.setAvg(avg);
+                heroStats.setOvl(ovl);
+                heroStats.setSpc(spc);
+
+                s.put(heroName, heroStats);
+            }
         }
 
         HeroOutput heroOutput = new HeroOutput(p, s);

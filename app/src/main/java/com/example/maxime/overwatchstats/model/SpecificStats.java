@@ -1,8 +1,11 @@
 package com.example.maxime.overwatchstats.model;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
 
-public class SpecificStats implements Serializable {
+public class SpecificStats extends Stats implements Serializable {
     private float charge_kills;
     private float earthshatter_kills;
     private float damage_blocked_most_in_game;
@@ -974,5 +977,37 @@ public class SpecificStats implements Serializable {
 
     public void setSound_barriers_provided(float sound_barriers_provided) {
         this.sound_barriers_provided = sound_barriers_provided;
+    }
+
+    @Override
+    public ArrayList<String> getAvailableStats()
+    {
+
+        ArrayList<String> result = new ArrayList<>();
+        Method[] methods = this.getClass().getMethods();
+
+        for (Method method : methods) {
+            String name = method.getName();
+            if (name.startsWith("get") && !name.equalsIgnoreCase("getClass") && !name.equalsIgnoreCase("getAvailableStats")) {
+
+                boolean isAvailable = false;
+
+                try {
+                    isAvailable = !(method.invoke(this)).equals((float)0.0);
+                } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+
+                if (isAvailable) {
+                    try {
+                        result.add(method.getName().substring(3).toLowerCase() + " : " + (String) method.invoke(this).toString());
+                    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        return result;
     }
 }
