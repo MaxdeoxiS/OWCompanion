@@ -47,11 +47,17 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+
+
         final Button button_qp = (Button) mView.findViewById(R.id.profile_button_quickplay);
         button_qp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("mode", "quickplay");
+                HeroesTimePlayedFragment hfrgm = new HeroesTimePlayedFragment();
+                hfrgm.setArguments(args);
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new QuickplayFragment())
+                        .replace(R.id.container, hfrgm)
                         .addToBackStack("QUICKPLAY")
                         .commit();
             }
@@ -60,8 +66,12 @@ public class ProfileFragment extends Fragment {
         final Button button_rk = (Button) mView.findViewById(R.id.profile_button_ranked);
         button_rk.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("mode", "competitive");
+                HeroesTimePlayedFragment hfrgm = new HeroesTimePlayedFragment();
+                hfrgm.setArguments(args);
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new RankedFragment())
+                        .replace(R.id.container, hfrgm)
                         .addToBackStack("RANKED")
                         .commit();
             }

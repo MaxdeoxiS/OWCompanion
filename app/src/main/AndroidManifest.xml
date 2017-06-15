@@ -48,6 +48,9 @@
         <activity
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".activities.HeroesStatsActivity"
+            android:label="@string/title_activity_maps" />
         <activity android:name=".activities.SearchPlayerActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
