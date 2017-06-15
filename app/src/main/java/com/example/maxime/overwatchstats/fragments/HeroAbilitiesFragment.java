@@ -44,6 +44,9 @@ public class HeroAbilitiesFragment extends Fragment{
                  final TextView rowTextView = new TextView(this.getContext());
                  final TextView rowTextView2 = new TextView(this.getContext());
 
+                 rowTextView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                 rowTextView2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
                  rowTextView.setText(attr.getKey());
                  rowTextView2.setText(attr.getValue());
 
