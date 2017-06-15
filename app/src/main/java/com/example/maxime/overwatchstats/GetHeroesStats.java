@@ -1,5 +1,6 @@
 package com.example.maxime.overwatchstats;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -15,6 +16,7 @@ import com.example.maxime.overwatchstats.model.HeroOutput;
 import com.example.maxime.overwatchstats.model.HeroStats;
 import com.example.maxime.overwatchstats.model.OverallStats;
 import com.example.maxime.overwatchstats.model.SpecificStats;
+import com.example.maxime.overwatchstats.tools.Methods;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,6 +43,8 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
     // Gamemode. Either quickplay or competitive
     private String mode;
     private OnAsyncRequestComplete caller;
+
+    private ProgressDialog progressDialog;
 
     private static final Map<String, String> heroesHexa = createMap();
 
@@ -664,6 +668,13 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
     }
 
     @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        progressDialog = Methods.setUpProgressDialog(context, "Chargement des héros...", false);
+        progressDialog.show();
+    }
+
+    @Override
     protected HeroOutput doInBackground(Void... Params) {
 
         HttpURLConnection urlConnection = null;
@@ -759,6 +770,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
             adapter.notifyDataSetChanged();
 
             caller.asyncResponse(heroesStats);
+            progressDialog.dismiss();
         }
     }
 }

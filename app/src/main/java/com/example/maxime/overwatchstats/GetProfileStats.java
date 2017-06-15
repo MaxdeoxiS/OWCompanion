@@ -1,5 +1,6 @@
 package com.example.maxime.overwatchstats;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.maxime.overwatchstats.model.Profile;
+import com.example.maxime.overwatchstats.tools.Methods;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -40,6 +42,8 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
     private TextView profile_text;
     private TextView profile_text_level;
     private TextView profile_rank;
+
+    ProgressDialog progressDialog;
 
     private String BATTLE_TAG;
 
@@ -192,6 +196,13 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
     }
 
     @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        progressDialog = Methods.setUpProgressDialog(context, "Chargement du profil...", false);
+        progressDialog.show();
+    }
+
+    @Override
     protected void onPostExecute(Object result) {
         Profile p = (Profile)result;
         if (result != null) {
@@ -211,6 +222,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
                 button_add_friend.setVisibility(View.VISIBLE);
             if(null != profile_rank_img)
                 Picasso.with(context).load(p.getImg_rank()).into(profile_rank_img);
+            progressDialog.dismiss();
         }
     }
 
