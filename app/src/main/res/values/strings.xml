@@ -13,6 +13,7 @@
     <string name="menu_profile">Mon Profil</string>
     <string name="menu_favorites">Mes amis</string>
     <string name="menu_place">Carte Interactive</string>
+    <string name="menu_heroes">Héros</string>
     <string name="no_friends">Vous n\'avez aucun ami !</string>
     <string name="label_click_for_more">Cliquez pour en savoir plus</string>
 

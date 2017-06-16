@@ -18,6 +18,7 @@ import android.view.MenuItem;
 
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.fragments.FriendsFragment;
+import com.example.maxime.overwatchstats.fragments.HeroesFragment;
 import com.example.maxime.overwatchstats.fragments.MainFragment;
 import com.example.maxime.overwatchstats.fragments.NewsFragment;
 import com.example.maxime.overwatchstats.fragments.ProfileFragment;
@@ -119,7 +120,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .replace(R.id.container, new FriendsFragment())
                     .addToBackStack("FRIENDS")
                     .commit();
-        } else if (id == R.id.nav_map) {
+        } else if (id == R.id.nav_heroes) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new HeroesFragment())
+                    .addToBackStack("HEROES_MAIN")
+                    .commit();
+        } else if (id == R.id.nav_map) { //TODO remove Map from menu and add it to Heroes section
             Intent intent = new Intent(this, MapsActivity.class);
             Heroes heroes = new Heroes(this.getResources().openRawResource(R.raw.heroes));
             intent.putExtra("HEROES", heroes);

@@ -2,7 +2,6 @@ package com.example.maxime.overwatchstats.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,8 +46,6 @@ public class HeroesAdapter extends ArrayAdapter<HeroItem>{
             maxWidth = width;
 
         heroTimeBar.setLayoutParams(new LinearLayout.LayoutParams(calculateWidth(maxWidth, width, defWidth), LinearLayout.LayoutParams.MATCH_PARENT));
-
-        Log.v("tesssst", ""+ width);
 
         String nameCleaned = hero.name.toLowerCase().replaceAll(" |:", "").replaceAll("ú", "u").replaceAll("ö", "o");
 

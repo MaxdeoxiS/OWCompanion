@@ -15,10 +15,13 @@ public class Heroes implements Serializable {
     private List<Hero> heroes;
 
     public Heroes(InputStream in) {
+
         HeroXmlParser parser = new HeroXmlParser();
 
         try {
+
             this.heroes = parser.parse(in);
+
         } catch (XmlPullParserException x) {
             Log.e("error", "Parser cant parse this file");
         } catch (java.io.IOException io) {
@@ -48,8 +51,9 @@ public class Heroes implements Serializable {
 
     public Hero findHeroByName(String name) {
         Hero hero = null;
+
         for (Hero h : this.getHeroes()) {
-            if(h.getNickname().toLowerCase().equals(name)) {
+            if(h.getNickname().toLowerCase().equals(name.toLowerCase())) {
                 hero = h;
                 break;
             }
