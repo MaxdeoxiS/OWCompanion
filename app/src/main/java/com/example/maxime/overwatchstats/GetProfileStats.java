@@ -217,7 +217,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
             if(null != profile_text_level)
                 (profile_text_level).setText(p.getLevel());
             if(null != profile_rank)
-                (profile_rank).setText(p.getRank() + p.getRanked_winrate());
+                (profile_rank).setText(p.getRank());
             if(null != button_add_friend)
                 button_add_friend.setVisibility(View.VISIBLE);
             if(null != profile_rank_img)
