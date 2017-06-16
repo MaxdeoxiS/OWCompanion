@@ -16,7 +16,7 @@ import com.example.maxime.overwatchstats.model.Hero;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HeroViewHolder> {
+public class HeroesDataAdapter extends RecyclerView.Adapter<HeroesDataAdapter.HeroViewHolder> {
 
     public static class HeroViewHolder extends RecyclerView.ViewHolder {
 
@@ -49,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HeroViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Hero> myDataset, Context c) {
+    public HeroesDataAdapter(List<Hero> myDataset, Context c) {
         heroes = myDataset;
         this.c = c;
     }
