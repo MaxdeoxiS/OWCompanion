@@ -22,7 +22,6 @@ import com.example.maxime.overwatchstats.fragments.HeroesFragment;
 import com.example.maxime.overwatchstats.fragments.MainFragment;
 import com.example.maxime.overwatchstats.fragments.NewsFragment;
 import com.example.maxime.overwatchstats.fragments.ProfileFragment;
-import com.example.maxime.overwatchstats.model.Heroes;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -125,11 +124,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .replace(R.id.container, new HeroesFragment())
                     .addToBackStack("HEROES_MAIN")
                     .commit();
-        } else if (id == R.id.nav_map) { //TODO remove Map from menu and add it to Heroes section
-            Intent intent = new Intent(this, MapsActivity.class);
-            Heroes heroes = new Heroes(this.getResources().openRawResource(R.raw.heroes));
-            intent.putExtra("HEROES", heroes);
-            startActivity(intent);
         } else if (id == R.id.nav_manage) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);

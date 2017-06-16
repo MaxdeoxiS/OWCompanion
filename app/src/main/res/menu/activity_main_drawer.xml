@@ -19,10 +19,6 @@
             android:icon="@drawable/ic_star"
             android:title="@string/menu_heroes" />
         <item
-            android:id="@+id/nav_map"
-            android:icon="@drawable/ic_place"
-            android:title="@string/menu_place" />
-        <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_settings" />

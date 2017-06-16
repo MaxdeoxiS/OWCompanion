@@ -1,5 +1,6 @@
 package com.example.maxime.overwatchstats.fragments;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -13,9 +14,11 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.maxime.overwatchstats.R;
-import com.example.maxime.overwatchstats.adapters.MyAdapter;
+import com.example.maxime.overwatchstats.activities.MapsActivity;
+import com.example.maxime.overwatchstats.adapters.HeroesDataAdapter;
 import com.example.maxime.overwatchstats.model.Heroes;
 
 public class HeroesFragment extends Fragment {
@@ -39,7 +42,7 @@ public class HeroesFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        MyAdapter mAdapter = new MyAdapter(heroes.getHeroes(), this.getContext());
+        HeroesDataAdapter mAdapter = new HeroesDataAdapter(heroes.getHeroes(), this.getContext());
         mRecyclerView.setAdapter(mAdapter);
 
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -143,8 +146,16 @@ public class HeroesFragment extends Fragment {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
+        Button buttonMap = (Button) mView.findViewById(R.id.button_map);
 
-
+        buttonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), MapsActivity.class);
+                intent.putExtra("HEROES", heroes);
+                startActivity(intent);
+            }
+        });
 
         return mView;
     }
