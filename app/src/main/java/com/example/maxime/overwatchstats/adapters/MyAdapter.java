@@ -1,5 +1,8 @@
 package com.example.maxime.overwatchstats.adapters;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,6 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HeroViewHolder> {
         }
     }
     private List<Hero> heroes;
+    Context c;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -45,8 +49,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HeroViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Hero> myDataset) {
+    public MyAdapter(List<Hero> myDataset, Context c) {
         heroes = myDataset;
+        this.c = c;
     }
 
     // Create new views (invoked by the layout manager)
@@ -60,6 +65,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HeroViewHolder> {
 
     @Override
     public void onBindViewHolder(HeroViewHolder heroViewHolder, int i) {
+        Bitmap iconHero = BitmapFactory.decodeResource(
+                c.getResources(), c.getResources().getIdentifier(heroes.get(i).getNickname().toLowerCase(), "drawable", c.getPackageName()));
+
+        heroViewHolder.personPhoto.setImageBitmap(Bitmap.createScaledBitmap(iconHero, 100, 100, false));
         heroViewHolder.personName.setText(heroes.get(i).getNickname());
         heroViewHolder.personAge.setText(heroes.get(i).getFirstName() + " " + heroes.get(i).getLastName());
     }
