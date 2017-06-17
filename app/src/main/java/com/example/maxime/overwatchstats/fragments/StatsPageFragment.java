@@ -8,10 +8,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.maxime.overwatchstats.R;
+import com.example.maxime.overwatchstats.adapters.StatsAdapter;
 import com.example.maxime.overwatchstats.model.HeroStats;
 import com.example.maxime.overwatchstats.model.Stats;
 
@@ -66,8 +66,8 @@ public class StatsPageFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_page, container, false);
 
 
-        ArrayAdapter<String> itemsAdapter =
-                new ArrayAdapter<String>(this.getContext(), R.layout.stats_item, stats);
+        StatsAdapter itemsAdapter =
+                new StatsAdapter(this.getContext(), stats);
 
         ListView list = (ListView) view.findViewById(R.id.listview_stats);
 

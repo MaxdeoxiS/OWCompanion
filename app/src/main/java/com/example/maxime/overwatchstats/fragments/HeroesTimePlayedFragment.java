@@ -56,7 +56,7 @@ public class HeroesTimePlayedFragment extends Fragment implements
         wonGames.setText(winStats.get(0));
         lostGames.setText(winStats.get(1));
         winRate.setText(winStats.get(2) + "%");
-        
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

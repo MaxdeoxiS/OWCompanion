@@ -1000,7 +1000,7 @@ public class SpecificStats extends Stats implements Serializable {
 
                 if (isAvailable) {
                     try {
-                        result.add(method.getName().substring(3).toLowerCase() + " : " + (String) method.invoke(this).toString());
+                        result.add(parseStatName(method.getName().substring(3).toLowerCase()) + ":" + (String) method.invoke(this).toString());
                     } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                         e.printStackTrace();
                     }
