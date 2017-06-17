@@ -11,10 +11,14 @@ import android.widget.Toast;
 
 import com.example.maxime.overwatchstats.GetProfileStats;
 import com.example.maxime.overwatchstats.R;
+import com.example.maxime.overwatchstats.fragments.FriendsFragment;
 import com.example.maxime.overwatchstats.model.Friend;
 import com.example.maxime.overwatchstats.model.FriendDAO;
 
-public class SearchPlayerActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class SearchPlayerActivity extends AppCompatActivity implements
+        GetProfileStats.OnAsyncRequestComplete{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +39,16 @@ public class SearchPlayerActivity extends AppCompatActivity {
 
             //TODO add a method to check if player exists or not
 
-            GetProfileStats profile = new GetProfileStats(this.getWindow().getDecorView().findViewById(android.R.id.content), this, query);
+            GetProfileStats profile = new GetProfileStats(this.getWindow().getDecorView().findViewById(android.R.id.content), this, query, this);
             profile.execute();
+
+            Button button = (Button) findViewById(R.id.profile_button_achievements);
+            Button button2 = (Button) findViewById(R.id.profile_button_quickplay);
+            Button button3 = (Button) findViewById(R.id.profile_button_ranked);
+
+            button.setEnabled(false);
+            button2.setEnabled(false);
+            button3.setEnabled(false);
 
             final Button button_add_friend = (Button) findViewById(R.id.player_searched_button);
             button_add_friend.setText("+");
@@ -52,9 +64,20 @@ public class SearchPlayerActivity extends AppCompatActivity {
 
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
+                            if (insert_success) {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.container_search, new FriendsFragment())
+                                        .addToBackStack("FRIENDS")
+                                        .commit();
+                            }
                         }
                     });
         }
+    }
+
+    @Override
+    public void asyncResponse(ArrayList<String> stats)
+    {
     }
 
 }

@@ -23,6 +23,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
@@ -45,9 +46,15 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
     ProgressDialog progressDialog;
 
+    private OnAsyncRequestComplete caller;
+
     private String BATTLE_TAG;
 
-    public GetProfileStats(View v, Context c, String b)
+    public interface OnAsyncRequestComplete {
+        public void asyncResponse(ArrayList<String> response);
+    }
+
+    public GetProfileStats(View v, Context c, String b, OnAsyncRequestComplete caller)
     {
         myView = v;
         context = c;
@@ -60,6 +67,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         profile_rank = (TextView) myView.findViewById(R.id.profile_rank);
         button_add_friend = (Button) myView.findViewById(R.id.player_searched_button);
         battleTag = b;
+        this.caller = caller;
     }
 
     private Object getStatsDataFromJson(String statsAsString) throws JSONException {
@@ -76,7 +84,8 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         p.setImg_lvl(stats.getString("rank_image"));
         if(!stats.getString("prestige").equals("0"))
             p.setImg_stars(stats.getString("rank_image").substring(0, stats.getString("rank_image").length() - 10) + "Rank.png");
-        if (!stats.getString("comprank").equals("")) {
+        if (!stats.getString("comprank").equals("null")) {
+            Log.v("COMPRANK", stats.getString("comprank"));
             p.setRank(stats.getString("comprank"));
             int rank = Integer.parseInt(stats.getString("comprank"));
             int i;
@@ -206,6 +215,14 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
     protected void onPostExecute(Object result) {
         Profile p = (Profile)result;
         if (result != null) {
+            ArrayList<String> winStats = new ArrayList<>();
+            winStats.add(p.getQp_wins());
+            winStats.add(p.getQp_losses());
+            winStats.add(p.getQp_winrate());
+            winStats.add(p.getRanked_wins());
+            winStats.add(p.getRanked_losses());
+            winStats.add(p.getRanked_winrate());
+
             if(null != profile_pic)
                 Picasso.with(context).load(p.getAvatar()).into(profile_pic);
             if(null != profile_level)
@@ -222,6 +239,8 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
                 button_add_friend.setVisibility(View.VISIBLE);
             if(null != profile_rank_img)
                 Picasso.with(context).load(p.getImg_rank()).into(profile_rank_img);
+
+            caller.asyncResponse(winStats);
             progressDialog.dismiss();
         }
     }

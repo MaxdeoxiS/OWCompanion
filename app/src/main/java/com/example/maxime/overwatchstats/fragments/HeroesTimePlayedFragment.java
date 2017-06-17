@@ -3,12 +3,12 @@ package com.example.maxime.overwatchstats.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.maxime.overwatchstats.GetHeroesStats;
 import com.example.maxime.overwatchstats.R;
@@ -39,11 +39,24 @@ public class HeroesTimePlayedFragment extends Fragment implements
         lv.setAdapter(adapter);
 
         String mode = this.getArguments().getString("mode");
-        Log.v("mode", mode);
+        ArrayList<String> winStats = (ArrayList<String>) this.getArguments().getSerializable("winStats");
+
+        if (mode.equals("ranked")) {
+            winStats = (ArrayList<String>)winStats.subList(3, 6);
+        }
+
+        TextView wonGames = (TextView) mView.findViewById(R.id.wonGames);
+        TextView lostGames = (TextView) mView.findViewById(R.id.lostGames);
+        TextView winRate = (TextView) mView.findViewById(R.id.winRate);
+
 
         GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, mode, this);
         test.execute();
 
+        wonGames.setText(winStats.get(0));
+        lostGames.setText(winStats.get(1));
+        winRate.setText(winStats.get(2) + "%");
+        
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

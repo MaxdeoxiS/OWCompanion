@@ -87,7 +87,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
         this.caller = caller;
     }
 
-    public  interface OnAsyncRequestComplete {
+    public interface OnAsyncRequestComplete {
         public void asyncResponse(HashMap<String, HeroStats> response);
     }
 

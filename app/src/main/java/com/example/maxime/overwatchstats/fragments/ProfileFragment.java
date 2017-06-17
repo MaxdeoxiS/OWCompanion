@@ -16,7 +16,13 @@ import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.activities.AchievementsActivity;
 import com.example.maxime.overwatchstats.model.FriendDAO;
 
-public class ProfileFragment extends Fragment {
+import java.util.ArrayList;
+
+public class ProfileFragment extends Fragment implements
+        GetProfileStats.OnAsyncRequestComplete{
+
+
+    ArrayList<String> stats;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,7 +33,7 @@ public class ProfileFragment extends Fragment {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
         final String battleTag = preferences.getString("currentBattleTag", "");
 
-        GetProfileStats profile = new GetProfileStats(mView, getActivity(), battleTag);
+        GetProfileStats profile = new GetProfileStats(mView, getActivity(), battleTag, this);
         profile.execute();
 
         final Button button_remove_friend = (Button) mView.findViewById(R.id.player_searched_button);
@@ -44,6 +50,13 @@ public class ProfileFragment extends Fragment {
 
                 Toast toast = Toast.makeText(getContext(), text, duration);
                 toast.show();
+
+                if (insert_remove) {
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.container, new FriendsFragment())
+                            .addToBackStack("FRIENDS")
+                            .commit();
+                }
             }
         });
 
@@ -54,6 +67,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Bundle args = new Bundle();
                 args.putString("mode", "quickplay");
+                args.putSerializable("winStats", stats);
                 HeroesTimePlayedFragment hfrgm = new HeroesTimePlayedFragment();
                 hfrgm.setArguments(args);
                 getActivity().getSupportFragmentManager().beginTransaction()
@@ -86,6 +100,12 @@ public class ProfileFragment extends Fragment {
         });
 
         return mView;
+    }
+
+    @Override
+    public void asyncResponse(ArrayList<String> stats)
+    {
+        this.stats = stats;
     }
 
 }
