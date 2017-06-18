@@ -1,6 +1,7 @@
 package com.example.maxime.overwatchstats.activities;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -32,5 +33,9 @@ public class HeroesStatsActivity extends AppCompatActivity{
         pager.setAdapter(adapter);
         tabs.setupWithViewPager(pager);
 
+    }
+
+    protected String parseStatName(String statName, Context context) {
+        return context.getString(context.getResources().getIdentifier(statName, "string", context.getPackageName()));
     }
 }

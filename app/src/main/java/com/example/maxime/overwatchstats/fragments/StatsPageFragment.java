@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,9 +44,6 @@ public class StatsPageFragment extends Fragment{
 
         StatsPageFragment fragment = new StatsPageFragment();
         fragment.setArguments(args);
-        Log.v("page", page+"");
-
-        Log.v("Hero", stats.getHeroName());
 
         return fragment;
     }

@@ -123,7 +123,7 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
                 JSONObject currentHeroStats = statsHero.getJSONObject(heroName);
 
 
-                HeroStats heroStats = new HeroStats(heroName);
+                HeroStats heroStats = new HeroStats(heroName, context);
 
                 AverageStats avg = parseAvg(currentHeroStats.getJSONObject("average_stats"));
                 OverallStats ovl = parseOvl(currentHeroStats.getJSONObject("general_stats"));

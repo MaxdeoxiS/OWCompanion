@@ -1,5 +1,7 @@
 package com.example.maxime.overwatchstats.model;
 
+import android.content.Context;
+
 import java.io.Serializable;
 
 public class HeroStats implements Serializable{
@@ -9,7 +11,7 @@ public class HeroStats implements Serializable{
 
     private String heroName;
 
-    public HeroStats(String hero)
+    public HeroStats(String hero, Context c)
     {
         avg = new AverageStats();
         ovl = new OverallStats();

@@ -49,7 +49,7 @@ public class StatsAdapter extends ArrayAdapter<String> {
 
 
         String[] tmp = getItem(position).split(":");
-        String label = tmp[0];
+        String label = parseStatName(tmp[0], getContext());
         String stat = tmp[1];
 
         if (getItemViewType(position) == 0) {
@@ -75,5 +75,9 @@ public class StatsAdapter extends ArrayAdapter<String> {
         statView.setText(label + " : " + stat);
 
         return convertView;
+    }
+
+    protected String parseStatName(String statName, Context context) {
+        return context.getString(context.getResources().getIdentifier(statName, "string", context.getPackageName()));
     }
 }
