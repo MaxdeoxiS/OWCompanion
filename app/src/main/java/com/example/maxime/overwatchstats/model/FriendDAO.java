@@ -64,7 +64,7 @@ public class FriendDAO extends DAOBase {
     }
 
     public Friend search(String username) {
-        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + USERNAME + " = ? and " +KEY + " != ?" , new String[]{username, "1"});
+        Cursor c = mDb.rawQuery("select " + USERNAME + " from " + TABLE_NAME + " where " + USERNAME + " = ? or " + BATTLETAG + " = ? and " + KEY + " != ?" , new String[]{username, username, "1"});
         Friend f = null;
 
         if (c.moveToFirst()) {
