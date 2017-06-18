@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.maxime.overwatchstats.GetProfileStats;
 import com.example.maxime.overwatchstats.R;
-import com.example.maxime.overwatchstats.fragments.FriendsFragment;
 import com.example.maxime.overwatchstats.model.Friend;
 import com.example.maxime.overwatchstats.model.FriendDAO;
 
@@ -64,12 +63,6 @@ public class SearchPlayerActivity extends AppCompatActivity implements
 
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
-                            if (insert_success) {
-                                getSupportFragmentManager().beginTransaction()
-                                        .replace(R.id.container_search, new FriendsFragment())
-                                        .addToBackStack("FRIENDS")
-                                        .commit();
-                            }
                         }
                     });
         }
