@@ -1,6 +1,5 @@
 package com.example.maxime.overwatchstats.fragments;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 
 import com.example.maxime.overwatchstats.GetProfileStats;
 import com.example.maxime.overwatchstats.R;
-import com.example.maxime.overwatchstats.activities.AchievementsActivity;
 import com.example.maxime.overwatchstats.model.FriendDAO;
 import com.example.maxime.overwatchstats.model.Profile;
 
@@ -105,8 +103,11 @@ public class ProfileFragment extends Fragment implements
         final Button button_ac = (Button) mView.findViewById(R.id.profile_button_achievements);
         button_ac.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), AchievementsActivity.class);
-                startActivity(intent);
+                AchievementsFragment hfrgm = new AchievementsFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, hfrgm)
+                        .addToBackStack("ACHIEVEMENTS")
+                        .commit();
             }
         });
 
