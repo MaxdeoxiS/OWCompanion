@@ -82,6 +82,7 @@ public class ProfileFragment extends Fragment implements
             public void onClick(View v) {
                 Bundle args = new Bundle();
                 args.putString("mode", "competitive");
+                args.putSerializable("winStats", stats);
                 HeroesTimePlayedFragment hfrgm = new HeroesTimePlayedFragment();
                 hfrgm.setArguments(args);
                 getActivity().getSupportFragmentManager().beginTransaction()
