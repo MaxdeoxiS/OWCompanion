@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +37,7 @@ public class FriendsFragment extends Fragment {
             TextView t = (TextView)  mView.findViewById(R.id.label_no_friends);
             t.setVisibility(View.INVISIBLE);
             adapter = new FriendsAdapter(this.getActivity(), friends);
-            Log.v("adapter:", adapter.getCount()+"");
+
             ListView lv = (ListView)     mView.findViewById(R.id.listview_friends);
             lv.setAdapter(adapter);
 

@@ -51,7 +51,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
     private String BATTLE_TAG;
 
     public interface OnAsyncRequestComplete {
-        public void asyncResponse(ArrayList<String> response);
+        public void asyncResponse(ArrayList<Object> response);
     }
 
     public GetProfileStats(View v, Context c, String b, OnAsyncRequestComplete caller)
@@ -85,7 +85,7 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
         if(!stats.getString("prestige").equals("0"))
             p.setImg_stars(stats.getString("rank_image").substring(0, stats.getString("rank_image").length() - 10) + "Rank.png");
         if (!stats.getString("comprank").equals("null")) {
-            Log.v("COMPRANK", stats.getString("comprank"));
+
             p.setRank(stats.getString("comprank"));
             int rank = Integer.parseInt(stats.getString("comprank"));
             int i;
@@ -213,36 +213,43 @@ public class GetProfileStats extends AsyncTask<Void, Void, Object> {
 
     @Override
     protected void onPostExecute(Object result) {
-        Profile p = (Profile)result;
-        if (result != null) {
-            ArrayList<String> winStats = new ArrayList<>();
-            winStats.add(p.getQp_wins());
-            winStats.add(p.getQp_losses());
-            winStats.add(p.getQp_winrate());
-            winStats.add(p.getRanked_wins());
-            winStats.add(p.getRanked_losses());
-            winStats.add(p.getRanked_winrate());
-
-            if(null != profile_pic)
-                Picasso.with(context).load(p.getAvatar()).into(profile_pic);
-            if(null != profile_level)
-                Picasso.with(context).load(p.getImg_lvl()).into(profile_level);
-            if(null != profile_stars)
-                Picasso.with(context).load(p.getImg_stars()).into(profile_stars);
-            if(null != profile_text)
-                (profile_text).setText(p.getUsername());
-            if(null != profile_text_level)
-                (profile_text_level).setText(p.getLevel());
-            if(null != profile_rank)
-                (profile_rank).setText(p.getRank());
-            if(null != button_add_friend)
-                button_add_friend.setVisibility(View.VISIBLE);
-            if(null != profile_rank_img)
-                Picasso.with(context).load(p.getImg_rank()).into(profile_rank_img);
-
-            caller.asyncResponse(winStats);
+        if(result != null) {
+            populateViews(result);
             progressDialog.dismiss();
         }
+    }
+
+    public void populateViews(Object result){
+        Profile p = (Profile)result;
+        ArrayList<String> winStats = new ArrayList<>();
+        winStats.add(p.getQp_wins());
+        winStats.add(p.getQp_losses());
+        winStats.add(p.getQp_winrate());
+        winStats.add(p.getRanked_wins());
+        winStats.add(p.getRanked_losses());
+        winStats.add(p.getRanked_winrate());
+
+        ArrayList<Object> responses = new ArrayList<>();
+        responses.add(winStats);
+
+        if(null != profile_pic)
+            Picasso.with(context).load(p.getAvatar()).into(profile_pic);
+        if(null != profile_level)
+            Picasso.with(context).load(p.getImg_lvl()).into(profile_level);
+        if(null != profile_stars)
+            Picasso.with(context).load(p.getImg_stars()).into(profile_stars);
+        if(null != profile_text)
+            (profile_text).setText(p.getUsername());
+        if(null != profile_text_level)
+            (profile_text_level).setText(p.getLevel());
+        if(null != profile_rank)
+            (profile_rank).setText(p.getRank());
+        if(null != button_add_friend)
+            button_add_friend.setVisibility(View.VISIBLE);
+        if(null != profile_rank_img)
+            Picasso.with(context).load(p.getImg_rank()).into(profile_rank_img);
+        responses.add(result);
+        caller.asyncResponse(responses);
     }
 
 }

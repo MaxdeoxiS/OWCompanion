@@ -15,14 +15,16 @@ import com.example.maxime.overwatchstats.GetProfileStats;
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.activities.AchievementsActivity;
 import com.example.maxime.overwatchstats.model.FriendDAO;
+import com.example.maxime.overwatchstats.model.Profile;
 
 import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment implements
         GetProfileStats.OnAsyncRequestComplete{
 
-
     ArrayList<String> stats;
+    public Boolean initialized = false;
+    Profile data;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,7 +36,15 @@ public class ProfileFragment extends Fragment implements
         final String battleTag = preferences.getString("currentBattleTag", "");
 
         GetProfileStats profile = new GetProfileStats(mView, getActivity(), battleTag, this);
-        profile.execute();
+
+        if(!initialized) {
+            initialized = true;
+            profile.execute();
+        }
+        else {
+            profile.populateViews(data);
+        }
+
 
         final Button button_remove_friend = (Button) mView.findViewById(R.id.player_searched_button);
 
@@ -104,9 +114,10 @@ public class ProfileFragment extends Fragment implements
     }
 
     @Override
-    public void asyncResponse(ArrayList<String> stats)
+    public void asyncResponse(ArrayList<Object> stats)
     {
-        this.stats = stats;
+        this.stats = (ArrayList<String>) stats.get(0);
+        this.data = (Profile) stats.get(1);
     }
 
 }

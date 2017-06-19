@@ -69,7 +69,7 @@ public class SearchPlayerActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void asyncResponse(ArrayList<String> stats)
+    public void asyncResponse(ArrayList<Object> stats)
     {
     }
 
