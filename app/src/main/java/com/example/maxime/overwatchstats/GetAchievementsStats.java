@@ -6,8 +6,9 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 
-import com.example.maxime.overwatchstats.model.Profile;
+import com.example.maxime.overwatchstats.model.Achievement;
 import com.example.maxime.overwatchstats.tools.Methods;
 
 import org.json.JSONException;
@@ -19,40 +20,60 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-public class GetAchievementsStats extends AsyncTask<Void, Void, Object> {
+public class GetAchievementsStats extends AsyncTask<Void, Void, ArrayList<Achievement>> {
 
     private final String LOG_TAG = GetAchievementsStats.class.getSimpleName();
     private View myView;
     private Context context;
 
-    String battleTag;
+    private String battleTag;
 
-    ProgressDialog progressDialog;
+    ArrayAdapter<String> adapter;
+
+    private ProgressDialog progressDialog;
 
     private String BATTLE_TAG;
 
 
-    public GetAchievementsStats(View v, Context c, String b)
+    public GetAchievementsStats(View v, Context c, String b, ArrayAdapter a)
     {
         myView = v;
         context = c;
         battleTag = b;
+        adapter = a;
     }
 
-    private Object getStatsDataFromJson(String statsAsString) throws JSONException {
+    private ArrayList<Achievement> getStatsDataFromJson(String statsAsString) throws JSONException {
 
-        JSONObject json = new JSONObject(statsAsString);
+        JSONObject jsonObject = new JSONObject(statsAsString);
 
-        Profile p = new Profile();
+        ArrayList<Achievement> p = new ArrayList<>();
 
+        JSONObject achievements = jsonObject.getJSONObject("eu").getJSONObject("achievements");
 
+        for (Achievement.Type t : Achievement.Type.values()) {
+
+            JSONObject currentAchievements = achievements.getJSONObject(t.toString());
+            Iterator<String> names;
+
+            for (names = currentAchievements.keys(); names.hasNext();) {
+                Achievement a = new Achievement();
+                a.setType(t);
+                String achvName = names.next();
+                a.setTitle(achvName);
+                a.setAchieved(currentAchievements.getBoolean(achvName));
+                p.add(a);
+            }
+        }
 
         return p;
     }
 
     @Override
-    protected Object doInBackground(Void... Params) {
+    protected ArrayList<Achievement> doInBackground(Void... Params) {
 
         // These two need to be declared outside the try/catch
         // so that they can be closed in the finally block.
@@ -144,9 +165,14 @@ public class GetAchievementsStats extends AsyncTask<Void, Void, Object> {
     }
 
     @Override
-    protected void onPostExecute(Object result) {
+    protected void onPostExecute(ArrayList<Achievement> result) {
         if(result != null) {
-            Profile p = (Profile)result;
+            ArrayList<String> achievementsAsString = new ArrayList<>();
+            for(Achievement r : result) {
+                achievementsAsString.add(r.getTitle());
+            }
+            adapter.addAll(achievementsAsString);
+            adapter.notifyDataSetChanged();
 
             progressDialog.dismiss();
         }

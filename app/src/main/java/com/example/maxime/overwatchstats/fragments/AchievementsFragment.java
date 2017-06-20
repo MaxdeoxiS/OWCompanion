@@ -7,11 +7,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.maxime.overwatchstats.GetAchievementsStats;
 import com.example.maxime.overwatchstats.R;
 
 public class AchievementsFragment extends Fragment {
+
+    ArrayAdapter adapter;
+    ListView lv;
 
 
     @Override
@@ -24,8 +29,12 @@ public class AchievementsFragment extends Fragment {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
         final String battleTag = preferences.getString("currentBattleTag", "");
 
-        GetAchievementsStats achievements = new GetAchievementsStats(mView, getActivity(), battleTag);
-        //achievements.execute();
+        adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.achievement_item);
+        lv = (ListView)     mView.findViewById(R.id.achievements_list);
+        lv.setAdapter(adapter);
+
+        GetAchievementsStats achievements = new GetAchievementsStats(mView, getActivity(), battleTag, adapter);
+        achievements.execute();
 
         return mView;
     }
