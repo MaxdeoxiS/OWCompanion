@@ -41,7 +41,7 @@ public class HeroesTimePlayedFragment extends Fragment implements
         String mode = this.getArguments().getString("mode");
         ArrayList<String> winStats = (ArrayList<String>) this.getArguments().getSerializable("winStats");
 
-        if (mode.equals("ranked")) {
+        if (mode.equals("competitive")) {
             winStats = (ArrayList<String>)winStats.subList(3, 6);
         }
 
