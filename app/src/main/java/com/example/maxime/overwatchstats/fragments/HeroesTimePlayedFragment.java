@@ -42,7 +42,7 @@ public class HeroesTimePlayedFragment extends Fragment implements
         ArrayList<String> winStats = (ArrayList<String>) this.getArguments().getSerializable("winStats");
 
         if (mode.equals("competitive")) {
-            winStats = (ArrayList<String>)winStats.subList(3, 6);
+            winStats = new ArrayList<String>(winStats.subList(3, 6));
         }
 
         TextView wonGames = (TextView) mView.findViewById(R.id.wonGames);
