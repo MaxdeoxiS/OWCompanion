@@ -63,13 +63,18 @@ public class GetAchievementsStats extends AsyncTask<Void, Void, ArrayList<Achiev
                 Achievement a = new Achievement();
                 a.setType(t);
                 String achvName = names.next();
-                a.setTitle(achvName);
+                a.setTitle(parseAchievement(achvName, false));
                 a.setAchieved(currentAchievements.getBoolean(achvName));
+                a.setDescription(parseAchievement(achvName, true));
                 p.add(a);
             }
         }
 
         return p;
+    }
+
+    private String parseAchievement(String achvName, boolean isDesc) {
+        return context.getString(context.getResources().getIdentifier(achvName + ((isDesc) ? "_desc" : ""), "string", context.getPackageName()));
     }
 
     @Override
