@@ -453,16 +453,16 @@
     <string name="whoa_there">On se calme !</string>
     <string name="death_from_above">La mort vient d\'en haut</string>
 
-    <string name="whap_desc">a</string>
-    <string name="snowed_in_desc">a</string>
-    <string name="held_the_door_desc">a</string>
-    <string name="not_a_scratch_desc">a</string>
-    <string name="flagbearer_desc">a</string>
-    <string name="survived_the_night_desc">a</string>
-    <string name="four_they_were_desc">a</string>
-    <string name="ambush_desc">a</string>
-    <string name="cleanup_duty_desc">a</string>
-    <string name="cool_as_ice_desc">a</string>
+    <string name="whap_desc">Tuer un ennemi avec une boule de neige à 25m de distance.</string>
+    <string name="snowed_in_desc">Remporter une Bataille de boules de neige sans perdre une manche.</string>
+    <string name="held_the_door_desc">Remporter La revanche du Dr Chacalstein en difficulté difficile.</string>
+    <string name="not_a_scratch_desc">Remporter La revanche du Dr Chacalstein en diffuclté moyenne sans endommager la porte.</string>
+    <string name="flagbearer_desc">Remporter une partie de Capture du Coq avec un score de 3 à 0.</string>
+    <string name="survived_the_night_desc">Remporter La revanche du Dr Chacalstein en difficulté moyenne.</string>
+    <string name="four_they_were_desc">Remporter La revanche du Dr Chacalstein en utilisant chacun des 4 héros.</string>
+    <string name="ambush_desc">Tuer 3 ennemis pendant qu\'ils ramassent de la neige en mode Bataille de boules de neige</string>
+    <string name="cleanup_duty_desc">Récupérer un drapeau en mode Capture du Coq.</string>
+    <string name="cool_as_ice_desc">Tuer 4 ennemis sans manquer une balle dans Bataille de boules de neige.</string>
     <string name="world_traveler_desc">Gagner une partie rapide ou compétitive sur 12 cartes différentes.</string>
     <string name="double_cap_desc">Capturer les 2 objectifs d\'une partie de type capture sans mourir en partie rapide ou compétitive.</string>
     <string name="shutout_desc">Gagner une partie rapide ou compétitive de type contrôle sans que l\'ennemi ne capture l\'objectif.</string>
