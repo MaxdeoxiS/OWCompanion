@@ -7,15 +7,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.maxime.overwatchstats.GetAchievementsStats;
 import com.example.maxime.overwatchstats.R;
+import com.example.maxime.overwatchstats.adapters.AchievementsAdapter;
+import com.example.maxime.overwatchstats.model.Achievement;
+
+import java.util.ArrayList;
 
 public class AchievementsFragment extends Fragment {
 
-    ArrayAdapter adapter;
+    AchievementsAdapter adapter;
     ListView lv;
 
 
@@ -29,9 +34,27 @@ public class AchievementsFragment extends Fragment {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
         final String battleTag = preferences.getString("currentBattleTag", "");
 
-        adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.achievement_item);
+        adapter = new AchievementsAdapter(this.getActivity(), new ArrayList<Achievement>());
+
         lv = (ListView)     mView.findViewById(R.id.achievements_list);
         lv.setAdapter(adapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                TextView desc = (TextView) view.findViewById(R.id.achievement_desc);
+
+                if ( desc.getVisibility() == View.GONE)
+                {
+                    desc.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    desc.setVisibility(View.GONE);
+                }
+            }
+        });
 
         GetAchievementsStats achievements = new GetAchievementsStats(mView, getActivity(), battleTag, adapter);
         achievements.execute();

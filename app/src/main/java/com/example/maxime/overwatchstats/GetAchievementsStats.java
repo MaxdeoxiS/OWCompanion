@@ -6,8 +6,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
+import com.example.maxime.overwatchstats.adapters.AchievementsAdapter;
 import com.example.maxime.overwatchstats.model.Achievement;
 import com.example.maxime.overwatchstats.tools.Methods;
 
@@ -31,14 +31,14 @@ public class GetAchievementsStats extends AsyncTask<Void, Void, ArrayList<Achiev
 
     private String battleTag;
 
-    ArrayAdapter<String> adapter;
+    AchievementsAdapter adapter;
 
     private ProgressDialog progressDialog;
 
     private String BATTLE_TAG;
 
 
-    public GetAchievementsStats(View v, Context c, String b, ArrayAdapter a)
+    public GetAchievementsStats(View v, Context c, String b, AchievementsAdapter a)
     {
         myView = v;
         context = c;
@@ -172,11 +172,8 @@ public class GetAchievementsStats extends AsyncTask<Void, Void, ArrayList<Achiev
     @Override
     protected void onPostExecute(ArrayList<Achievement> result) {
         if(result != null) {
-            ArrayList<String> achievementsAsString = new ArrayList<>();
-            for(Achievement r : result) {
-                achievementsAsString.add(r.getTitle());
-            }
-            adapter.addAll(achievementsAsString);
+
+            adapter.addAll(result);
             adapter.notifyDataSetChanged();
 
             progressDialog.dismiss();
