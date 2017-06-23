@@ -30,7 +30,6 @@ public class AchievementsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View mView = inflater.inflate(R.layout.fragment_achievements, container, false);
 
-
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
         final String battleTag = preferences.getString("currentBattleTag", "");
 
@@ -38,6 +37,9 @@ public class AchievementsFragment extends Fragment {
 
         lv = (ListView)     mView.findViewById(R.id.achievements_list);
         lv.setAdapter(adapter);
+
+        GetAchievementsStats achievements = new GetAchievementsStats(mView, getActivity(), battleTag, adapter);
+        achievements.execute();
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
@@ -55,9 +57,6 @@ public class AchievementsFragment extends Fragment {
                 }
             }
         });
-
-        GetAchievementsStats achievements = new GetAchievementsStats(mView, getActivity(), battleTag, adapter);
-        achievements.execute();
 
         return mView;
     }

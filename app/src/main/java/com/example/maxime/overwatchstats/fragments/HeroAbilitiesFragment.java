@@ -4,6 +4,7 @@ package com.example.maxime.overwatchstats.fragments;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.Space;
 import android.util.ArrayMap;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,11 +51,17 @@ public class HeroAbilitiesFragment extends Fragment{
                  rowTextView.setText(attr.getKey());
                  rowTextView2.setText(attr.getValue());
 
+                 if (attr.getKey().equals("name")) {
+                     rowTextView.setTextSize(24);
+                 }
+
                  rowTextView.setTextColor(Color.RED);
                  rowTextView2.setTextColor(Color.BLACK);
 
+                 Space space = new Space(getContext());
                  mLinearLayout.addView(rowTextView);
                  mLinearLayout.addView(rowTextView2);
+                 mLinearLayout.addView(space);
              }
          }
 

@@ -1,6 +1,7 @@
 package com.example.maxime.overwatchstats.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,10 @@ public class AchievementsAdapter extends ArrayAdapter<Achievement> {
         TextView desc = (TextView) convertView.findViewById(R.id.achievement_desc);
         title.setText(ach.getTitle());
         desc.setText(ach.getDescription());
+        title.setBackgroundColor(Color.RED);
+
+        if(ach.isAchieved())
+            title.setBackgroundColor(Color.GREEN);
 
         return convertView;
     }
