@@ -65,6 +65,7 @@ public class HeroesTimePlayedFragment extends Fragment implements
 
                 Intent intent = new Intent(getContext(), HeroesStatsActivity.class);
                 intent.putExtra("stats", stats.get(heroName));
+                intent.putExtra("heroName", heroName);
                 startActivity(intent);
             }
         });

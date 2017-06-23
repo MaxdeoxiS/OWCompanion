@@ -7,7 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.GridView;
 
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.adapters.StatsAdapter;
@@ -19,15 +19,18 @@ import java.util.ArrayList;
 public class StatsPageFragment extends Fragment{
     public static final String ARG_PAGE = "ARG_PAGE";
     public static final String ARG_STATS = "stats";
+    public static final String ARG_HERO = "heroName";
 
     private int mPage;
+    private String heroName;
     TabLayout tabLayout;
     ViewPager viewPager;
     ArrayList<String> stats;
 
-    public static StatsPageFragment newInstance(int page, HeroStats stats) {
+    public static StatsPageFragment newInstance(int page, HeroStats stats, String heroName) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
+        args.putString(ARG_HERO, heroName);
         switch(page) {
             case 1:
                 args.putSerializable(ARG_STATS, stats.getSpc());
@@ -52,6 +55,7 @@ public class StatsPageFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(ARG_PAGE);
+        heroName = getArguments().getString(ARG_HERO);
         Stats mStats = (Stats) (getArguments().getSerializable(ARG_STATS));
         stats = mStats.getAvailableStats();
     }
@@ -63,9 +67,9 @@ public class StatsPageFragment extends Fragment{
 
 
         StatsAdapter itemsAdapter =
-                new StatsAdapter(this.getContext(), stats);
+                new StatsAdapter(this.getContext(), stats, heroName);
 
-        ListView list = (ListView) view.findViewById(R.id.listview_stats);
+        GridView list = (GridView) view.findViewById(R.id.listview_stats);
 
         list.setAdapter(itemsAdapter);
 

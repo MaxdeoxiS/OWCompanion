@@ -13,11 +13,13 @@ public class TabsPagerAdapter extends FragmentStatePagerAdapter {
     private String tabTitles[] = new String[] { "Héro", "Moyenne", "Général" };
     private Context context;
     private HeroStats stats;
+    private String heroName;
 
-    public TabsPagerAdapter(FragmentManager fm, Context context, HeroStats stats) {
+    public TabsPagerAdapter(FragmentManager fm, Context context, HeroStats stats, String heroName) {
         super(fm);
         this.context = context;
         this.stats = stats;
+        this.heroName = heroName;
     }
 
     @Override
@@ -27,7 +29,7 @@ public class TabsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return StatsPageFragment.newInstance(position + 1, this.stats);
+        return StatsPageFragment.newInstance(position + 1, this.stats, this.heroName);
     }
 
     @Override

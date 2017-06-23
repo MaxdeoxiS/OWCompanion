@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_stats_firsts"
     android:orientation="horizontal"
-    android:layout_width="150dp"
-    android:layout_height="150dp"
-    android:layout_margin="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
     android:background="@color/colorPrimary"
     >
 <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:gravity="center">
     <TextView
         android:id="@+id/text_stats_first_label"
         android:textColor="@color/colorWhite"
