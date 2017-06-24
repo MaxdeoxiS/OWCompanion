@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.maxime.overwatchstats.GetHeroesStats;
 import com.example.maxime.overwatchstats.R;
@@ -60,13 +61,19 @@ public class HeroesTimePlayedFragment extends Fragment implements
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                HeroItem currentItem =  (HeroItem)adapterView.getAdapter().getItem(i);
+                String heroName = currentItem.getName();
+                float playTime = currentItem.getPlayTimeAsFloat();
 
-                String heroName = ((HeroItem)adapterView.getAdapter().getItem(i)).getName();
+                if(playTime > 0) {
+                    Intent intent = new Intent(getContext(), HeroesStatsActivity.class);
+                    intent.putExtra("stats", stats.get(heroName));
+                    intent.putExtra("heroName", heroName);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getContext(), "Vous n'avez pas joué ce héros !", Toast.LENGTH_SHORT).show();
+                }
 
-                Intent intent = new Intent(getContext(), HeroesStatsActivity.class);
-                intent.putExtra("stats", stats.get(heroName));
-                intent.putExtra("heroName", heroName);
-                startActivity(intent);
             }
         });
 
