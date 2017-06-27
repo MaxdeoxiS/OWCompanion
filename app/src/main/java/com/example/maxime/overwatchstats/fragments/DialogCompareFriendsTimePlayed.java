@@ -17,8 +17,7 @@ public class DialogCompareFriendsTimePlayed extends DialogFragment {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setItems(friends, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    // The 'which' argument contains the index position
-                    // of the selected item
+
                 }
             });
 
