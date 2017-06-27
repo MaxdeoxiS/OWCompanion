@@ -104,6 +104,7 @@
     <string name="cant_add_friend">Vous ne pouvez pas ajouter cet utilisateur.</string>
     <string name="friend_deleted">Ami supprimé !</string>
     <string name="cant_delete_friend">Vous ne pouvez pas supprimer cet utilisateur.</string>
+    <string name="label_compare">Comparer...</string>
 
     <!-- Heroes Colors -->
 

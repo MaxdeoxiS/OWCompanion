@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +16,8 @@ import com.example.maxime.overwatchstats.GetHeroesStats;
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.activities.HeroesStatsActivity;
 import com.example.maxime.overwatchstats.adapters.HeroesAdapter;
+import com.example.maxime.overwatchstats.model.Friend;
+import com.example.maxime.overwatchstats.model.FriendDAO;
 import com.example.maxime.overwatchstats.model.HeroItem;
 import com.example.maxime.overwatchstats.model.HeroStats;
 
@@ -57,6 +60,33 @@ public class HeroesTimePlayedFragment extends Fragment implements
         wonGames.setText(winStats.get(0));
         lostGames.setText(winStats.get(1));
         winRate.setText(winStats.get(2) + "%");
+
+        Button button_compare = (Button) mView.findViewById(R.id.button_compare);
+
+        FriendDAO f = new FriendDAO(this.getContext());
+        f.open();
+        ArrayList<Friend> friends = f.getAllFriends();
+        f.close();
+
+        ArrayList<String> friendsAsArrayList = new ArrayList<String>();
+
+        for (Friend friend : friends) {
+            friendsAsArrayList.add(friend.getUsername());
+        }
+
+        final String[] tmp = friendsAsArrayList.toArray(new String[friendsAsArrayList.size()]);
+
+        button_compare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogCompareFriendsTimePlayed newFragment = new DialogCompareFriendsTimePlayed();
+                Bundle args = new Bundle();
+                args.putStringArray("friends", tmp);
+                newFragment.setArguments(args);
+                newFragment.show(getFragmentManager(), "friends");
+
+            }
+        });
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
