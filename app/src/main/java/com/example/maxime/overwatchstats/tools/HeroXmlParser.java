@@ -58,6 +58,7 @@ public class HeroXmlParser {
         String x = null;
         String y = null;
         String age = null;
+        String desc = null;
         List<Ability> abilities = null;
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -78,13 +79,15 @@ public class HeroXmlParser {
                 age = readData(parser, "age");
             } else if (name.equals("abilities")) {
                 abilities = readAbilities(parser);
+            } else if (name.equals("description")) {
+                desc = readData(parser, "description");
             } else {
                 skip(parser);
             }
         }
 
         //TODO change 1-before-last parameter
-        return new Hero(nickname, firstName, lastName, Double.parseDouble(x), Double.parseDouble(y), Integer.parseInt(age), "", abilities);
+        return new Hero(nickname, firstName, lastName, Double.parseDouble(x), Double.parseDouble(y), Integer.parseInt(age), desc, abilities);
     }
 
     private String readData(XmlPullParser parser, String nodeName) throws IOException, XmlPullParserException {

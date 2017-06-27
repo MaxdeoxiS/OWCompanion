@@ -46,6 +46,17 @@
                 <charge>1375 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Fatale est l’assassin parfait : une tueuse patiente, efficace et impitoyable qui ne laisse jamais transparaître aucune émotion ni le moindre remord.
+
+            On raconte que dans son ancienne vie, Fatale était l’épouse de Gérard Lacroix, un agent d’Overwatch responsable des opérations contre l’organisation terroriste appelée La Griffe. Après plusieurs tentatives infructueuses pour éliminer Gérard, La Griffe décida de s’en prendre à sa femme pour l’atteindre. Amélie fut kidnappée par ses agents et soumise à un programme intense de reformatage neuronal. Sa volonté fut balayée, sa personnalité effacée et elle fut reconditionnée pour être un agent dormant. Elle fut ensuite retrouvée par des agents d’Overwatch, apparemment sans séquelle, et renvoyée à sa vie civile.
+
+            Deux semaines plus tard, elle tuait Gérard dans son sommeil.
+
+            Une fois sa mission terminée, Amélie retourna auprès de La Griffe et ils achevèrent de la transformer en arme vivante. Elle reçut un entraînement intensif et des altérations physiologiques. Les battements de son cœur furent considérablement ralentis, ce qui donna une teinte bleutée à sa peau et inhiba sa capacité à ressentir des émotions humaines. Amélie n’existait plus.
+
+            Aujourd’hui, Fatale est l’assassin le plus efficace de La Griffe, et elle ne ressent plus rien hormis la satisfaction du travail bien fait.
+        </description>
     </hero>
     <hero>
         <surname>Ana</surname>
@@ -91,6 +102,19 @@
                 <charge>1650 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Membre de l'équipe originelle d'Overwatch, Ana utilise ses compétences et son expertise pour défendre son pays et les personnes qui lui sont chères.
+
+            Alors que la Crise Omnique infligeait un lourd tribut humain et matériel à l’Égypte, les forces de sécurité du pays, épuisées et décimées, comptaient sur des tireurs d'élite pour résister le mieux possible avec des effectifs moindres. Parmi eux se trouvait Ana Amari, qui était considérée comme l'un des plus brillants du pays. Sa précision de tir exceptionnelle, sa disposition à prendre de justes décisions et son instinct firent d'elle une option de premier choix au moment de constituer la première équipe d'intervention d'Overwatch, qui mit fin à la Première Crise Omnique.
+
+            Après le succès de la mission originale d'Overwatch, Ana fut promue Capitaine et servit durant de nombreuses années comme second du Commandant des Opérations Jack Morrison. A 28 ans, elle devint la mère d'une petite fille nommée Fariha, dont la voie devait suivre celle de sa mère, bien des années plus tard. Malgré ses responsabilités accrues au sein de l'organisation, Ana refusa de s'éloigner des théâtres d'opérations, et resta en service actif jusque dans la cinquantaine.
+
+            Mais son destin bascula au cours d'une intervention spéciale d'une très haute importance contre l'organisation terroriste "La Griffe" ("Talon", en anglais). Alors qu'elle assurait les arrières de son équipe d'élite Overwatch, engagée dans la libération de scientifiques retenus en otage, elle fut confrontée à un ennemi d'un genre inouï pour elle. En effet, alors qu'elle s'apprêtait à éliminer un sniper ennemi, l'agent de La Griffe connue sous le nom de Fatale, elle reconnut à travers son viseur Amélie Lacroix, épouse d'un ancien haut responsable d'Overwatch assassiné quelque temps auparavant par La Griffe et portée disparue depuis. La fraction de seconde durant laquelle Ana hésita à presser la gâchette de son fusil scella son sort, et Fatale, sans la moindre hésitation, tira en sa direction. La balle brisa le viseur du fusil d'Ana et celle-ci fut grièvement touchée à la tête. L'opération tourna au désastre pour Overwatch, et toute son équipe périt sous le feu ennemi.
+
+            En vérité, Ana survécut à cette rencontre, en dépit de sa profonde blessure et de la perte de son œil droit (son œil directeur pour la visée). Elle fut présumée morte et disparut durant de nombreuses années de toute activité liée à Overwatch. Cet isolement représentait pour elle la perte d'un pan entier de sa vie. Pendant sa longue convalescence, loin des regards de tous, elle lutta avec le poids d'une vie passée dans le combat, durement marquée par la disparition de tant de ses camardes au front, et elle choisit de se tenir en dehors des conflits croissants du Monde. Cependant, comme le temps passait, Ana réalisa qu'elle ne pouvait plus rester sur la touche alors que certains menaçaient à nouveau sa patrie et les innocents qu'elle abrite. Ainsi, elle dut apprendre à viser avec son œil gauche pour pouvoir reprendre du service.
+
+            Maintenant, Ana a rejoint la lutte pour protéger son pays et le Monde en général contre les forces qui le déstabilisent, et surtout, afin de garder sa famille et ses alliés les plus proches en toute sécurité.
+        </description>
     </hero>
     <hero>
         <surname>Bastion</surname>
@@ -136,6 +160,15 @@
                 <charge>2075 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Autrefois combattant de première ligne lors de la terrible crise des Omniums, ce curieux automate Bastion explore maintenant le monde, fasciné par la nature mais vigilant face à une humanité qui le craint.
+
+            Initialement créées pour des missions de maintien de la paix, les unités robotiques Bastion possédaient la capacité unique de pouvoir se reconfigurer rapidement pour se muer en armes d’assaut. Pendant la crise des Omniums, les Bastions furent dirigés contre leurs concepteurs humains et formèrent ainsi le gros des troupes rebelles des Omniums. À la fin du conflit, ils furent presque tous démantelés ou détruits. Aujourd’hui encore, les unités Bastion incarnent les horreurs de cette période.
+
+            Une seule unité Bastion, gravement endommagée pendant les derniers moments de la guerre, fut oubliée pendant plus de dix ans. Elle demeura en veille prolongée, exposée à la rouille et aux intempéries, laissant la nature reprendre ses droits. Couvert de lierre et de racines, abritant les nids ou les terriers de petits animaux, le robot resta inerte, apparemment sans conscience du passage des saisons. Jusqu’au jour où il se réactiva brusquement. Sa programmation de combat ayant pour ainsi dire disparu, il développa un grand intérêt pour son environnement naturel et ses occupants. Cette curiosité insatiable poussa l’unité Bastion à arpenter le monde pour découvrir le sens de son existence sur une planète ravagée par la guerre.
+
+            Même si « Bastion » semble très doux – voire inoffensif – sa programmation de combat reprend les commandes si l’unité perçoit un danger, et utilise l’ensemble de son arsenal pour éliminer tout ce qu’elle considère comme une menace. Cela a parfois provoqué des conflits avec les rares humains qui ont croisé sa route, et l’a poussé à éviter les zones peuplées en faveur des régions du monde les plus désertes et sauvages.
+        </description>
     </hero>
     <hero>
         <surname>DVa</surname>
@@ -175,6 +208,17 @@
 				<headshot>x2</headshot>
             </ability>
         </abilities>
+        <description>
+            D.Va est une ancienne joueuse professionnelle qui met désormais ses aptitudes au service de la défense de sa patrie aux commandes d’un méca ultra-moderne.
+
+            Il y a vingt ans, la Corée du Sud a été attaquée par une colossale monstruosité omniaque qui a jailli des profondeurs orientales de la mer de Chine. Cet énorme assemblage malhabile infligea des dégâts catastrophiques aux cités côtières avant d’être repoussé sous les eaux. Suite à cet évènement, le gouvernement sud-coréen a développé une unité de drones blindés, MEKA, pour protéger les environnements urbains en prévision de futurs combats contre la menace omniaque.
+
+            Les craintes du gouvernement se sont avérées fondées, car les attaques survinrent à intervalles réguliers. De temps à autres, la monstruosité sortait de la mer pour attaquer la Corée du Sud et ses voisins. L’omniaque apprenait des affrontements et se reconfigurait souvent, apparaissant sous une nouvelle forme avec des armes et des capacités différentes. Chaque incident se terminait par un match nul, la monstruosité vaincue, mais non détruite.
+
+            L’omniaque continuant à s’adapter, il finit par détruire le réseau de contrôle des drones MEKA, obligeant l’armée à installer des pilotes dans les mécas. Dans une recherche désespérée de candidats adaptés, le gouvernement se tourna vers les joueurs professionnels du pays, qui possédaient les réflexes et l’instinct nécessaire pour faire fonctionner les systèmes d’armes avancées des mécas. Les plus grandes stars furent enrôlées, y compris la championne du monde en titre, Hana Song, alias « D.Va ». Réputée pour ses compétences sans pareil, D.Va était une compétitrice enragée qui jouait pour gagner, à n’importe quel prix, et elle avait la réputation bien méritée de se montrer impitoyable envers ses adversaires.
+
+            Considérant ses nouvelles missions comme un jeu, D.Va charge au combat en compagnie du reste de son unité MEKA, prête à défendre son pays à tout instant. Elle a récemment commencé à diffuser ses opérations de combat en direct pour ses fans, si nombreux qu’elle est devenue une célébrité mondiale.
+        </description>
     </hero>
     <hero>
         <surname>Genji</surname>
@@ -216,6 +260,17 @@
 				<charge>1500 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Le cyborg Genji a fait la paix avec le corps de cyborg qu'il avait autrefois rejeté, et s'est ainsi découvert des pouvoirs surhumains.
+
+            En tant que plus jeune fils du clan ninja « Shimada » Genji a été élevé dans le luxe. Il s'est intéressé au business illégal de la famille, a excellé lors de son entrainement ninja, et a passé la plupart de son temps à peaufiner son style de playboy. De nombreuses personnes du clan pensaient que Genji avait de trop grosses responsabilités, et en voulaient à son père de le protéger et le gâter. Après la mort prématurée du chef de clan, le frère aîné de Genji, Hanzo, a exigé que Genji contribue plus activement à l'empire de leur père défunt. Genji a refusé, provoquant la colère d'Hanzo. Les tensions entre les deux frères ont débouché sur une violente confrontation qui a failli coûter la vie à Genji.
+
+            Hanzo croyait avoir tué son frère, mais Genji a été secouru par le Cartel et l'intervention du Dr. Angela Ziegler. Les autorités mondiales ont reconnu le potentiel de Genji pour lutter contre le clan Shimada. Les blessures de Genji étant très sérieuses, Overwatch a offert de reconstruire son corps en échange de son aide. Il a été soumis à un vaste processus de cybernétisation, qui a renforcé sa vitesse et son agilité naturelle et augmenté ses compétences de ninja. Transformé en arme vivante, Genji s'est attelé à démonter l'empire criminel de sa famille.
+
+            Mais peu à peu, Genji s'est senti en conflit avec lui-même. Il a été repoussé par les pièces mécaniques de son corps et ne pouvait pas venir à bout de ce qu'il était devenu. Lorsque sa mission s'est terminée, il a abandonné le Cartel et erré dans le monde en quête de sens. Il a dérivé pendant de nombreuses années avant de croiser la route de Zenyatta, le moine Omniac. Bien que Genji ait initialement rejeté la sagesse de Zenyatta, l'Omniac bienveillant n'a pas renoncé si vite, et a fini par devenir son mentor. Sous la tutelle du moine, Genji a réussi à concilier son côté homme et son côté machine, il a appris à accepter que son corps de cyborg n'avait pas altéré l'humanité de son âme, et il a su apprécier sa nouvelle forme comme un don.
+
+            Fort de son apprentissage, Genji c'est ensuite mis en quête de son frère, Hanzo, qui avait renoncé à ses responsabilité et disparu dans la nature. Il apprit au cours de ses vagabondages que son frère se rendait chaque années, à l'anniversaire de la "mort" de son frère, au domaine du clan Shimada pour rendre hommage à Genji. Ce dernier retrouva en effet Hanzo au centre du temple, qui priait devant l'autel, mais l'archer le prit pour un assassin, et un combat s'engagea entre les deux. Genji battu Hanzo, en retournant contre lui son attaque ultime en contrôlant les dragons, et se révéla à lui, lui apprenant qu'il n'était pas mort. (Voir le court-métrage d'animation de Blizzard Deux Dragons.)
+        </description>
     </hero>
     <hero>
         <surname>Hanzo</surname>
@@ -260,6 +315,13 @@
 				<charge>1500 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Par la maîtrise de ses techniques d’archer et d’assassin, Hanzo Shimada cherche à se prouver qu’il est un guerrier sans égal.
+
+            L’histoire de la famille Shimada remonte à plusieurs siècles. Ce clan d’assassins a vu son influence croître avec les années, jusqu’à devenir un vaste empire criminel engrangeant les profits de la vente d’armes et de substances illégales. En tant que premier fils du chef de famille, Hanzo avait pour devoir de succéder à son père et de régner sur l’empire Shimada. Il fut formé dès son plus jeune âge pour cette responsabilité et fit montre de grandes aptitudes pour le commandement et d’un sens inné de la stratégie et de la tactique. Il excellait également dans des domaines plus pragmatiques : les arts martiaux, l’escrime et le tir à l’arc. À la mort de son père, les anciens du clan exigèrent d’Hanzo qu’il reprenne en main son frère rebelle, afin que lui aussi puisse prendre part à la direction de l’empire Shimada. Son frère refusa d’entendre raison et Hanzo fut obligé de le tuer. Son cœur en fut brisé et il rejeta l’héritage de son père, allant finalement jusqu’à abandonner le clan et tout ce pour quoi il avait si durement travaillé.
+
+            Hanzo voyage maintenant à travers le monde pour parfaire ses compétences martiales, dans l’espoir de restaurer son honneur et de chasser les fantômes de son passé.
+        </description>
     </hero>
     <hero>
         <surname>Junkrat</surname>
@@ -306,6 +368,17 @@
                 <damage>50/grenade (6 grenades)</damage>
             </ability>
         </abilities>
+        <description>
+            Chacal est un fou obsédé par les explosifs qui ne vit que pour le chaos et la destruction.
+
+            L’attaque sur le cœur du réacteur de l’omnium australien a définitivement modifié le paysage de l’intérieur du pays. Après la détonation, la zone s’est transformée en une terre désolée, aride et irradiée, recouverte de débris et de fragments déformés du complexe en ruine, et inhabitable pour la plus grande partie.
+
+            Mais certains ont survécu. Se faisant appeler les Junkers, ils ont récupéré tout ce qu’ils pouvaient dans la carcasse de l’omnium et formé une société sans foi ni loi dans son ombre. Chacal est l’un d’entre eux, gagnant difficilement sa vie en récupérant du métal et des composants dans les ruines. Comme beaucoup d’autres, il a été affecté par les radiations. Cette pointe de folie a fait de lui la personne idéale pour manipuler de dangereux explosifs, une passion qui est devenue une véritable obsession.
+
+            Il a connu la notoriété quand il a découvert un secret d’une très grande valeur dans la carcasse de l’omnium. Bien que peu de personnes connaissent la nature de sa découverte, il a néanmoins été poursuivi par des chasseurs de primes, des gangs et des opportunistes partout où il allait. Jusqu’au jour où il a fait un marché avec un homme de main des Junkers, Chopper, qui a accepté à contrecœur d’être son garde du corps personnel en échange de la moitié de ses gains.
+
+            Aujourd’hui, Chacal, accompagné de Chopper, a quitté l’intérieur du pays pour s’embarquer dans une carrière de criminel international, ne laissant dans son sillage que chaos et destruction.
+        </description>
     </hero>
     <hero>
         <surname>Lucio</surname>
@@ -352,6 +425,17 @@
 				<charge>2625 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Lúcio est une célébrité internationale qui milite pour le changement social par sa musique et ses actions.
+
+            Lúcio Correia dos Santos grandit à Rio de Janeiro, dans une favela surpeuplée et durement touchée par le bouleversement économique qui suivit la crise des Omniums. Alors que le Brésil entamait une longue convalescence, Lúcio voulut trouver un moyen de mettre un peu de baume au cœur des gens qui l’entouraient. Sa solution, il la trouva dans la musique, qui lui permit de rassembler les gens, voire de leur faire oublier leurs soucis, ne fut-ce que pour un court instant. Il se produisait dans la rue, dans des fêtes de quartier, et, sa notoriété grandissant, dans plusieurs salles underground célèbres.
+
+            Mais le petit monde de Lúcio, aussi soudé soit-il, sombra dans le chaos quand la multinationale Vishkar Corporation signa un contrat pour réorganiser de larges pans de la ville. Le promoteur avait assuré à Lúcio et ses voisins que ces reconstructions amélioreraient leur quotidien, mais ces promesses ne se concrétisèrent jamais. Vishkar se mit à contrôler les habitants dans le but de former une société plus policée à ses yeux : couvre-feu, sanctions contre les comportements excentriques et exploitation de la population comme main-d’œuvre bon marché.
+
+            Lúcio ne put le tolérer. Il déroba à Vishkar la technologie sonique utilisée pour opprimer le peuple, et il en fit un outil de ralliement et d’action. Les habitants se rebellèrent et finirent par expulser Vishkar de leurs quartiers. Du jour au lendemain, Lúcio fut élevé au rang de star et d’icône du changement social positif. Sa musique devint incroyablement populaire. Alors qu’il se produisait auparavant uniquement dans son pays, il se mit à remplir des stades dans le monde entier.
+
+            Grâce à sa célébrité soudaine, Lúcio découvre qu’il a l’opportunité de changer les choses et de rendre le monde meilleur.
+        </description>
     </hero>
     <hero>
         <surname>McCree</surname>
@@ -395,6 +479,15 @@
 				<charge>1500 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Armé de son fidèle Pacificateur, le hors-la-loi Jesse McCree administre la justice à sa façon bien personnelle.
+
+            McCree était déjà célèbre en tant que membre du fameux gang Deadlock, dont le réseau illégal de trafic d’armes et d’équipement militaire couvrait tout le Sud-Ouest américain, quand lui et ses associés furent pris en flagrant délit suite à une opération d’infiltration montée par Overwatch. Vu son adresse et son ingéniosité, on lui laissa le choix entre moisir dans une prison de haute sécurité et rallier Blackwatch, la division des opérations secrètes d’Overwatch. Il choisit la seconde option.
+
+            Bien qu’initialement très cynique, il finit par se convaincre qu’il pourrait faire amende de ses fautes passées en réparant les injustices aux quatre coins du monde. McCree appréciait la flexibilité inhérente au caractère clandestin de Blackwatch, qui ne s’embarrassait pas de bureaucratie et de paperasse. Mais quand l’influence d’Overwatch se mit à décliner, des éléments peu scrupuleux de Blackwatch tentèrent de renverser complètement l’organisation pour la mettre à leur service. Ne voulant pas prendre part à ces luttes intestines, McCree prit le maquis et disparut de la circulation.
+
+            Il refit surface plusieurs années plus tard en tant que pistolero mercenaire. Mais même si toutes sortes de gens sont prêts à employer ses talents, il ne se bat que pour les causes qu'il estime justes.
+        </description>
     </hero>
     <hero>
         <surname>Mei</surname>
@@ -447,6 +540,15 @@
 				<charge>1450 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Mei est une scientifique qui a décidé de se battre pour la préservation de l’environnement. Même si, pour beaucoup, l’avènement des nouvelles technologies, la croissance rapide de la population omniaque et l’accroissement considérable de la consommation des ressources étaient responsables de phénomènes climatiques de plus en plus violents, leur cause véritable restait inconnue. À la recherche d’une solution, Overwatch installa une série d’éco-observatoires dans des lieux-clés reculés du monde entier.
+
+            Mei-Ling Zhou faisait partie de cette initiative prévue pour durer plusieurs années. Climatologue hors pair, elle avait introduit des innovations ultra-pointues dans le champ de la manipulation du climat qui protégeaient les zones à risque en Asie et ailleurs. Elle poursuivait ses recherches dans une station de surveillance du programme, l’Observatoire : Antarctique, lorsque cette dernière fut frappée par un désastre : une soudaine tempête polaire d’une grande violence balaya l’installation et la coupa du monde extérieur, laissant les bâtiments endommagés et les scientifiques coupés du monde. Leurs provisions diminuant, ils décidèrent d’entrer en cryostase dans une ultime tentative pour survivre jusqu’à l’arrivée des secours.
+
+            Mais les secours ne vinrent jamais. La chambre cryogénique de l’équipe fut finalement découverte des années plus tard. Mei, toujours en hibernation, fut la seule survivante. Le monde dans lequel Mei s’éveilla avait beaucoup changé. Overwatch n’existait plus, les problèmes climatiques, déjà graves, avaient encore empiré, et tous les éco-observatoires avaient cessé de fonctionner. Tous les indices qu’ils avaient découverts étaient perdus.
+
+            Mei a décidé de continuer son travail par elle-même. Équipée d'une version portative de sa technologie de manipulation climatique, elle voyage à travers le monde, dans l’espoir de rétablir un éco-réseau et de remonter aux sources des menaces contre l’écosystème de la planète.
+        </description>
     </hero>
     <hero>
         <surname>Mercy</surname>
@@ -479,6 +581,17 @@
 				<charge>1625 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Véritable ange gardien pour ceux qu’elle prend en charge, le docteur Angela Ziegler est une soignante hors pair, une scientifique brillante et une fervente partisane de la paix.
+
+            Ziegler a gravi les échelons jusqu’à la direction du service de chirurgie d’un grand hôpital suisse avant de lancer une percée révolutionnaire dans le domaine des nanotechnologies appliquées qui a amélioré de façon radicale le traitement des maladies et des traumatismes potentiellement mortels. C’est grâce à ce domaine d’expertise qu’elle a attiré l’attention d’Overwatch.
+
+            Privée de ses parents par la guerre, Angela Ziegler était opposée à l’approche militariste de l’organisation dans le maintien de la paix mondiale. Mais elle finit par reconnaître qu’Overwatch lui offrait l’opportunité de sauver des vies à bien plus grande échelle. En devenant responsable de la recherche médicale d’Overwatch, Angela cherchait à optimiser l’application de ses travaux pour dispenser des soins sur le terrain dans les situations de crise. Ses recherches se concrétisèrent sous la forme de l’armure de traitement des urgences Valkyrie, qu’elle pilota elle-même lors de nombreuses missions d’Overwatch.
+
+            Malgré ses contributions significatives, elle était fréquemment en désaccord avec ses supérieurs et les objectifs globaux de l’organisation. Après la dissolution d’Overwatch, Ziegler put se consacrer à apporter de l’aide aux victimes de guerre.
+
+            Même si elle passe maintenant l’essentiel de son temps à soigner les victimes et les réfugiés dans les zones de crise aux quatre coins du globe, on peut encore compter sur le Dr Ziegler et sur son armure Valkyrie quand des innocents sont en péril.
+        </description>
     </hero>
     <hero>
         <surname>Pharah</surname>
@@ -512,6 +625,15 @@
 				<charge>1850 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Fariha Amari a le sens du devoir dans le sang. Elle descend d’une longue lignée de militaires tous plus décorés les uns que les autres et brûle du désir de servir elle aussi avec honneur.
+
+            Quand elle était enfant, Fariha rêvait de suivre les traces de sa mère et de s’enrôler à son tour pour maintenir la paix dans le monde sous la bannière d’Overwatch. Elle s’engagea dans l’armée égyptienne, où sa ténacité et son sens tactique lui valurent de gravir les échelons du commandement. Elle était un officier courageux qui méritait la loyauté de ceux qui servaient sous ses ordres. Avec son dossier exemplaire, Fariha était en bonne place pour rejoindre les rangs d’Overwatch, mais avant qu’elle ne puisse saisir cette opportunité, l’organisation avait été dissoute.
+
+            Après son départ de l’armée assorti d’une décoration pour services rendus, on lui offrit un poste au sein de Helix Security International, une agence de sécurité privée responsable de la protection du site de recherche des intelligences artificielles sous le plateau de Gizeh. Ce site top-secret était réputé essentiel pour la sécurité non seulement de la région, mais aussi de nombreux pays à travers la planète. Fariha accepta volontiers cette prestigieuse affectation et fut formée à l’utilisation du Raptora modèle VI, une armure motorisée expérimentale conçue pour allier une mobilité fulgurante à une puissance de feu dévastatrice.
+
+            Sous le nom de code de « Pharah », elle assure la sécurité du site de recherche. Même si elle déplore la fin d’Overwatch, elle rêve encore de pouvoir un jour se battre pour l’intérêt général et pour améliorer le monde.
+        </description>
     </hero>
     <hero>
         <surname>Torbjorn</surname>
@@ -563,6 +685,15 @@
                 <charge>1625 pts</charge>
             </ability>
         </abilities>
+        <description>
+            À son apogée, Overwatch possédait un arsenal parmi les plus avancés de la planète, dont la majorité des pièces pouvaient être attribuées à l’atelier d’un génial ingénieur, Torbjörn Lindholm.
+
+            Avant la crise des Omniums, Torbjörn avait obtenu une certaine notoriété pour sa conception de systèmes d’armement en usage dans plusieurs pays. Mais il pensait que la technologie devait être au service de l’amélioration de l’humanité, ce qui l’opposait à ses employeurs qui souhaitaient contrôler ses armes au moyen d’intelligences artificielles en réseau.
+
+            Torbjörn était très méfiant vis-à-vis de la conscience robotique. Alors que nombre de ses contemporains voyaient cela comme de la paranoïa sans fondement, ses pires craintes devaient se réaliser lorsque l’ensemble de la population robotique mondiale se retourna contre ses créateurs au cours de la crise des Omniums. Son génie de l’ingénierie lui valut d’être recruté dans la première équipe d’intervention d’Overwatch, et ses nombreuses inventions furent constitutives de la résolution de ce conflit. Dans les années qui suivirent, Overwatch devint une force internationale de maintien de la paix, et Torbjörn y demeura un élément crucial pour répondre aux besoins de l’organisation en matière d’expertise technologique et d’armement.
+
+            Immédiatement après la chute d’Overwatch, une grande quantité d’armes conçues par Torbjörn furent volées ou stockées en divers points du globe. Comme il se tient pour responsable de ses créations, Torbjörn est bien décidé à les empêcher de tomber entre de mauvaises mains et de faire des ravages sur des innocents.
+        </description>
     </hero>
     <hero>
         <surname>Tracer</surname>
@@ -601,6 +732,17 @@
 				<charge>1125 pts</charge>
             </ability>
         </abilities>
+        <description>
+            L’ancien agent d’Overwatch connu sous le pseudonyme de Tracer est une aventurière capable de se déplacer dans le temps et est une force irrépressible au service du bien.
+
+            Lena Oxton (nom de code « Tracer ») était la plus jeune recrue de toute l’histoire du programme de vol expérimental d’Overwatch. Ses talents de pilote et son intrépidité lui valurent d’être sélectionnée pour tester un prototype de chasseur-téléporteur, "le Sillage". Malheureusement, la matrice de téléportation de l’avion eut une avarie lors du premier vol d’essai et disparut. Lena fut présumée morte.
+
+            Elle finit par réapparaître des mois plus tard, profondément changée par l’épreuve qu’elle venait de traverser, sa structure moléculaire avait été désynchronisée par rapport à l’écoulement normal du temps. Souffrant de « chrono-dissociation », elle était devenue une sorte de fantôme vivant, disparaissant irrégulièrement pendant des heures ou des jours et incapable de maintenir sa consistance physique dans les rares moments où elle était présente.
+
+            Les médecins et les chercheurs d’Overwatch étaient perplexes, et son cas semblait désespéré jusqu’à ce qu’un scientifique appelé Winston parvienne à concevoir le chrono-accélérateur, un appareil capable d’ancrer Tracer dans le présent. Cela permit également à Tracer de contrôler son propre flux temporel et de le ralentir ou de l’accélérer à volonté. Grâce à cette nouvelle compétence, elle devint l’un des agents les plus efficaces d’Overwatch.
+
+            Depuis la dissolution de l’organisation, Tracer continue de lutter pour la bonne cause et de combattre les injustices dès qu’elle en a l’occasion.
+        </description>
     </hero>
     <hero>
         <surname>Winston</surname>
@@ -643,6 +785,17 @@
 				<charge>1375 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Gorille génétiquement modifié et supérieurement intelligent, Winston est un brillant chercheur et un fervent défenseur du génie de l’humanité.
+
+            La colonie lunaire Horizon fut un premier pas pour l’humanité vers une reprise de la conquête spatiale. Parmi ses premiers résidents se trouvait un groupe de gorilles génétiquement améliorés qui devaient servir à tester les effets des séjours prolongés dans l’espace.
+
+            L’un de ces gorilles répondit au traitement en faisant montre d’un tel développement cérébral que le Dr Harold Winston le prit sous son aile pour lui enseigner les sciences et l’histoire du génie humain. Le jeune gorille passait ses journées à assister le chercheur dans ses expériences et à observer la lointaine planète bleue par les hublots de l’habitat, en rêvant aux possibilités infinies qui l’attendaient là-bas.
+
+            Mais sa vie devait sombrer dans le chaos lorsque les autres gorilles se rebellèrent, tuèrent les scientifiques qui les encadraient et prirent le contrôle de la colonie. Prenant le nom de son précepteur humain adoré, Winston construisit une fusée et prit la fuite vers la Terre. Il y trouva un nouveau foyer avec Overwatch, une organisation qui représentait tout ce qu’il avait admiré de l’humanité. Winston put enfin vivre à la mesure des idéaux héroïques qu’on lui avait inculqués.
+
+            Depuis la dissolution d’Overwatch, Winston vit reclus, coupé d’un monde en lequel il continue néanmoins à croire, et espérant le retour de l’époque des héros.
+        </description>
     </hero>
     <hero>
         <surname>Zarya</surname>
@@ -692,6 +845,17 @@
 				<charge>1875 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Aleksandra Zaryanova est l’une des femmes les plus vigoureuses au monde, une athlète reconnue qui a sacrifié sa gloire personnelle pour protéger sa famille, ses amis et sa patrie en temps de guerre.
+
+            Aleksandra est née dans un village isolé de Sibérie, en première ligne de la crise des Omniums qui débuta il y a une trentaine d’années. Même si l’armée russe parvint à vaincre les robots et à neutraliser l’omnium sibérien, la région fut dévastée par le conflit. Aleksandra, qui n’était alors qu’une enfant, grandit au sein de la destruction de l’après-guerre et fit le serment d’acquérir la force nécessaire pour aider les siens à se remettre.
+
+            Devenue une haltérophile et une bodybuildeuse accomplie, Aleksandra fut repérée par le programme olympique national comme une star potentielle. Au prix d’un entraînement draconien, elle gravit tous les échelons en représentant son pays, et l’on s’attendait à la voir surpasser tous les records en vigueur lors des prochains championnats du monde.
+
+            Mais à la veille du tournoi, l’omnium sibérien sortit de sa longue hibernation pour orchestrer une attaque et son village se trouva à nouveau au cœur de la guerre. Aleksandra abandonna immédiatement la compétition pour rentrer chez elle et s’enrôler dans les forces de défense locales, sacrifiant la vie de gloire et de fortune qui l’attendait.
+
+            Elle est désormais sous les drapeaux : un symbole pour certains, une camarade de combat pour d’autres. Mais de son propre aveu, elle a enfin la chance de mettre sa prodigieuse force physique au service de ceux qu’elle aime.
+        </description>
     </hero>
     <hero>
         <surname>Zenyatta</surname>
@@ -745,6 +909,17 @@
 				<charge>2075 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Zenyatta est un moine omniaque qui parcourt le monde à la recherche de l’éveil spirituel. On dit que ceux qui le croisent en sont changés à jamais.
+
+            Il y a des années, après la crise des Omniums, un groupe de robots omniaques renégats ont fait l’expérience de ce qu’ils ont ensuite appelé un éveil spirituel. Abandonnant leurs existences préprogrammées, ils partirent établir un monastère communautaire dans les lointaines hauteurs de l’Himalaya. Après des années de méditation et de réflexion sur la nature de l’existence, ils en vinrent à croire qu’au-delà de leurs intelligences artificielles, ils disposaient, à l’instar des humains, de l’essence d’une âme.
+
+            Partant de l’égalité spirituelle entre eux-mêmes et les humains, les moines, dirigés par un énigmatique robot répondant au nom de Tekhartha Mondatta, cherchèrent à panser les blessures causées par la crise des Omniums une génération plus tôt et à ramener l’harmonie sociale entre humains et robots. Leur message fut adopté et relayé par des millions de gens et ils devinrent mondialement célèbres.
+
+            Mais un moine, Zenyatta, désapprouvait cette nouvelle tournure. Il pensait que l’apaisement des dissensions entre les humains et les omniaques ne pouvait provenir d’un enseignement dogmatique mais devait passer par l’implication individuelle et les relations interpersonnelles.
+
+            Finalement, Zenyatta a décidé de suivre sa propre voie. Il a quitté le monastère et parcourt le monde, aidant ceux qu’il croise à surmonter leurs luttes internes et à trouver la paix intérieure. Mais quand c’est nécessaire, il est prêt à se battre pour protéger les innocents, qu’ils soient omniaques ou humains.
+        </description>
     </hero>
     <!--<hero>-->
     <!--<surname>Orisa</surname>-->
@@ -790,6 +965,23 @@
 				<charge>1850 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Gabriel Reyes grandit au sein de l'importante et très vivante communauté latine de Los Angeles. Jeune adulte, il s'orienta tôt vers une carrière militaire dans l'armée des États-Unis d'Amérique. Entré comme jeune volontaire, il gravit rapidement les échelons jusqu'à devenir un soldat réputé et hautement considéré par ses camardes et ses supérieurs. C'est au cours de ces années qu'il eut l'occasion de prendre part à ses premières opérations dans le cadre de conflits réels et qu'il accéda au statut d'officier, comme reconnaissance de ses aptitudes militaires hors du commun. En outre, son courage et sa ténacité lui valurent de nombreuses distinctions du Mérite, et contribuèrent à entretenir sa notoriété auprès des plus hauts gradés.
+
+            Comme le "Programme de Renforcement de Soldats" ("Soldier Enhancement Program") fut lancé par le gouvernement des États-Unis en réponse à la Crise Omnique, c'est tout naturellement que Gabriel Reyes fut proposé pour y prendre part. Il valida les examens d'entrée d'un très haut niveau d'exigence et rejoignit ainsi les meilleurs éléments venant du pays entier, de branches très diverses. Notamment, il fit la rencontre du jeune Jack Morrison, originaire de l'Indiana; rencontre qui devait mener les deux hommes vers un destin commun glorieux et tragique. Gabriel Reyes et Jack Morrison devinrent amis au bout de quelques temps, et poursuivaient ensemble leur évolution au sein du Programme. Au moment où fut annoncée la création d'Overwatch, il fut convenu que deux éléments issus du Programme étasunien prendraient part à la première équipe d'intervention, composée en tout de cinq éléments parmi les meilleurs soldats de la Planète. C'est ainsi que Reyes et Morrison rejoignirent tous les deux Ana Amari, Reinhardt Wilhelm et Torbjörn Lindholm dans l'espoir de sauver l'Humanité de la menace Omnique.
+
+            Gabriel Reyes fut d'emblée nommé Commandant de l'équipe d'intervention. Leur tâche herculéenne consistait à se déplacer le plus rapidement possible aux endroits du Globe où l'Humanité se trouvait en plus grand péril. Systématiquement, l'équipe se retrouvait confrontée à des situations absolument critiques, et la cohésion du groupe était mise à rude épreuve. Bien qu'étant un chef militaire génial, Reyes se révélait être bien moins talentueux quand il s'agissait de gérer les diverses individualités de son équipe et de les unir en un bloc commun. Souvent, la réussite des missions d'Overwatch était due à l'intervention de Morrison, étant bien plus à même d'harmoniser les relations entre équipiers. Malgré cela, la tâche d'Overwatch fut menée à bien sous le commandement de Reyes et la Première Crise Omnique fut ainsi éteinte. Overwatch avait réussi sa grande mission et l'Humanité fut préservée du désastre. Mais malheureusement pour Gabriel Reyes, l'accomplissement de sa mission et la fin de la guerre n'allaient pas signifier pour lui le temps des honneurs et de la reconnaissance du Monde entier.
+
+            Peu de temps après la fin du conflit, les dirigeants d'Overwatch décidèrent de lui retirer le Commandement des Opérations au profit de Jack Morrison, jugé préférable pour sa manière dont il sut gérer les relations dans l'équipe et pour le fait qu'il offrirait un visage plus reluisant aux yeux du Monde pour représenter Overwatch. En guise de compensation, Reyes fut nommé à la tête d'une branche de l'organisation nouvellement créée : Blackwatch, spécialisée dans les missions clandestines et dont l'existence était tenue secrète au reste du Monde. Gabriel Reyes fut donc condamné à l'anonymat le plus strict, comme responsable des servies secrets d'Overwatch. Mais malgré cette nomination, il garda depuis ce jour une rancœur et une colère absolument inextinguibles à l'encontre de ses dirigeants ainsi que de Jack Morrison pour avoir accepté de lui voler les honneurs de la Victoire. Une fracture béante se créa alors dans les relations entre les deux hommes, et le désir de vengeance devenait chaque jour plus brûlant au fond du cœur de Reyes contre son ancien ami. Alors que l'organisation Overwatch allait connaître les jours les plus fastes de son existence sous l'égide du Commandant Morrison, une guerre secrète de longue haleine commença à naître à l'intérieur même de son Quartier Général de Zürich (en Suisse). En plus de ses obligations de chef des opérations secrètes d'Overwatch, Reyes opérait de toute son influence auprès de ses collaborateurs (surtout dans son service de Blackwatch, qui regroupait des individus d'horizons parfois peu recommandables) pour former un groupe lui étant loyal et l'appuyant dans le cas d'une opposition (à priori seulement diplomatique) contre le Commandant Morrison. C'est ainsi qu'avec le temps Overwatch se scinda en plusieurs camps; entre les pro-Reyes, pro-Morrison et les personnes neutres. Gabriel Reyes pensait à raison que c'est en restant au cœur de l'organisation qui l'avait trahi, au plus proche de ses ennemis, qu'il parviendrait le mieux à assouvir sa vengeance.
+
+            Les années passèrent et environ deux décennies après la fin de la Première Crise Omnique, le majestueux monument qu'était Overwatch commença à se fissurer. Pour cause, une vague d'accusations graves concernant des abus des Droits de l'Homme, des cas de corruption, la prolifération d'armes de guerre se propageait dans les médias du Monde entier. Déjà fragilisée de l'intérieur par la guerre d'influence entre Reyes et Morrison, Overwatch était cette fois-ci visée par une lourde procédure judiciaire entamée par l'ONU pour éclaircir ces accusations. Plusieurs enquêtes furent lancées et déjà le discrédit s'abattait sur ceux qui étaient autrefois considérés comme des héros, en premier lieu sur le Commandant Morrison lui-même. Mais les investigations ne purent jamais aller jusqu'à leur terme, en raison d'un dramatique évènement qui scella l'implosion totale d'Overwatch. En effet, l'opposition entre Reyes et Morrison atteint un tel paroxysme qu'elle dégénéra en un conflit armé au cœur du Quartier Général de Zürich, bref mais intense. La violence du combat entre les deux groupes fut telle qu'elle déclencha une énorme explosion qui souffla presque intégralement les installations de l'organisation. En cause, un stock de munitions ou un générateur d'énergie auraient pu être touchés au cours de l'affrontement. Des centaines de blessés et des dizaines de morts furent à déplorer, parmi lesquels figuraient Gabriel Reyes et Jack Morrison, d'après des sources officielles. Mais mystérieusement, aucun des corps des deux antagonistes ne fut jamais retrouvé parmi les décombres, ce qui eut pour effet de lever quelques doutes parmi certains experts quant à la mort de ces hommes qui jadis étaient les sauveurs de l'Humanité.
+
+            En dépit de ce qu'affirmaient toutes les sources officielles autour du drame, Gabriel Reyes avait effectivement survécu à la déflagration et était parvenu à quitter le site de Zürich. En revanche, la manière dont il a résisté à l'explosion et dont il a pu s'échapper des décombres encore fumants de la base d'Overwatch reste absolument incertaine, notamment sur le fait qu'il ait eu besoin ou non d'une complicité. Après cet évènement, il adopta une nouvelle personnalité en rupture partielle avec l'homme qu'il fut; à l'instar de Jack Morrison lui aussi survivant, toujours dans des circonstances très vagues. Reyes apparaît désormais telle une ombre, vêtu d'une grande cape noire, son visage dissimulé derrière un masque effrayant. Son identité réelle demeure un mystère pour le reste du Monde, se faisant désormais connaître sous le nom de "Faucheur". Sans doute sa nouvelle apparence lui permet-il de masquer les profondes séquelles infligées par l'explosion de Zürich; tout comme le fait Jack Morrison, alias "Soldat 76", en cachant son visage derrière un masque. Et tout comme son ancien ennemi, les nouvelles motivations de Faucheur restent elles aussi mystérieuses, celui-ci ayant été vu au cours d'attaques terroristes et de conflits armés divers. Bien qu'il ne semble revendiquer aucune appartenance durable, il se pourrait que Faucheur ait développé une certaine connivence avec la puissante organisation terroriste du nom de "La Griffe". En effet, ses dernières apparitions fortement médiatisées ont été effectuées en compagnie de l'agent de La Griffe connue sous le nom de Fatale, et plus récemment encore avec la célèbre pirate informatique nommée "Sombra". Par contre, il est impossible de savoir si Faucheur est averti du fait que Morrison soit toujours actif, sous sa nouvelle identité.
+
+            Les survivants des attaques de Faucheur rapportent un fait étonnant à son sujet : celui-ci aurait désormais la capacité de s'évaporer au sens propre du terme, lui conférant alors la possibilité de pouvoir traverser les champs de bataille les plus cauchemardesques sans encombre et ainsi propager la mort encore plus aisément et rapidement à l'aide de ses deux fusils (armement caractéristique qu'il employait déjà au temps d'Overwatch). La cause de cette propriété extraordinaire pourrait être une manipulation génétique effectuée sur ses propres cellules. En revanche, il n'est là encore pas possible pour le moment de savoir si cette opération a été pratiquée dans le cadre d'un programme médical expérimental d'Overwatch ou à contrario par les moyens de la Griffe; même s'il est avéré qu'Overwatch testait effectivement cette technologie révolutionnaire et que La Griffe dispose d'énormes moyens médicaux pour parvenir à ses fins (comme peut le prouver le destin de Fatale).
+
+            Quoi qu'il en soit, désormais, Gabriel Reyes alias le Faucheur n'aura pour seul but que de traquer les anciens agents survivants d'Overwatch, qu'il juge complices de sa déchéance, pour les éliminer systématiquement; et ainsi il pourra enfin accomplir sa terrible vengeance, après avoir vu son glorieux destin brisé net.
+        </description>
     </hero>
     <hero>
         <surname>Reinhardt</surname>
@@ -832,6 +1024,17 @@
 				<charge>1375 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Reinhardt Wilhelm se présente comme un champion d’un âge révolu, qui règle sa vie sur les valeurs chevaleresques de la vertu, de la justice et du courage.
+
+            Il y a plus de trente ans, Overwatch fut fondé pour contrer la menace que représentaient les soulèvements de robots partout dans le monde. Reinhardt, un soldat allemand plusieurs fois décoré, fut incorporé dans la première équipe d’intervention d’Overwatch qui mit fin à la crise des Omniums. Après la résolution du conflit, Overwatch grandit pour devenir une institution mondiale chargée de maintenir la paix dans un monde déchiré par les guerres. Reinhardt était l’un de ses piliers les plus fidèles.
+
+            La déontologie inflexible et la personnalité hors du commun de Reinhardt lui valurent l’admiration de ses pairs comme de ses supérieurs. Jamais réticent à parler franchement, il était le partisan le plus démonstratif d’Overwatch, mais au besoin, il savait aussi en être le critique le plus impitoyable, ne manquant jamais de rappeler à tous que l’organisation était censée rester au service du bien commun.
+
+            À la veille de ses soixante ans, Reinhardt fut contraint de quitter le service actif. Déprimé, il craignait de perdre sa raison d’être et que ses jours de gloire ne soient derrière lui. Alors que le climat s’assombrissait et qu’Overwatch était mis en cause dans des affaires de corruption et de sédition, Reinhardt ne put qu’assister à l’effondrement et à la disgrâce de la cause qu’il avait dédié sa vie à défendre.
+
+            Même si Overwatch finit par être dissous, Reinhardt ne pouvait se satisfaire de regarder passivement le monde succomber au chaos. Vêtu à nouveau de son armure de croisé tel un chevalier d’antan, il a promis de combattre pour la justice partout en Europe, de défendre les innocents et d’inspirer les cœurs et les esprits par la promesse de jours meilleurs.
+        </description>
     </hero>
     <hero>
         <surname>Soldier76</surname>
@@ -871,6 +1074,23 @@
 				<charge>2075 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Jack Morrison naquit au cœur de l'Indiana rural, d'une famille d'agriculteurs comme en compte tant cet état. Les personnes l'ayant connu jeune le décrivent comme un humble fils de paysan, mais la plupart s'accordent sur le fait qu'il ne fut jamais destiné à passer son existence au sein de cette douce campagne, si tranquille et semblant être hors l'évolution du vaste Monde extérieur. A l'âge de 18 ans, il quitta l'exploitation familiale afin d'accomplir son service militaire. Il avait prévu initialement de ne rester que durant la période réglementaire avant de regagner la ferme de ses parents; mais son projet ne put se réaliser comme prévu et son destin le guida vers ce qui devait être sa raison même de vivre.
+
+            En effet, constatant ses aptitudes exceptionnelles au métier de soldat, son sens éthique rare et son courage, ses supérieurs décidèrent de l'inscrire aux présélections du "Programme de Renforcement de Soldats" ("Soldier Enhancement Program"), organisé pour la première fois par le Département de la Défense des États-Unis. Ce programme révolutionnaire a été lancé à l'époque pour constituer une force armée suffisamment solide capable d'endiguer la Première Crise Omnique, le soulèvement des robots à travers le Monde entier. Jack Morrison passa les tests avec succès et prit part à ce programme en compagnie des éléments les plus brillants venus du pays tout entier. Parmi eux, se trouvait Gabriel Reyes, un soldat plus expérimenté et hautement respecté par ses pairs. En dépit de leurs différences culturelles (Reyes étant originaire de Los Angeles), Morrison et Reyes devinrent amis, pour le meilleur et pour le pire....
+
+            Au moment de la création d'Overwatch, deux éléments du programme étasunien étaient censés prendre part à la toute première équipe d'intervention; celle qui serait envoyée en urgence aux quatre coins du Globe, aux endroits où la situation était la plus critique pour l'Humanité. C'est ainsi que Morrison et Reyes rejoignirent l'organisation, et formèrent aux côtés d'Ana Amari, Reinhardt Wilhelm et Torbjörn Lindholm l'équipe qui arrêterait enfin la progression Omnique. Le commandement de cette section d'élite échoua à Gabriel Reyes. Bien qu'à terme, leur mission s'avéra être un succès, ce fut Morrison qui se révéla comme étant l'élément moteur du groupe. Contrairement à Reyes, c'est lui qui parvint le mieux à fédérer toutes ces individualités derrière lui (parfois conflictuelles), à rendre le collectif cohérent et ainsi en extraire toute la force nécessaire à l'accomplissement de leur tâche titanesque. Ainsi, d'après la sous-secrétaire générale de l'ONU de l'époque Gabrielle Adawe : "J'ai moi-même eu des doutes quant à la réussite de la mission d'Overwatch. Mais Morrison ne renonça pas. Il ne fit pas que répondre à nos attentes sur ce que Overwatch et ses agents pouvaient accomplir, il les transcenda.". Après la fin de la Première Crise Omnique, Morrison fut promu Commandant des Opérations en lieu et place de Reyes (lui-même muté à un autre poste moins prestigieux), comme récompense de sa valeur. Cette décision eut pour malheureux effet de créer une profonde rupture entre les deux hommes, ce qui, à terme, amènera à une fin dramatique.
+
+            Au cours du mandat de Morrison, l'organisation Overwatch (désormais publique) connut une grande période de prospérité. Le Monde entier célébrait ses glorieux héros, mais aucun autant que le Commandant Jack Morrison. Il était devenu la figure emblématique de la libération aux yeux de tous, symbole d'espoir, l'incarnation même d'Overwatch. Toute une génération grandit avec lui comme modèle; et lui-même possédait une vision tout à fait optimiste pour l'avenir de l'Humanité. Malgré cela, il demeurait disponible auprès de ses proches et continuait à former de nouveaux agents, en leur inculquant toujours les principes fondamentaux d'Overwatch. Mais cette ère faste ne dura pas éternellement. Environ 20 ans après la fin de la Première Crise Omnique, l'organisation fut terriblement ébranlée par une série d'accusations accablantes : corruption, non-respect des Droits de l'Homme, prolifération d'armements, échecs de missions secrètes de haute importance.... En conséquence, l'ONU entama une procédure judiciaire de grande envergure afin d'éclaircir ces allégations. Il était bien probable que ces enquêtes pouvait amener à la dissolution de l'organisation si elles s'avéraient concluantes (ne serait-ce qu'en partie). Mais un autre évènement bien plus tragique allait plonger Overwatch dans l'abysse.
+
+            Alors que les enquêtes suivaient leurs cours, le Quartier Général d'Overwatch situé à Zürich (Suisse) fut presque entièrement détruit par une terrible explosion. Malgré les affirmations de l'ONU, la déflagration n'avait rien d'accidentel et Jack Morrison et Gabriel Reyes figuraient parmi les nombreuses victimes. A la vérité, cet évènement n'était que le point d'orgue de la guerre interne que se livraient Morrison et Reyes depuis des années dans la quête de la plus grande influence. Cette opposition a finalement abouti à un conflit armé entre les deux camps au sein même de leurs locaux, jusqu'à la destruction mutuelle des deux antagonistes (ainsi que de ceux qui n'avaient rien à voir avec ceci). Des archives classées permirent de mieux comprendre l'état de la situation avant le drame. Selon le Dr. Angela Ziegler, elle aussi agent d'Overwatch : "Après la promotion de Morrison en tant que Commandant des Opérations, sa relation avec Reyes a profondément changé. A mesure que le temps passait, la tension entre eux devenait de plus en plus prononcée. J'ai essayé d'arranger les choses. Nous avons tous essayé. Mais quand les liens les plus étroits se déchirent, tout ce que vous pouvez espérer est de rester hors du feu de l'affrontement.". On apprit en outre que le Commandant Morrison tentait coûte que coûte de maintenir ensemble tout ce qui restait d'Overwatch afin de garder un infime espoir de faire survivre l'organisation à la série de procès, dont il était persuadé qu'il s'agissait d'un coup monté (de l'extérieur, cette fois). En dépit du fait que le corps de Jack Morrison ne fut jamais retrouvé sur le site de Zürich (chose très étonnante), il eut tout de même droit à une cérémonie funéraire officielle au Cimetière National d'Arlington, en Virginie (États-Unis).
+
+            Mais l'histoire ne s'arrête pas là. En effet, la révélation de la mystérieuse disparition du corps de Jack Morrison laisse la porte ouverte à une éventuelle alternative quant à la mort de ce dernier. Ceci expliquerait notamment la série d'attaques et de braquages de haut vol menés contre les sièges sociaux de plusieurs institutions financières, ainsi que sur les sites d'anciennes bases d'Overwatch aujourd'hui désaffectées et sécurisées, où d'importants stocks d'armes et de munitions ont pourtant été dérobés. Les autorités refusent pour le moment de s'exprimer sur l'identité réelle du principal suspect, ce pseudo-justicier masqué, communément appelé "Soldat 76". Les témoins de ses intrusions sur les anciennes bases d'Overwatch évoquent un individu expert dans le domaine des opérations sous couverture. De plus, les enregistrements sur place montrent une grande similitude entre le Soldat 76 et le Commandant Morrison lors de sa dernière apparition publique. De nombreux observateurs et spécialistes sur les causes (cachées ?) de la chute d'Overwatch affirment le Soldat 76 est avant tout motivé par le but d'éclaircir les circonstances de cette chute, qui aurait pu être programmée par des entités extérieures (d'où l'origine des procès ?), et peut-être de mettre au jour une éventuelle conspiration....
+
+            Mais on peut rester sceptique à propos de l'hypothèse selon laquelle le Soldat 76 serait effectivement Jack Morrison. Ses dangereuses activités, sa volonté de mettre en péril la vie d'innocents montre qu'il n'est pas guidé par de nobles intentions. On pourrait même imaginer qu'il s'agisse d'un criminel au service de réseaux internationaux, qui terroriseraient des citoyens innocents en temps voulu.
+
+            Finalement, c'est sur la tombe vide du Commandant Morrison que l'énigme trouve sa réponse. Le Soldat 76 n'est plus ce héros qui a inspiré une génération toute entière. Ce héros ne cacherait pas ses cicatrices derrière un masque. Ce héros ne volerait pas d'armes et ne poserait pas de bombes alors que le Monde souffre encore de la guerre. Ce héros, il est enterré ici même. Tout ce qu'il en reste est l'ombre qui n'aura de cesse de traquer les responsables de la fin d'Overwatch, elle-même traquée dans une chasse à l'homme globale. Et à terme, de placer les coupables sous le glaive impitoyable de la Justice. Alors cette ombre, le Soldat 76, aura enfin trouvé le répit dans cette autre existence.
+        </description>
     </hero>
     <hero>
         <surname>Symmetra</surname>
@@ -925,6 +1145,17 @@
 				<charge>1000 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Symmetra peut littéralement altérer la réalité. En manipulant des assemblages photoformés, elle façonne le monde comme elle souhaiterait qu’il soit, dans l’espoir de concevoir une société parfaite.
+
+            Après la crise des Omniums, la société Vishkar, basée dans le sud de l’Inde, entreprit un laborieux processus de création de nouvelles cités autosuffisantes pour abriter les populations déplacées par le conflit. L’une de ces cités, Utopée, fut créée en utilisant une technologie révolutionnaire de photoformation qui permettait aux architectes de modeler en un clin d’œil les rues, les espaces de vie et les services publics.
+
+            Après avoir été reconnue comme l’une des rares personnes capables de devenir un architecte façonneur de lumière, la jeune Satya Vaswani fut arrachée à l’extrême pauvreté de son milieu pour intégrer l’école d’architecture de Vishkar. Parfaitement esseulée dans cette nouvelle vie, Satya se dévoua entièrement à son éducation. Elle perçut rapidement les applications possibles de la technologie et devint l’une des meilleures élèves de l’école. Satya avait une approche de la photoformation différente de celle de ses condisciples et de leurs procédures de construction mécaniques. Elle-même érigeait ses assemblages en s’inspirant des mouvements de danse traditionnelle de sa terre natale.
+
+            Même si elle était une des architectes les plus doués d’Utopée, Vishkar sut voir un tout autre potentiel dans les capacités de Satya. Sous le pseudonyme de « Symmetra », elle fut envoyée pour effectuer des missions clandestines aux quatre coins du monde afin de promouvoir les intérêts de la corporation et de renforcer son influence internationale.
+
+            Symmetra croit que ses actes servent l’intérêt général de la société. Mais elle se demande parfois si le contrôle et l’ordre qu’elle appelle de ses vœux sont vraiment ce qui convient le mieux à l’humanité.
+        </description>
     </hero>
     <hero>
         <surname>Sombra</surname>
@@ -968,5 +1199,8 @@
 				<charge>125s0 pts</charge>
             </ability>
         </abilities>
+        <description>
+            Comptant parmi les hackers les plus réputés du monde, Sombra se sert des informations qu’elle dérobe pour manipuler les détenteurs du pouvoir. Bien avant d’adopter le pseudonyme de « Sombra », ░░░░░░ comptait parmi les milliers d’orphelins de la crise des Omniums. Les infrastructures du pays ayant été pour la plupart détruites, elle doit sa survie à son talent naturel pour l’informatique et le piratage. Après avoir rejoint le gang mexicain Los Muertos, ░░░░░░ a contribué à leurs desseins de révolution contre le gouvernement. Les membres de Los Muertos étaient convaincus que la reconstruction du Mexique avait essentiellement profité aux classes riches et influentes, au détriment des plus démunis. Enhardie par ses nombreux succès, ░░░░░░ fut prise au dépourvu lorsqu’elle mit le doigt dans l’engrenage d’une conspiration mondiale, dont les responsables connaissaient même son existence. Voyant sa sécurité compromise, ░░░░░░ dut effacer toute trace de son identité et s’efforça de disparaître du radar. Elle refit surface sous le nom de Sombra, plus forte et déterminée que jamais à percer à jour le complot qu’elle avait découvert. Sombra entreprit des piratages encore plus audacieux et ses exploits lui valurent une certaine admiration, notamment de la part de la Griffe. Ayant rejoint les rangs de l’organisation, elle serait derrière les cyber-attaques massives ayant touché les corporations liées de près au gouvernement. Ses efforts ont encouragé une révolution populaire contre LumériCo au Mexique et ouvert une brèche de sécurité dans l’usine Volskaya, qui fabrique les armes de défense anti-omniaques de la Russie.
+        </description>
     </hero>
 </heroes>
