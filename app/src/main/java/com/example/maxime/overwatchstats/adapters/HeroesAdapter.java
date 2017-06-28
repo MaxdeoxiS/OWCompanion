@@ -16,12 +16,18 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class HeroesAdapter extends ArrayAdapter<HeroItem>{
-    public HeroesAdapter(Context context, ArrayList<HeroItem> heroes) {
+    public HeroesAdapter(Context context, ArrayList<HeroItem> heroes, String resHeroImg, String resHeroTimeBar, String resLayout) {
         super(context, 0, heroes);
+        this.resHeroImg = resHeroImg;
+        this.resHeroTimeBar = resHeroTimeBar;
     }
 
-    float maxWidth;
-    int defWidth = 800;
+    private float maxWidth;
+    private int defWidth = 800;
+
+    private String resHeroImg;
+    private String resHeroTimeBar;
+    private String resLayout;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -34,8 +40,8 @@ public class HeroesAdapter extends ArrayAdapter<HeroItem>{
         }
         // Lookup view for data population
 
-        ImageView heroImg = (ImageView) convertView.findViewById(R.id.qp_hero_img_1);
-        View heroTimeBar = (View) convertView.findViewById(R.id.qp_hero_bar);
+        ImageView heroImg = (ImageView) convertView.findViewById(this.getContext().getResources().getIdentifier(resHeroImg, "id", getContext().getPackageName()));
+        View heroTimeBar = convertView.findViewById(this.getContext().getResources().getIdentifier(resHeroTimeBar, "id", getContext().getPackageName()));
 
         // Populate the data into the template view using the data object
         Picasso.with(getContext()).load(hero.imgUrl).into(heroImg);

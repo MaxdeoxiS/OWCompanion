@@ -38,7 +38,7 @@ public class HeroesTimePlayedFragment extends Fragment implements
         super.onCreate(savedInstanceState);
         View mView = inflater.inflate(R.layout.activity_profile_quickplay, container, false);
 
-        adapter = new HeroesAdapter(this.getActivity(), new ArrayList<HeroItem>());
+        adapter = new HeroesAdapter(this.getActivity(), new ArrayList<HeroItem>(), "qp_hero_img_1", "qp_hero_bar", "list_heroes");
         lv = (ListView)     mView.findViewById(R.id.quickplay_list_heroes);
         lv.setAdapter(adapter);
 

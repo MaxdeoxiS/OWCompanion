@@ -4,20 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maxime.overwatchstats.GetHeroesStats;
 import com.example.maxime.overwatchstats.R;
 import com.example.maxime.overwatchstats.activities.HeroesStatsActivity;
 import com.example.maxime.overwatchstats.adapters.HeroesAdapter;
-import com.example.maxime.overwatchstats.model.Friend;
-import com.example.maxime.overwatchstats.model.FriendDAO;
 import com.example.maxime.overwatchstats.model.HeroItem;
 import com.example.maxime.overwatchstats.model.HeroStats;
 
@@ -29,63 +27,70 @@ public class CompareHeroesTimePlayedFragment extends Fragment implements
         GetHeroesStats.OnAsyncRequestComplete {
 
     ListView lv;
+    ListView lv2;
     HeroesAdapter adapter;
+    HeroesAdapter adapter2;
     HashMap<String, HeroStats> stats;
+    View clickSource;
+    View touchSource;
+
+    int offset = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View mView = inflater.inflate(R.layout.activity_profile_quickplay, container, false);
+        View mView = inflater.inflate(R.layout.fragment_compare, container, false);
 
-        adapter = new HeroesAdapter(this.getActivity(), new ArrayList<HeroItem>());
-        lv = (ListView)     mView.findViewById(R.id.quickplay_list_heroes);
+        adapter = new HeroesAdapter(this.getActivity(), new ArrayList<HeroItem>(), "qp_hero_img_1", "qp_hero_bar", "list_heroes");
+        adapter2 = new HeroesAdapter(this.getActivity(), new ArrayList<HeroItem>(), "qp_hero_img_1", "qp_hero_bar", "list_heroes");
+        lv = (ListView)     mView.findViewById(R.id.quickplay_list_heroes1);
         lv.setAdapter(adapter);
 
-        String mode = this.getArguments().getString("mode");
-        ArrayList<String> winStats = (ArrayList<String>) this.getArguments().getSerializable("winStats");
-
-        if (mode.equals("competitive")) {
-            winStats = new ArrayList<String>(winStats.subList(3, 6));
-        }
-
-        TextView wonGames = (TextView) mView.findViewById(R.id.wonGames);
-        TextView lostGames = (TextView) mView.findViewById(R.id.lostGames);
-        TextView winRate = (TextView) mView.findViewById(R.id.winRate);
-
+        String mode = "quickplay";//this.getArguments().getString("mode");
 
         GetHeroesStats test = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter, mode, this);
+        GetHeroesStats test2 = new GetHeroesStats(getActivity().getWindow().getDecorView().getRootView(), this.getActivity(), adapter2, mode, this, "Blackout-2716");
         test.execute();
 
-        wonGames.setText(winStats.get(0));
-        lostGames.setText(winStats.get(1));
-        winRate.setText(winStats.get(2) + "%");
+        lv2 = (ListView)     mView.findViewById(R.id.quickplay_list_heroes2);
+        lv2.setAdapter(adapter2);
 
-        Button button_compare = (Button) mView.findViewById(R.id.button_compare);
+        test2.execute();
 
-        FriendDAO f = new FriendDAO(this.getContext());
-        f.open();
-        ArrayList<Friend> friends = f.getAllFriends();
-        f.close();
 
-        ArrayList<String> friendsAsArrayList = new ArrayList<String>();
 
-        for (Friend friend : friends) {
-            friendsAsArrayList.add(friend.getUsername());
-        }
 
-        final String[] tmp = friendsAsArrayList.toArray(new String[friendsAsArrayList.size()]);
 
-        button_compare.setOnClickListener(new View.OnClickListener() {
+
+        lv.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                DialogCompareFriendsTimePlayed newFragment = new DialogCompareFriendsTimePlayed();
-                Bundle args = new Bundle();
-                args.putStringArray("friends", tmp);
-                newFragment.setArguments(args);
-                newFragment.show(getFragmentManager(), "friends");
+            public boolean onTouch(View v, MotionEvent event) {
+                if(touchSource == null)
+                    touchSource = v;
 
+                if(v == touchSource) {
+                    lv2.dispatchTouchEvent(event);
+                    if(event.getAction() == MotionEvent.ACTION_UP) {
+                        clickSource = v;
+                        touchSource = null;
+                    }
+                }
+
+                return false;
             }
+        });
+
+
+        lv.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if(view == clickSource)
+                    lv2.setSelectionFromTop(firstVisibleItem, view.getChildAt(0).getTop() + offset);
+            }
+
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {}
         });
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

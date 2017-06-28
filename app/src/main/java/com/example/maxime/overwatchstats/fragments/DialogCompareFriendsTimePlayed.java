@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
+import com.example.maxime.overwatchstats.R;
+
 
 public class DialogCompareFriendsTimePlayed extends DialogFragment {
 
@@ -17,7 +19,10 @@ public class DialogCompareFriendsTimePlayed extends DialogFragment {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setItems(friends, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.container, new CompareHeroesTimePlayedFragment())
+                            .addToBackStack("COMPARE")
+                            .commit();
                 }
             });
 

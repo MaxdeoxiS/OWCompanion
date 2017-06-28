@@ -44,6 +44,8 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
     private String mode;
     private OnAsyncRequestComplete caller;
 
+    String pref_battleTag;
+
     private ProgressDialog progressDialog;
 
     private static final Map<String, String> heroesHexa = createMap();
@@ -85,6 +87,18 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
         adapter = a;
         mode = m;
         this.caller = caller;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        pref_battleTag = preferences.getString("currentBattleTag", "");
+    }
+
+    public GetHeroesStats(View v, Context c, HeroesAdapter a, String m, OnAsyncRequestComplete caller, String battleTag)
+    {
+        myView = v;
+        context = c;
+        adapter = a;
+        mode = m;
+        this.caller = caller;
+        this.pref_battleTag = battleTag;
     }
 
     public interface OnAsyncRequestComplete {
@@ -684,9 +698,6 @@ public class GetHeroesStats extends AsyncTask<Void, Void, HeroOutput> {
 
         try {
             final String BASE_URL = "https://owapi.net/api/v3/u/";
-
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-            String pref_battleTag = preferences.getString("currentBattleTag", "");
 
             final String BATTLE_TAG = pref_battleTag;
             final String DATATYPE = "heroes";
