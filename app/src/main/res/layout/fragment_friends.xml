@@ -8,11 +8,13 @@
         android:id="@+id/label_no_friends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/no_friends" />
+        android:text="@string/no_friends"
+        android:textSize="25sp"
+        android:layout_marginBottom="15dp"/>
 
     <ListView
         android:id="@+id/listview_friends"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </ListView>

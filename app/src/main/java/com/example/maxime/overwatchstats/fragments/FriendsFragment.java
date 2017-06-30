@@ -35,7 +35,7 @@ public class FriendsFragment extends Fragment {
 
         if (friends.size() > 0) {
             TextView t = (TextView)  mView.findViewById(R.id.label_no_friends);
-            t.setVisibility(View.INVISIBLE);
+            t.setText(R.string.title_friends);
             adapter = new FriendsAdapter(this.getActivity(), friends);
 
             ListView lv = (ListView)     mView.findViewById(R.id.listview_friends);
