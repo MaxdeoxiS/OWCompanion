@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OverwatchStats</string>
+    <string name="ambush_desc"></string>
+    <string name="button_my_profile">My Profile</string>
+    <string name="action_add_friend">Add a friend</string>
+    <string name="action_search">Search a player</string>
+    <string name="action_settings">Settings</string>
+    <string name="cards">Cards</string>
+    <string name="friend_added">Friend added !</string>
+    <string name="friend_deleted">Friend deleted !</string>
+    <string name="label_avatar">Avatar</string>
+    <string name="label_click_for_more">Click to learn more</string>
+    <string name="medals">Medals</string>
+    <string name="medals_gold">Gold medals</string>
+    <string name="medals_silver">Silver medals</string>
+    <string name="medals_bronze">Bronze medals</string>
+    <string name="menu_favorites">My friends</string>
+    <string name="menu_heroes">Heroes</string>
+    <string name="menu_place">Interactive Map</string>
+    <string name="menu_plus">More</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">My Profile</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_share">Share</string>
+    <string name="no_friends">You don\'t have any friends !</string>
+    <string name="overwatch_map">Overwatch Map</string>
+    <string name="profile_button_quickplay">Quickplay</string>
+    <string name="profile_button_ranked">Competitve</string>
+    <string name="profile_button_achievements">Achievements</string>
+</resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OverwatchStats</string>
+    <string name="app_name" translatable="false">OverwatchStats</string>
     <string name="button_my_profile">Mon Profil</string>
     <string name="label_avatar">Avatar</string>
     <string name="profile_button_quickplay">Partie rapide</string>
@@ -108,30 +108,30 @@
 
     <!-- Heroes Colors -->
 
-    <string name="genji">#83FD01</string>
-    <string name="hanzo">#928748</string>
-    <string name="mccree">#8D3939</string>
-    <string name="widowmaker">#6F6FAE</string>
-    <string name="pharah">#1A64C5</string>
-    <string name="soldier76">#586FB5</string>
-    <string name="ana">#CBC1AD</string>
-    <string name="mei">#9ADAF3</string>
-    <string name="reaper">#272725</string>
-    <string name="roadhog">#C09476</string>
-    <string name="junkrat">#D29208</string>
-    <string name="zarya">#F470A7</string>
-    <string name="sombra">#751B9C</string>
-    <string name="zenyatta">#C69B00</string>
-    <string name="lucio">#8AEB22</string>
-    <string name="winston">#4B4F5A</string>
-    <string name="torbjorn">#FF6100</string>
-    <string name="dva">#FF7FD0</string>
-    <string name="tracer">#FEE06B</string>
-    <string name="mercy">#F7911B</string>
-    <string name="bastion">#6D984C</string>
-    <string name="symmetra">#5BEBFF</string>
-    <string name="reinhardt">#A9958D</string>
-    <string name="orisa">#1D2741</string>
+    <string name="genji" translatable="false">#83FD01</string>
+    <string name="hanzo" translatable="false">#928748</string>
+    <string name="mccree" translatable="false">#8D3939</string>
+    <string name="widowmaker" translatable="false">#6F6FAE</string>
+    <string name="pharah" translatable="false">#1A64C5</string>
+    <string name="soldier76" translatable="false">#586FB5</string>
+    <string name="ana" translatable="false">#CBC1AD</string>
+    <string name="mei" translatable="false">#9ADAF3</string>
+    <string name="reaper" translatable="false">#272725</string>
+    <string name="roadhog" translatable="false">#C09476</string>
+    <string name="junkrat" translatable="false">#D29208</string>
+    <string name="zarya" translatable="false">#F470A7</string>
+    <string name="sombra" translatable="false">#751B9C</string>
+    <string name="zenyatta" translatable="false">#C69B00</string>
+    <string name="lucio" translatable="false">#8AEB22</string>
+    <string name="winston" translatable="false">#4B4F5A</string>
+    <string name="torbjorn" translatable="false">#FF6100</string>
+    <string name="dva" translatable="false">#FF7FD0</string>
+    <string name="tracer" translatable="false">#FEE06B</string>
+    <string name="mercy" translatable="false">#F7911B</string>
+    <string name="bastion" translatable="false">#6D984C</string>
+    <string name="symmetra" translatable="false">#5BEBFF</string>
+    <string name="reinhardt" translatable="false">#A9958D</string>
+    <string name="orisa" translatable="false">#1D2741</string>
 
 
     <!-- Statistics names -->
