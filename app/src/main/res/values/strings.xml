@@ -190,7 +190,7 @@
     <string name="fan_the_hammer_kills_most_in_game">Victimes de mitraillage (Max.)</string>
     <string name="primal_rage_kills_most_in_game">Victimes de rage primordiale (Max.)</string>
     <string name="primal_rage_kills">Victimes de rage primordiale</string>
-    <string name="projected_barriers_applied_most_in_game">-</string>
+    <string name="projected_barriers_applied_most_in_game">Écrans générés  (Max.)</string>
     <string name="blaster_kills_most_in_game">Victimes de miséricorde (Max.)</string>
     <string name="unscoped_hits">Tirs à l\'oeil nu</string>
     <string name="unscoped_accuracy_best_in_game">Préicison à l\'oeil nu (Max.)</string>
@@ -338,14 +338,14 @@
     <string name="primal_rage_kills_average">Victimes de rage primordiale (Moy.)</string>
     <string name="scatter_arrow_kills_average">Victimes de mille-flèches (Moy.)</string>
     <string name="dragonstrike_kills_average">Victimes de frappe du dragon(Moy.)</string>
-    <string name="barrage_kills_average">Victimes de barrage(Moy.)</string>
+    <string name="barrage_kills_average">Victimes de barrage (Moy.)</string>
     <string name="rocket_direct_hits_average">Tirs de roquette directs (Moy.)</string>
     <string name="enemies_hooked_average">Ennemis aggripés (Moy.)</string>
     <string name="whole_hog_kills_average">Victimes d\'équarisseur(Moy.)</string>
     <string name="graviton_surge_kills_average">Victimes d\'orbe à graviton(Moy.)</string>
     <string name="projected_barriers_applied_average">Écrans générés (Moy.)</string>
     <string name="high_energy_kills_average">Victimes sous énérgie élevée(Moy.)</string>
-    <string name="average_energy_best_in_game">Énergie maximum par partie (Moy.)</string>
+    <string name="average_energy_best_in_game">Énergie moyenne (Max.)</string>
     <string name="turret_kills_average">Victimes de tourelle (Moy.)</string>
     <string name="torbjorn_kills_average">Victimes de Torbjörn (Moy.)</string>
     <string name="armor_packs_created_average">Modules d\'armure créés (Moy.)</string>
@@ -363,7 +363,7 @@
     <string name="dragonblade_kills_average">Victimes de lame du dragon (Moy.)</string>
     <string name="damage_reflected_average">Dégâts renvoyés (Moy.)</string>
     <string name="death_blossom_kills_average">Victimes d\'éclosion mortelle (Moy.)</string>
-    <string name="blizzard_kills_average">Victimes de blizzard(Moy.)</string>
+    <string name="blizzard_kills_average">Victimes de blizzard (Moy.)</string>
     <string name="enemies_frozen_average">Ennemis gelés (Moy.)</string>
     <string name="tank_kills_average">Victimes de tank (Moy.)</string>
     <string name="recon_kills_average">Victimes de reconnaissance (Moy.)</string>
